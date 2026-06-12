@@ -1,0 +1,41 @@
+{
+    "type": "Page",
+    "title": "Arsip LPJ",
+    "slug": "arsip-lpj",
+    "sections": [
+        {
+            "type": "Hero",
+            "title": "Arsip LPJ",
+            "subtitle": "Laporan Pertanggungjawaban"
+        },
+        {
+            "type": "LpjList",
+            "items": [
+                {
+                    "year": "2024/2025",
+                    "url": "https://drive.google.com/file/d/1kihZELUHJ_n4p2SapyjLLovX6Lqc4Web/view?usp=sharing"
+                },
+                {
+                    "year": "2022/2024",
+                    "url": "https://drive.google.com/file/d/1fosB-Sxxt483uLfGNFo3HiRSkFL4gOWO/view?usp=sharing"
+                },
+                {
+                    "year": "2021/2022",
+                    "url": "https://drive.google.com/file/d/1wRP8HHnigfMrcKprNrnT-i8m3Mt6zNHD/view?usp=sharing"
+                },
+                {
+                    "year": "2020/2021",
+                    "url": "https://drive.google.com/file/d/1u7IYPBEHdeBnxgUWlOQyqDhs5vGVFmi-/view?usp=sharing"
+                },
+                {
+                    "year": "2018/2019",
+                    "url": "https://drive.google.com/file/d/1BSv5HZXD5b9xFe_ZCEdUz6lkCfyi9KdB/view?usp=sharing"
+                },
+                {
+                    "year": "2017/2018",
+                    "url": "https://drive.google.com/file/d/1BVT9wmvOEdXqyKy_4VUjnBpADqr-lR7I/view?usp=sharing"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Page",
+    "title": "Aachen Open 2025",
+    "slug": "acop2025",
+    "sections": [
+        {
+            "type": "IframeSection",
+            "title": "Aachen Open 2025",
+            "src": "https://aachenopen.ppiaachen.de/",
+            "height": "calc(100vh - 64px)"
+        }
+    ]
+}

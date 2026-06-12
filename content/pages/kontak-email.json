@@ -1,0 +1,70 @@
+{
+    "type": "Page",
+    "title": "Kontak Email",
+    "slug": "kontak-email",
+    "sections": [
+        {
+            "type": "Hero",
+            "title": "Kontak Email",
+            "subtitle": "Get in Touch"
+        },
+        {
+            "type": "ContactList",
+            "title": "Department Contacts",
+            "officeName": "Sekretariat PPI Aachen",
+            "officeAddress": "An der Schanz 1, 52064 Aachen, Germany",
+            "whatsappNumber": "+49 15679 027862 (WA Only)",
+            "contacts": [
+                {
+                    "role": "Sekretariat / General Inquiries",
+                    "email": "info@ppiaachen.de sekretariat@ppiaachen.de",
+                    "image": "/images/kontak-email/Sekretaris.png",
+                    "whatsapp": "+49 15679 027862 (WA Only)",
+                    "whatsappLink": "https://wa.me/message/U7EYCVZDKP7WG1",
+                    "address": "An der Schanz 1, 52064 Aachen, Germany",
+                    "addressLink": "https://maps.app.goo.gl/TWvaC2dYNgVr2iXF8"
+                },
+                {
+                    "role": "Bendahara (Treasury)",
+                    "email": "treasury@ppiaachen.de",
+                    "image": "/images/kontak-email/Bendahara.png"
+                },
+                {
+                    "role": "Human Resources",
+                    "email": "human.resources@ppiaachen.de",
+                    "image": "/images/kontak-email/HR.png"
+                },
+                {
+                    "role": "Public Relations",
+                    "email": "public.relations@ppiaachen.de Info@ppiaachen.de",
+                    "image": "/images/kontak-email/Humas.png"
+                },
+                {
+                    "role": "Fundraising",
+                    "email": "fundraising@ppiaachen.de",
+                    "image": "/images/kontak-email/Wirus.png"
+                },
+                {
+                    "role": "Multimedia & IT",
+                    "email": "multimedia@ppiaachen.de it@ppiaachen.de multimedia-it@ppiaachen.de",
+                    "image": "/images/kontak-email/MulmedIT.png"
+                },
+                {
+                    "role": "Education",
+                    "email": "education@ppiaachen.de",
+                    "image": "/images/kontak-email/Pendik.png"
+                },
+                {
+                    "role": "Arts & Culture",
+                    "email": "art.culture@ppiaachen.de",
+                    "image": "/images/kontak-email/Senbud.png"
+                },
+                {
+                    "role": "Sports",
+                    "email": "sports@ppiaachen.de",
+                    "image": "/assets/logos/OR.png"
+                }
+            ]
+        }
+    ]
+}

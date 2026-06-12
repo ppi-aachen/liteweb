@@ -1,0 +1,56 @@
+{
+    "type": "Page",
+    "title": "Press Kit",
+    "slug": "press-kit",
+    "sections": [
+        {
+            "type": "Hero",
+            "title": "Press Kit",
+            "subtitle": "Resources & Assets"
+        },
+        {
+            "type": "PressKitHeader",
+            "title": "PPI Aachen Logos",
+            "subtitle": "8 Images (533 KB)",
+            "downloadLink": "https://drive.google.com/file/d/1WkgwhmRnFY6-3A_xX3hh7WB2-uvhZfYq/view?usp=sharing",
+            "downloadText": "Download all (.zip)"
+        },
+        {
+            "type": "LogoGrid",
+            "logos": [
+                {
+                    "name": "PPI Aachen Logo - RWTH Colour Scheme",
+                    "image": "/images/press-kit/logo-rwth-colour.png"
+                },
+                {
+                    "name": "PPI Aachen Logo - FH Colour Scheme",
+                    "image": "/images/press-kit/logo-fh-colour.png"
+                },
+                {
+                    "name": "PPI Aachen Logo - FH Colour Scheme 2",
+                    "image": "/images/press-kit/logo-fh-colour-2.png"
+                },
+                {
+                    "name": "PPI Aachen Logo - White",
+                    "image": "/images/press-kit/logo-white.png"
+                },
+                {
+                    "name": "PPI Aachen Logo - Black",
+                    "image": "/images/press-kit/logo-black.png"
+                },
+                {
+                    "name": "PPI Aachen Logo - New Grey",
+                    "image": "/images/press-kit/logo-new-grey.png"
+                },
+                {
+                    "name": "PPI Aachen Logo - Black-Grey",
+                    "image": "/images/press-kit/logo-black-grey.png"
+                },
+                {
+                    "name": "PPI Aachen Logo - Long Form",
+                    "image": "/images/press-kit/logo-long-form.png"
+                }
+            ]
+        }
+    ]
+}

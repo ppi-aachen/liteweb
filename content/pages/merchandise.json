@@ -1,0 +1,13 @@
+{
+    "type": "Page",
+    "title": "Merchandise",
+    "slug": "merchandise",
+    "sections": [
+        {
+            "type": "IframeSection",
+            "title": "Linktree - Aachen Studio",
+            "src": "https://aachen-studio.vercel.app/",
+            "height": "calc(100vh - 64px)"
+        }
+    ]
+}

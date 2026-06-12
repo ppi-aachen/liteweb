@@ -346,7 +346,7 @@ const renderHeroHeader = (title, subtitle) => {
     return `
     <div class="hero-header relative overflow-hidden text-white flex flex-col justify-center items-center text-center">
       <!-- Parallax Background Layer -->
-      <div class="hero-header-bg absolute inset-0 w-full" style="background-image: url('hero-bright.png'); background-size: cover; background-position: center; height: 120%; top: -10%; z-index: 0;"></div>
+      <div class="hero-header-bg absolute inset-0 w-full" style="background-image: url('hero-bright.png'); height: 120%; top: -10%; z-index: 0;"></div>
     </div>
     `;
 };
@@ -387,7 +387,7 @@ const compileHome = () => {
         <!-- Section 1: Carousel + Linktree -->
         <div class="bg-[#0161bf]">
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="px-4 md:px-[48px] py-12">
+            <div class="px-0 md:px-[48px] py-6 md:py-12">
               
               <!-- Carousel -->
               <div class="overflow-hidden relative group w-full aspect-[16/9] rounded-lg shadow-md">
@@ -396,14 +396,14 @@ const compileHome = () => {
                     <img src="assets/carousel/${slide}" alt="Slide ${i + 1}" class="w-full h-full object-cover flex-shrink-0" />
                   `).join('')}
                 </div>
-                <div class="absolute inset-0 flex items-center justify-between p-4">
-                  <button id="carousel-prev" class="p-2 rounded-full shadow bg-white/30 text-white hover:bg-white/50 transition-colors backdrop-blur-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <div class="absolute inset-0 flex items-center justify-between p-2 md:p-4">
+                  <button id="carousel-prev" class="text-white hover:text-white/80 transition-colors md:p-2 md:rounded-full md:shadow md:bg-white/30 md:hover:bg-white/50 md:backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                     </svg>
                   </button>
-                  <button id="carousel-next" class="p-2 rounded-full shadow bg-white/30 text-white hover:bg-white/50 transition-colors backdrop-blur-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                  <button id="carousel-next" class="text-white hover:text-white/80 transition-colors md:p-2 md:rounded-full md:shadow md:bg-white/30 md:hover:bg-white/50 md:backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
                   </button>
@@ -874,7 +874,43 @@ const compileEvents = () => {
           <div class="px-4 md:px-[48px] py-12">
 
             <section class="mb-12">
-              <h2 class="heading-2 mb-8">${eventGrid?.title || 'Kegiatan Kami'}</h2>
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8 border-b border-gray-100 pb-6">
+                <h2 class="heading-2 !mt-0 !mb-0">${eventGrid?.title || 'Kegiatan Kami'}</h2>
+                
+                <!-- Search and Filter Controls -->
+                <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                  <!-- Search Input -->
+                  <div class="relative flex-grow sm:flex-grow-0 sm:w-80">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </span>
+                    <input
+                      type="text"
+                      id="search-input"
+                      placeholder="Search events by title..."
+                      class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm bg-[#fcfcfc] transition-all"
+                    />
+                  </div>
+                  
+                  <!-- Sort Selector -->
+                  <div class="relative shrink-0">
+                    <select
+                      id="sort-select"
+                      class="w-full sm:w-48 pl-3 pr-8 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm bg-[#fcfcfc] appearance-none cursor-pointer transition-all"
+                    >
+                      <option value="newest">Newest First</option>
+                      <option value="oldest">Oldest First</option>
+                    </select>
+                    <span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
 
               <div id="events-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <!-- Dynamically populated by js/events.js -->

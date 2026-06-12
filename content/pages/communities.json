@@ -1,0 +1,215 @@
+{
+    "type": "Page",
+    "title": "Communities",
+    "slug": "communities",
+    "sections": [
+        {
+            "type": "Hero",
+            "title": "Communities",
+            "subtitle": "Komunitas Indonesia di Aachen"
+        },
+        {
+            "type": "CommunitySpotlight",
+            "title": "Pusat Komunitas",
+            "community": {
+                "name": "Indo Aachener",
+                "description": "Sebuah komunitas tidak hanya untuk pelajar Indonesia, melainkan juga untuk semua orang Indonesia di Aachen dan sekitarnya. Wadah utama untuk saling terhubung, berbagi informasi, dan menjalin silaturahmi antar warga Indonesia di kota Aachen.",
+                "longDescription": "Sebuah komunitas tidak hanya untuk pelajar Indonesia, melainkan juga untuk semua orang Indonesia di Aachen dan sekitarnya.\n\nA community not only for Indonesian Students, but also for all Indonesians living in and around Aachen.",
+                "category": "Pusat",
+                "image": "/images/communities/indo-aachener.png",
+                "links": [
+                    {
+                        "label": "Discord Server",
+                        "url": "https://link.ppiaachen.de/dc-aachener"
+                    },
+                    {
+                        "label": "WhatsApp Community",
+                        "url": "https://link.ppiaachen.de/wa-aachener"
+                    },
+                    {
+                        "label": "Telegram Community",
+                        "url": "https://t.me/indoaachener"
+                    },
+                    {
+                        "label": "Facebook Group",
+                        "url": "https://link.ppiaachen.de/fb-aachener"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "CommunityGrid",
+            "title": "Komunitas Indonesia di Aachen",
+            "communities": [
+                {
+                    "name": "Badminton",
+                    "category": "Olahraga",
+                    "description": "Latihan rutin badminton bareng warga Indo. Lokasi: Hochschulsport / Tivoli.",
+                    "image": "/images/communities/badminton.jpg",
+                    "links": [
+                        {
+                            "label": "Join Group",
+                            "url": "https://link.ppiaachen.de/badmin-aachen"
+                        }
+                    ]
+                },
+                {
+                    "name": "Basket",
+                    "category": "Olahraga",
+                    "description": "Komunitas basket Indonesia di Aachen. Lokasi: Hochschulsport / Scheiben.",
+                    "image": "/images/communities/basket.jpg",
+                    "links": [
+                        {
+                            "label": "Join Group",
+                            "url": "https://link.ppiaachen.de/basket-aachen"
+                        }
+                    ]
+                },
+                {
+                    "name": "Futsal (Indo Aachen FC)",
+                    "category": "Olahraga",
+                    "description": "Main futsal bareng! Lokasi: Kennedy / Scheiben / Kelmis. Instagram: @indoaachenfc",
+                    "image": "/images/communities/futsal.jpg",
+                    "links": [
+                        {
+                            "label": "Join Group",
+                            "url": "https://link.ppiaachen.de/futsal-aachen"
+                        }
+                    ]
+                },
+                {
+                    "name": "Voli (Nord Volleyball)",
+                    "category": "Olahraga",
+                    "description": "Latihan voli seru-seruan. Lokasi: Vaals. Instagram: @nordvolleyball",
+                    "image": "/images/communities/voli.jpg",
+                    "links": [
+                        {
+                            "label": "Join Group",
+                            "url": "https://link.ppiaachen.de/voli-aachen"
+                        }
+                    ]
+                },
+                {
+                    "name": "Keluarga Islam Aachen (KIA)",
+                    "category": "Agama",
+                    "description": "Wadah untuk memenuhi kebutuhan rohani muslim Indonesia di Aachen. Program rutin: Pengajian Bulanan, TPA, Sommer Grillen, dan Rihlah.",
+                    "longDescription": "Keluarga Islam Aachen (KIA) merupakan perkumpulan yang didirikan oleh warga muslim Indonesia di Aachen sebagai wadah untuk memenuhi kebutuhan rohani para jamaah melalui pengadaan program-program yang diharapkan dapat mempererat tali silaturahim antar jamaah sekaligus dapat memperkuat keimanan dan ketaqwaan.\n\nProgram yang rutin diselenggarakan oleh KIA dibagi menjadi 3 kategori, yaitu Program Ikhwan (laki-laki), Akhwat (Perempuan), dan Gabungan. Program-program tersebut terdiri dari kegiatan Tarbiyah yang meliputi Pengajian Bulanan yang diselenggarakan secara terpisah untuk Ikhwan dan Akhwat serta Pengajian Gabungan. Tidak hanya itu, terdapat juga Program Ukhuwah yang secara rutin diselenggarakan seperti Sommer Grillen dan Rihlah.\n\nSelain itu, kami juga menyediakan program Taman Pendidikan Al-Qur’an (TPA) sebagai wadah untuk memperkenalkan dan belajar membaca Al-Qur’an kepada anak-anak jamaah Keluarga Islam Aachen.",
+                    "image": "/images/communities/kia.jpg",
+                    "links": [
+                        {
+                            "label": "Website",
+                            "url": "https://aachen-kia.de/"
+                        },
+                        {
+                            "label": "Instagram",
+                            "url": "https://www.instagram.com/kia_aachen"
+                        }
+                    ]
+                },
+                {
+                    "name": "KMKI Aachen",
+                    "category": "Agama",
+                    "description": "Keluarga Mahasiswa Katolik Indonesia. Mengadakan misa Bahasa Indonesia setiap bulan (minggu ke-3), spielabend, dan acara kekeluargaan lainnya.",
+                    "longDescription": "Suatu organisasi dari dan untuk mahasiswa/i Indonesia di Jerman yang dijiwai semangat kekatolikan serta kekeluargaan. Namun, KMKI juga terbuka bagi rekan-rekan dari berbagai kalangan dan agama lain.\n\nKMKI mengadakan misa Bahasa Indonesia setiap bulan (minggu ketiga setiap bulan). Selain itu, ada pula kegiatan spielabend, halloween, Christmas Dinner dll.",
+                    "image": "/images/communities/kmki.jpg",
+                    "links": [
+                        {
+                            "label": "Instagram",
+                            "url": "https://www.instagram.com/kmki.aachen"
+                        }
+                    ]
+                },
+                {
+                    "name": "PERKI Aachen",
+                    "category": "Agama",
+                    "description": "Persekutuan Kristen Indonesia Aachen. Mendasarkan kepercayaan pada Alkitab, mendukung pertumbuhan rohani melalui pertemuan rutin dan persekutuan doa.",
+                    "longDescription": "Perki Aachen adalah singkatan dari Persekutuan Kristen Indonesia Aachen dan merupakan sebuah persekutuan Kristen yang mendasarkan kepercayaan, ajaran dan kehidupannya pada seluruh isi Alkitab Perjanjian Lama dan Perjanjian Baru yang diakuinya sebagai Firman Tuhan yang diilhami. Persekutuan kami tidak berafiliasi dengan kelompok gereja tertentu. Semua kegiatan ditujukan untuk mendukung perwujudan Amanat Agung Tuhan Yesus Kristus.\n\nKami berusaha untuk memupuk rasa kebersamaan yang kuat dan pertumbuhan rohani di antara para anggota kami, mendorong diri kami sendiri untuk menghidupi iman mereka secara otentik dan membagikan pesan kasih dan keselamatan Tuhan kepada orang lain. Melalui pertemuan rutin, persekutuan doa, dan program-program penjangkauan, para anggota kami diperlengkapi untuk melayani sebagai duta-duta Kristus di komunitas lokal mereka dan di luar. Kita hanyalah persekutuan orang berdosa yang ingin bertumbuh bersama ke arah Kristus.",
+                    "image": "/images/communities/perki.jpg",
+                    "links": [
+                        {
+                            "label": "Website",
+                            "url": "https://perkiweb.vercel.app/"
+                        },
+                        {
+                            "label": "Instagram",
+                            "url": "https://www.instagram.com/perki.aachen"
+                        }
+                    ]
+                },
+                {
+                    "name": "Kalyanamitta (KBA)",
+                    "category": "Agama",
+                    "description": "Komunitas mahasiswa/i Buddhis di Aachen. Sharing info acara vihara, meetup rutin, dan kegiatan kebersamaan lainnya.",
+                    "longDescription": "Halo teman-teman Buddhis di Aachen, kita punya kabar baik nih! Kenalin kita adalah komunitas mahasiswa/i Buddhis di Aachen yang open buat kalian semua. Yuk, join komunitas kita untuk:\n- Sharing info: Acara, kebaktian, dan Dhammatalk di Vihara NRW & sekitarnya\n- Meetup rutin: ngobrol, belajar, dan praktik bersama\n- Rencanakan kegiatan bersama: apapun itu, yang penting bikin kita makin solid",
+                    "image": "/images/communities/kba.jpg",
+                    "links": [
+                        {
+                            "label": "WhatsApp",
+                            "url": "https://link.ppiaachen.de/kabar-aachen"
+                        }
+                    ]
+                },
+                {
+                    "name": "Aachen Cekrek",
+                    "category": "Hobi",
+                    "description": "Komunitas fotografi dan multimedia. Buat yang hobi foto, mau belajar motret, atau mau jadi model foto. Bebas pakai kamera atau HP.",
+                    "longDescription": "Buat kalian yang memiliki minat fotografi, pengen foto foto tapi tapi takut kalau sendiri, pengen jadi model foto bisa banget loh ikut organisasi kami. Kita juga bebas nih mau make kamera atau hp dan bakal diajarin caranya ambil foto yang bagus juga loh, kedepannya club ini bukan hanya akan menggeluti dunia fotografi namun juga dunia multimedia.",
+                    "image": "/images/communities/aachen-cekrek.jpg",
+                    "links": [
+                        {
+                            "label": "WhatsApp",
+                            "url": "https://link.ppiaachen.de/aachen-cekrek"
+                        },
+                        {
+                            "label": "Instagram",
+                            "url": "https://www.instagram.com/aachencekrek"
+                        }
+                    ]
+                },
+                {
+                    "name": "KoKuchen",
+                    "category": "Hobi",
+                    "description": "Komunitas Kucing Aachen dan Sekitarnya. Tempat berbagi foto kucing, tanya jawab seputar kucing, dan rekomendasi vet.",
+                    "longDescription": "Komunitas Kucing Aachen dan Sekitarnya (KoKuchen) adalah komunitas untuk pemilik dan penyuka kucing. Di komunitas ini, kalian bisa berbagi foto kucing kalian, bertanya-tanya mengenai hal-hal seputar kucing, mencari rekomendasi dokter hewan, dll.\n\nSemua orang boleh ikut serta komunitasnya kok!",
+                    "image": "/images/communities/kokuchen.jpg",
+                    "links": [
+                        {
+                            "label": "WhatsApp",
+                            "url": "https://link.ppiaachen.de/kokuchen"
+                        }
+                    ]
+                },
+                {
+                    "name": "Suara Kami",
+                    "category": "Sosial Politik",
+                    "description": "Pergerakan pemuda non-profit dibidang sosial politik. Membangun kesadaran politik dan mendorong pemikiran kritis kaum muda.",
+                    "longDescription": "SuaraKami adalah sebuah pergerakan pemuda non-profit dan non-partai dibidang sosial politik dalam lingkup demokrasi Indonesia yang berdomisili di Aachen, Jerman. SuaraKami berusaha membawakan warna baru dalam sistem politik Indonesia dengan ide dan terobosan baru yang didukung dengan semangat dan perspektif muda.\n\nSuaraKami bertujuan untuk membangun kesadaran masyarakat khususnya kaum muda akan politik dan mendorong lebih jauh, bukan hanya aktif tetapi juga kritis dan memperoleh informasi yang luas tentang topik tersebut.",
+                    "image": "/images/communities/surkam.jpg",
+                    "links": [
+                        {
+                            "label": "Website",
+                            "url": "https://www.suarakami.org/"
+                        },
+                        {
+                            "label": "Instagram",
+                            "url": "https://www.instagram.com/suarakami"
+                        }
+                    ]
+                },
+                {
+                    "name": "Arbeitskreis Indonesia",
+                    "category": "Sosial Budaya",
+                    "description": "Jembatan penyambung masyarakat Jerman dan Indonesia. Memperkenalkan perkembangan sosial, politik, dan budaya Indonesia.",
+                    "longDescription": "Arbeitskreis Indonesien e.V. (AK-I e.V) melihat tugasnya tidak hanya sebagai jembatan penyambung antara masyarakat Jerman dan Indonesia yang berada di Aachen, tetapi juga memperkenalkan dan menyebarkan informasi tentang perkembangan sosial, politik dan budaya di Indonesia. Selama beberapa tahun, AK-I e.V ikut mengawal proses demokratisasi di Indonesia melalui serangkaian acara kritis. Mulai dari Politisi, ilmuwan, jurnalis dan aktivis diundang oleh AK-I e.V untuk melaporkan dan mendiskusikan situasi serta perkembangan di Indonesia.",
+                    "image": "/images/communities/arbeitskreis.jpg",
+                    "links": [
+                        {
+                            "label": "Instagram",
+                            "url": "https://www.instagram.com/arbeitskreis.id"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

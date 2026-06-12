@@ -45,111 +45,158 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Date(dateStr);
     };
 
-    // 1. Dynamic Grid Populating
+    // 1. Dynamic Grid Populating, Filtering & Sorting
     const eventsGrid = document.getElementById('events-grid');
+    const searchInput = document.getElementById('search-input');
+    const sortSelect = document.getElementById('sort-select');
+
     if (eventsGrid && window.eventsData) {
         const eventGridData = window.eventsData.sections.find(s => s.type === 'EventGrid');
         const eventsList = eventGridData ? eventGridData.events : [];
-        
-        const sorted = [...eventsList].sort((a, b) => {
-            const dateA = parseDate(a.date);
-            const dateB = parseDate(b.date);
-            return dateB.getTime() - dateA.getTime();
-        });
 
-        eventsGrid.innerHTML = sorted.map((event) => {
-            const longDescEscaped = (event.longDescription || event.description || '').replace(/"/g, '&quot;');
-            return `
-            <div
-              class="event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
-              data-title="${event.title || ''}"
-              data-date="${event.date || ''}"
-              data-tag="${event.tag || ''}"
-              data-location="${event.location || ''}"
-              data-time="${event.time || ''}"
-              data-description="${event.description || ''}"
-              data-long-description="${longDescEscaped}"
-              data-image="${makeRelativePath(event.image)}"
-              data-link="${event.link || ''}"
-              data-link-text="${event.linkText || ''}"
-            >
-              <!-- Image Section -->
-              ${event.image ? `
-                <div class="h-48 w-full overflow-hidden relative">
-                  <img
-                    src="${makeRelativePath(event.image)}"
-                    alt="${event.title}"
-                    loading="lazy"
-                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+        const renderEvents = (list) => {
+            if (list.length === 0) {
+                eventsGrid.innerHTML = `
+                <div class="col-span-full py-16 text-center">
+                  <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-50 text-gray-400 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-medium text-gray-900 mb-1">No Events Found</h3>
+                  <p class="text-sm text-gray-500">We couldn't find any events matching your search criteria. Try a different query!</p>
                 </div>
-              ` : ''}
+                `;
+                return;
+            }
 
-              <div class="p-6 flex flex-col flex-grow">
-                <div class="mb-4">
-                  <span class="inline-block bg-[#0161bf] text-white text-xs px-2 py-1 rounded-full mb-2">
-                    ${event.date}
-                  </span>
-                  ${event.tag ? `
-                    <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded-full mb-2 ml-2">
-                      ${event.tag}
-                    </span>
+            eventsGrid.innerHTML = list.map((event) => {
+                const longDescEscaped = (event.longDescription || event.description || '').replace(/"/g, '&quot;');
+                return `
+                <div
+                  class="event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+                  data-title="${event.title || ''}"
+                  data-date="${event.date || ''}"
+                  data-tag="${event.tag || ''}"
+                  data-location="${event.location || ''}"
+                  data-time="${event.time || ''}"
+                  data-description="${event.description || ''}"
+                  data-long-description="${longDescEscaped}"
+                  data-image="${makeRelativePath(event.image)}"
+                  data-link="${event.link || ''}"
+                  data-link-text="${event.linkText || ''}"
+                >
+                  <!-- Image Section -->
+                  ${event.image ? `
+                    <div class="h-48 w-full overflow-hidden relative">
+                      <img
+                        src="${makeRelativePath(event.image)}"
+                        alt="${event.title}"
+                        loading="lazy"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
                   ` : ''}
-                  <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c]">${event.title}</h3>
-                  <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
-                    ${event.time ? `
-                      <div class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span>${event.time}</span>
+
+                  <div class="p-6 flex flex-col flex-grow">
+                    <div class="mb-4">
+                      <span class="inline-block bg-[#0161bf] text-white text-xs px-2 py-1 rounded-full mb-2">
+                        ${event.date}
+                      </span>
+                      ${event.tag ? `
+                        <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded-full mb-2 ml-2">
+                          ${event.tag}
+                        </span>
+                      ` : ''}
+                      <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c]">${event.title}</h3>
+                      <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+                        ${event.time ? `
+                          <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>${event.time}</span>
+                          </div>
+                        ` : ''}
+                        <div class="flex items-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          <span>${event.location}</span>
+                        </div>
                       </div>
+                    </div>
+
+                    <p class="body-text text-sm text-gray-600 mb-6 flex-grow line-clamp-3">
+                      ${event.description}
+                    </p>
+                  </div>
+
+                  <!-- Card Footer Actions -->
+                  <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50">
+                    ${event.link ? `
+                      <a
+                        href="${event.link}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+                        onclick="event.stopPropagation();"
+                      >
+                        <span>${event.linkText || 'Open Link'}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
                     ` : ''}
-                    <div class="flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+                      View Details
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                       </svg>
-                      <span>${event.location}</span>
                     </div>
                   </div>
                 </div>
+                `;
+            }).join('');
+        };
 
-                <p class="body-text text-sm text-gray-600 mb-6 flex-grow line-clamp-3">
-                  ${event.description}
-                </p>
-              </div>
+        const updateGrid = () => {
+            const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+            const sortBy = sortSelect ? sortSelect.value : 'newest';
 
-              <!-- Card Footer Actions -->
-              <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50">
-                ${event.link ? `
-                  <a
-                    href="${event.link}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
-                    onclick="event.stopPropagation();"
-                  >
-                    <span>${event.linkText || 'Open Link'}</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                ` : ''}
-                <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
-                  View Details
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            `;
-        }).join('');
+            // Filter events by title match
+            let filtered = eventsList.filter(event => 
+                (event.title || '').toLowerCase().includes(query)
+            );
+
+            // Sort events by date
+            filtered.sort((a, b) => {
+                const dateA = parseDate(a.date);
+                const dateB = parseDate(b.date);
+                if (sortBy === 'newest') {
+                    return dateB.getTime() - dateA.getTime();
+                } else {
+                    return dateA.getTime() - dateB.getTime();
+                }
+            });
+
+            renderEvents(filtered);
+        };
+
+        // Initialize grid rendering (default newest sorted events)
+        updateGrid();
+
+        // Bind input listeners
+        if (searchInput) {
+            searchInput.addEventListener('input', updateGrid);
+        }
+        if (sortSelect) {
+            sortSelect.addEventListener('change', updateGrid);
+        }
     }
 
-    // 2. Details Modal Logic
-    const eventCards = document.querySelectorAll('.event-card');
+    // 2. Details Modal Logic (with Event Delegation)
     const eventModal = document.getElementById('event-modal');
     const closeEventBtn = document.getElementById('close-event-btn');
 
@@ -236,9 +283,19 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('overflow-hidden');
         };
 
-        eventCards.forEach(card => {
-            card.addEventListener('click', () => openModal(card));
-        });
+        // Use event delegation on eventsGrid
+        if (eventsGrid) {
+            eventsGrid.addEventListener('click', (e) => {
+                const card = e.target.closest('.event-card');
+                if (card) {
+                    // Check if an anchor/link or anything inside an anchor was clicked
+                    if (e.target.closest('a')) {
+                        return; // Let the anchor handle the event
+                    }
+                    openModal(card);
+                }
+            });
+        }
 
         closeEventBtn.addEventListener('click', closeModal);
         eventModal.addEventListener('click', (e) => {

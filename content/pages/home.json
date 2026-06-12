@@ -1,0 +1,42 @@
+{
+    "type": "Page",
+    "title": "Home",
+    "slug": "home",
+    "sections": [
+        {
+            "type": "Hero",
+            "title": "PPI Aachen",
+            "subtitle": "Indonesian Students Association in Aachen"
+        },
+        {
+            "type": "Section",
+            "title": "About Us",
+            "content": "<strong>Perhimpunan Pelajar Indonesia di Aachen</strong> atau PPI Aachen adalah sebuah perkumpulan pelajar Indonesia yang bersifat politik non partais, ilmiah, sosial, dan independen yang berpusat di Aachen. PPI Aachen memiliki misi untuk menghimpun, melindungi, dan membela kepentingan para anggotanya dalam rangka meningkatkan kualitas diri dan mengoptimalkan seluruh potensi yang dimiliki, serta mewujudkan masyarakat Indonesia yang lebih adil dan sejahtera. Menjadi bermanfaat bagi Indonesia dan Jerman adalah visi utama kami.\n\n<strong>Perhimpunan Pelajar Indonesia di Aachen (Indonesian Students Association in Aachen)</strong> or PPI Aachen is a non-party political, scientific, social and independent student association based in Aachen. PPI Aachen has a mission to gather, protect, and defend the interests of its members in order to improve their quality and optimize all their potential, and to create a more fair and prosperous Indonesian society. To be beneficial to both Indonesia and Germany is our main vision.",
+            "backgroundColor": "white"
+        },
+        {
+            "type": "Section",
+            "title": "Short History",
+            "content": "PPI Aachen didirikan pada 4 Mei 1956 bersamaan dengan berdirinya PPI Jerman. PPI Aachen pertama didirikan oleh Peter Manusama, dengan Liem Keng Kie sebagai bendahara dan Presiden Republik Indonesia ke-3, B. J. Habibie sebagai sekretaris pada masa dia berkuliah di RWTH Aachen. Sidang perwakilan anggota pertama diadakan pada 1957, dimana melalui pemilihan umum, B. J. Habibie terpilih menjadi ketua PPI Aachen. PPI Aachen sendiri didirikan karena ada rasa diperlukannya sebuah organisasi yang bisa mendukung dan membantu pelajar-pelajar Indonesia di Aachen.\n\nPPI Aachen was founded on May 4, 1956 at the same time as PPI Jerman (Vereinigung Indonesischer Studenten e.V). PPI Aachen was first founded by Peter Manusama, with Liem Keng Kie as treasurer and the 3rd President of the Republic of Indonesia, B. J. Habibie as secretary while he was studying at RWTH Aachen. The first member representative assembly was held in 1957, where through elections, B. J. Habibie was elected chairman of PPI Aachen. PPI Aachen itself was established because there was a sense of need for an organization that could support and help Indonesian students in Aachen.\n",
+            "backgroundColor": "blue",
+            "image": "/images/home/habibie_history.jpg",
+            "imagePosition": "right"
+        },
+        {
+            "type": "Section",
+            "title": "Our Logo",
+            "content": "Logo kami terdiri dari 2 garis, dengan 2 jenis warna biru yang berbeda. Warna-warna ini mewakili Universitas RWTH Aachen yang terkenal. Di sisinya, Anda juga dapat menemukan profil samping Charlemagne yang agung, kaisar abad pertengahan yang pernah memerintah sebagian besar Eropa Barat dari Aachen.\n\nOur logo consists of 2 lines, adored with 2 different kinds of blue. These colors represent the famous RWTH Aachen University. On its side, you can also find the side profile of the great Charlemagne, a medieval emperor who once ruled much of Western Europe from Aachen.",
+            "backgroundColor": "white",
+            "image": "/images/home/logo_description.png",
+            "imagePosition": "left"
+        },
+        {
+            "type": "Section",
+            "title": "Peta Wilayah Kerja",
+            "content": "Peta wilayah kerja PPI Aachen, daerah dimana PPI Aachen beroperasi di Jerman. <br />\nPPI Aachen operates in the following regions of Germany.",
+            "backgroundColor": "white",
+            "image": "/images/home/peta_wilayah.jpg",
+            "imagePosition": "center"
+        }
+    ]
+}

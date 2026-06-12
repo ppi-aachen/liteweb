@@ -1,0 +1,13 @@
+{
+    "type": "Page",
+    "title": "Lapor Diri",
+    "slug": "lapor-diri",
+    "sections": [
+        {
+            "type": "IframeSection",
+            "title": "Lapor Diri - Pendataan Masyarakat Indonesia di Aachen",
+            "src": "https://forms.gle/oZi1Yp64sA36wy2g7?embedded=true",
+            "height": "calc(100vh - 64px)"
+        }
+    ]
+}

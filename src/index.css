@@ -161,8 +161,26 @@
 
   /* Hero Header */
   .hero-header {
-    height: 40vh;
+    height: 50vh;
     @apply bg-primary text-white relative overflow-hidden flex flex-col justify-center items-center text-center;
+  }
+
+  @media (min-width: 768px) {
+    .hero-header {
+      height: 40vh;
+    }
+  }
+
+  .hero-header-bg {
+    background-size: 180%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: 768px) {
+    .hero-header-bg {
+      background-size: cover;
+    }
   }
 
 
