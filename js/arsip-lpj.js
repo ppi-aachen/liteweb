@@ -42,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const previewUrl = url.replace('/view', '/preview');
 
             if (modalTitle) modalTitle.textContent = `LPJ ${year}`;
+            
+            const mobileBtn = document.getElementById('modal-lpj-mobile-btn');
+            if (mobileBtn) mobileBtn.href = url;
+
             if (modalIframe) modalIframe.src = previewUrl;
             if (modalNewtab) modalNewtab.href = url;
 

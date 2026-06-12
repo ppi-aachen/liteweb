@@ -636,11 +636,21 @@ const compileHome = () => {
               </div>
             </div>
             <!-- Content -->
-            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-y-auto -webkit-overflow-scrolling-touch">
+            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-y-auto -webkit-overflow-scrolling-touch flex flex-col">
+              <!-- Mobile Fallback Button (visible only on mobile) -->
+              <div class="desktop:hidden flex-grow flex flex-col items-center justify-center p-6 text-center bg-white rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-[#0161bf] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                <p class="body-text text-gray-700 font-medium mb-6">Pratinjau PDF tidak didukung di layar HP Anda. Silakan buka dokumen secara langsung.</p>
+                <a href="https://drive.google.com/file/d/1JtwUe0FkGHvXqIJbFa0i6iVw79eA-Cu4/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#0161bf] text-white font-bold rounded-lg shadow-md hover:bg-[#004e9a] transition-all">
+                  Buka Buku Panduan (PDF) ↗
+                </a>
+              </div>
+              <!-- Desktop Iframe (hidden on mobile) -->
               <iframe
                 src="https://drive.google.com/file/d/1JtwUe0FkGHvXqIJbFa0i6iVw79eA-Cu4/preview"
-                class="w-full h-full rounded-lg bg-white border-0"
-                style="display: block; width: 100%; height: 100%; min-height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;"
+                class="hidden desktop:block w-full h-full rounded-lg bg-white border-0"
                 allow="autoplay"
                 title="Aachen für Dummies Fullscreen"
               ></iframe>
@@ -1233,12 +1243,22 @@ const compileAdArt = () => {
               </div>
             </div>
             <!-- Content -->
-            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-y-auto -webkit-overflow-scrolling-touch">
+            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-y-auto -webkit-overflow-scrolling-touch flex flex-col">
+              <!-- Mobile Fallback Button (visible only on mobile) -->
+              <div class="desktop:hidden flex-grow flex flex-col items-center justify-center p-6 text-center bg-white rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-[#0161bf] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <p class="body-text text-gray-700 font-medium mb-6">Pratinjau dokumen tidak didukung di layar HP Anda. Silakan buka dokumen secara langsung.</p>
+                <a href="https://docs.google.com/document/d/e/2PACX-1vS1P12969Vut22ytyBniEyIdopjk08xi5fk73IlC4ZA90_lp01PiB9L78Rz-86c7D7BUgVpnb1Q4Ito/pub" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#0161bf] text-white font-bold rounded-lg shadow-md hover:bg-[#004e9a] transition-all">
+                  Buka Dokumen Resmi AD/ART ↗
+                </a>
+              </div>
+              <!-- Desktop Iframe (hidden on mobile) -->
               <iframe
                 id="adart-iframe"
                 src="about:blank"
-                class="w-full h-full rounded-lg bg-white"
-                style="display: block; width: 100%; height: 100%; min-height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;"
+                class="hidden desktop:block w-full h-full rounded-lg bg-white border-0"
                 allow="autoplay"
                 title="Official AD/ART Document"
               ></iframe>
@@ -1343,12 +1363,22 @@ const compileArsipLpj = () => {
             </div>
 
             <!-- Content -->
-            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-y-auto -webkit-overflow-scrolling-touch">
+            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-y-auto -webkit-overflow-scrolling-touch flex flex-col">
+              <!-- Mobile Fallback Button (visible only on mobile) -->
+              <div class="desktop:hidden flex-grow flex flex-col items-center justify-center p-6 text-center bg-white rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-[#0161bf] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                <p class="body-text text-gray-700 font-medium mb-6">Pratinjau laporan tidak didukung di layar HP Anda. Silakan buka dokumen secara langsung.</p>
+                <a id="modal-lpj-mobile-btn" href="" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#0161bf] text-white font-bold rounded-lg shadow-md hover:bg-[#004e9a] transition-all">
+                  Buka Dokumen LPJ ↗
+                </a>
+              </div>
+              <!-- Desktop Iframe (hidden on mobile) -->
               <iframe
                 id="modal-lpj-iframe"
                 src="about:blank"
-                class="w-full h-full rounded-lg bg-white"
-                style="display: block; width: 100%; height: 100%; min-height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;"
+                class="hidden desktop:block w-full h-full rounded-lg bg-white border-0"
                 allow="autoplay"
                 title="LPJ Document"
               ></iframe>

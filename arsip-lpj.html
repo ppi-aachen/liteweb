@@ -456,12 +456,22 @@
             </div>
 
             <!-- Content -->
-            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-y-auto -webkit-overflow-scrolling-touch">
+            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-y-auto -webkit-overflow-scrolling-touch flex flex-col">
+              <!-- Mobile Fallback Button (visible only on mobile) -->
+              <div class="desktop:hidden flex-grow flex flex-col items-center justify-center p-6 text-center bg-white rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-[#0161bf] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                <p class="body-text text-gray-700 font-medium mb-6">Pratinjau laporan tidak didukung di layar HP Anda. Silakan buka dokumen secara langsung.</p>
+                <a id="modal-lpj-mobile-btn" href="" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#0161bf] text-white font-bold rounded-lg shadow-md hover:bg-[#004e9a] transition-all">
+                  Buka Dokumen LPJ ↗
+                </a>
+              </div>
+              <!-- Desktop Iframe (hidden on mobile) -->
               <iframe
                 id="modal-lpj-iframe"
                 src="about:blank"
-                class="w-full h-full rounded-lg bg-white"
-                style="display: block; width: 100%; height: 100%; min-height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;"
+                class="hidden desktop:block w-full h-full rounded-lg bg-white border-0"
                 allow="autoplay"
                 title="LPJ Document"
               ></iframe>
