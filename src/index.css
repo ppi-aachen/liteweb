@@ -172,15 +172,9 @@
   }
 
   .hero-header-bg {
-    background-size: 180%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
-
-  @media (min-width: 768px) {
-    .hero-header-bg {
-      background-size: cover;
-    }
   }
 
 
