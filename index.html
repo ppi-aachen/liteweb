@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>PPI Aachen - Home</title>
+</head>
+<body class="font-sans text-dark bg-white">
+  <div class="flex flex-col min-h-screen">
+    
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="fixed top-4 left-4 z-50 desktop:hidden bg-dark text-white p-2 rounded"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Top Navigation Bar (Desktop) -->
+      <nav
+        class="hidden desktop:flex desktop:fixed desktop:top-0 desktop:left-0 desktop:right-0 desktop:bg-white desktop:z-40 desktop:shadow-md h-12"
+        role="navigation"
+      >
+        <div class="w-full flex items-center justify-between px-8">
+          <div class="flex items-center flex-shrink-0">
+            <a href="index.html" class="flex items-center h-full py-2">
+              <img
+                src="logo.png"
+                alt="PPI Aachen"
+                class="h-10 object-contain"
+                onerror="this.style.display='none'; const text=document.createElement('span'); text.className='logo-text text-dark text-xl font-light'; text.textContent='PPI Aachen'; this.parentElement.appendChild(text);"
+              />
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 flex-shrink-0">
+            
+                    <a
+                      href="index.html"
+                      class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light text-black font-bold"
+                    >
+                      Home
+                    </a>
+                    
+                    <a
+                      href="lapor-diri.html"
+                      class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
+                    >
+                      Lapor Diri
+                    </a>
+                    
+                    <a
+                      href="events.html"
+                      class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
+                    >
+                      Events
+                    </a>
+                    
+                    <a
+                      href="communities.html"
+                      class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
+                    >
+                      Communities
+                    </a>
+                    
+                    <a
+                      href="merchandise.html"
+                      class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
+                    >
+                      Merchandise
+                    </a>
+                    
+                    <div class="relative group">
+                      <button
+                        class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 font-light"
+                      >
+                        Organization
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      <div
+                        class="absolute hidden group-hover:block top-full right-0 bg-white shadow-lg min-w-[200px] py-2 z-50 border border-gray-100"
+                      >
+                        
+                          <a
+                            href="sejarah.html"
+                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+                          >
+                            Sejarah
+                          </a>
+                        
+                          <a
+                            href="kepengurusan.html"
+                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+                          >
+                            Kepengurusan
+                          </a>
+                        
+                          <a
+                            href="ad-art.html"
+                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+                          >
+                            AD/ART PPI Aachen
+                          </a>
+                        
+                          <a
+                            href="spa.html"
+                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+                          >
+                            SPA PPI Aachen
+                          </a>
+                        
+                          <a
+                            href="arsip-lpj.html"
+                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+                          >
+                            Arsip LPJ
+                          </a>
+                        
+                          <a
+                            href="arsip-pengurus.html"
+                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+                          >
+                            Arsip Pengurus
+                          </a>
+                        
+                          <a
+                            href="kontak-email.html"
+                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+                          >
+                            Kontak Email
+                          </a>
+                        
+                      </div>
+                    </div>
+                    
+                    <div class="relative group">
+                      <button
+                        class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 font-light"
+                      >
+                        Others
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      <div
+                        class="absolute hidden group-hover:block top-full right-0 bg-white shadow-lg min-w-[200px] py-2 z-50 border border-gray-100"
+                      >
+                        
+                          <a
+                            href="linktree.html"
+                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+                          >
+                            Linktree
+                          </a>
+                        
+                          <a
+                            href="acop-2025.html"
+                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+                          >
+                            ACOP 2025
+                          </a>
+                        
+                          <a
+                            href="wiki-aachen.html"
+                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+                          >
+                            Wiki Aachen für Dummies
+                          </a>
+                        
+                          <a
+                            href="press-kit.html"
+                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+                          >
+                            Press Kit
+                          </a>
+                        
+                      </div>
+                    </div>
+                    
+          </div>
+        </div>
+      </nav>
+
+      <!-- Side Navigation (Mobile Drawer) -->
+      <nav
+        id="mobile-nav"
+        class="fixed desktop:hidden w-sidebar bg-dark font-sans pt-12 h-screen z-40 transition-transform duration-300 ease-in-out overflow-y-auto overflow-x-hidden -translate-x-full"
+        role="navigation"
+      >
+        <div class="px-2 pb-20">
+          
+                  <a
+                    href="index.html"
+                    class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white text-primary-light"
+                  >
+                    Home
+                  </a>
+                  
+                  <a
+                    href="lapor-diri.html"
+                    class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white "
+                  >
+                    Lapor Diri
+                  </a>
+                  
+                  <a
+                    href="events.html"
+                    class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white "
+                  >
+                    Events
+                  </a>
+                  
+                  <a
+                    href="communities.html"
+                    class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white "
+                  >
+                    Communities
+                  </a>
+                  
+                  <a
+                    href="merchandise.html"
+                    class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white "
+                  >
+                    Merchandise
+                  </a>
+                  
+                  <div>
+                    <button
+                      data-target="mobile-group-5"
+                      class="mobile-group-toggle w-full text-left py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white flex items-center justify-between "
+                    >
+                      Organization
+                      <span class="flex-shrink-0 ml-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="chevron-icon w-5 h-5 transition-transform duration-300"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
+                    </button>
+                    <div
+                      id="mobile-group-5"
+                      class="overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
+                    >
+                      <div class="pl-4">
+                        
+                          <a
+                            href="sejarah.html"
+                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
+                          >
+                            Sejarah
+                          </a>
+                        
+                          <a
+                            href="kepengurusan.html"
+                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
+                          >
+                            Kepengurusan
+                          </a>
+                        
+                          <a
+                            href="ad-art.html"
+                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
+                          >
+                            AD/ART PPI Aachen
+                          </a>
+                        
+                          <a
+                            href="spa.html"
+                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
+                          >
+                            SPA PPI Aachen
+                          </a>
+                        
+                          <a
+                            href="arsip-lpj.html"
+                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
+                          >
+                            Arsip LPJ
+                          </a>
+                        
+                          <a
+                            href="arsip-pengurus.html"
+                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
+                          >
+                            Arsip Pengurus
+                          </a>
+                        
+                          <a
+                            href="kontak-email.html"
+                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
+                          >
+                            Kontak Email
+                          </a>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <button
+                      data-target="mobile-group-6"
+                      class="mobile-group-toggle w-full text-left py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white flex items-center justify-between "
+                    >
+                      Others
+                      <span class="flex-shrink-0 ml-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="chevron-icon w-5 h-5 transition-transform duration-300"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
+                    </button>
+                    <div
+                      id="mobile-group-6"
+                      class="overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
+                    >
+                      <div class="pl-4">
+                        
+                          <a
+                            href="linktree.html"
+                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
+                          >
+                            Linktree
+                          </a>
+                        
+                          <a
+                            href="acop-2025.html"
+                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
+                          >
+                            ACOP 2025
+                          </a>
+                        
+                          <a
+                            href="wiki-aachen.html"
+                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
+                          >
+                            Wiki Aachen für Dummies
+                          </a>
+                        
+                          <a
+                            href="press-kit.html"
+                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
+                          >
+                            Press Kit
+                          </a>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+        </div>
+      </nav>
+
+      <!-- Mobile Overlay -->
+      <div
+        id="mobile-overlay"
+        class="fixed inset-0 bg-black/50 z-30 desktop:hidden hidden"
+      ></div>
+    
+    
+    <main class="flex-1 w-full min-w-0 desktop:mt-[48px]">
+      
+      <div>
+        <!-- Hero Section -->
+        
+    <div class="hero-header relative overflow-hidden text-white flex flex-col justify-center items-center text-center">
+      <!-- Parallax Background Layer -->
+      <div class="hero-header-bg absolute inset-0 w-full" style="background-image: url('hero-bright.png'); background-size: cover; background-position: center; height: 120%; top: -10%; z-index: 0;"></div>
+    </div>
+    
+
+        <!-- Section 1: Carousel + Linktree -->
+        <div class="bg-[#0161bf]">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="px-4 md:px-[48px] py-12">
+              
+              <!-- Carousel -->
+              <div class="overflow-hidden relative group w-full aspect-[16/9] rounded-lg shadow-md">
+                <div id="carousel-track" class="flex transition-transform ease-out duration-500 h-full">
+                  
+                    <img src="assets/carousel/1.png" alt="Slide 1" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/2.png" alt="Slide 2" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/3.png" alt="Slide 3" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/4.png" alt="Slide 4" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/5.png" alt="Slide 5" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/6.png" alt="Slide 6" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/7.png" alt="Slide 7" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/8.png" alt="Slide 8" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/9.png" alt="Slide 9" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/10.png" alt="Slide 10" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/11.png" alt="Slide 11" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/12.png" alt="Slide 12" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/13.png" alt="Slide 13" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/14.png" alt="Slide 14" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/15.png" alt="Slide 15" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/16.png" alt="Slide 16" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/17.png" alt="Slide 17" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                    <img src="assets/carousel/18.png" alt="Slide 18" class="w-full h-full object-cover flex-shrink-0" />
+                  
+                </div>
+                <div class="absolute inset-0 flex items-center justify-between p-4">
+                  <button id="carousel-prev" class="p-2 rounded-full shadow bg-white/30 text-white hover:bg-white/50 transition-colors backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                  </button>
+                  <button id="carousel-next" class="p-2 rounded-full shadow bg-white/30 text-white hover:bg-white/50 transition-colors backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="absolute bottom-4 right-0 left-0">
+                  <div class="flex items-center justify-center gap-2">
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                      <div class="carousel-dot transition-all bg-white rounded-full w-3 h-3 bg-opacity-50"></div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <!-- Linktree Button -->
+              <div class="flex justify-center mt-12 mb-4">
+                <a
+                  href="https://linktr.ee/aachenppi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-white hover:bg-gray-100 text-[#002F6C] font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-105 flex items-center gap-2"
+                >
+                  <span>Visit our Linktree</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: About Us -->
+        
+          <div class="bg-white">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="px-4 md:px-[48px] pt-6 pb-12">
+                <section class="max-w-none">
+                  <h2 class="heading-2-home text-center">About Us</h2>
+                  <div class="body-text space-y-6 text-lg text-gray-700 leading-relaxed text-justify">
+                    <strong>Perhimpunan Pelajar Indonesia di Aachen</strong> atau PPI Aachen adalah sebuah perkumpulan pelajar Indonesia yang bersifat politik non partais, ilmiah, sosial, dan independen yang berpusat di Aachen. PPI Aachen memiliki misi untuk menghimpun, melindungi, dan membela kepentingan para anggotanya dalam rangka meningkatkan kualitas diri dan mengoptimalkan seluruh potensi yang dimiliki, serta mewujudkan masyarakat Indonesia yang lebih adil dan sejahtera. Menjadi bermanfaat bagi Indonesia dan Jerman adalah visi utama kami.<br/><br/><strong>Perhimpunan Pelajar Indonesia di Aachen (Indonesian Students Association in Aachen)</strong> or PPI Aachen is a non-party political, scientific, social and independent student association based in Aachen. PPI Aachen has a mission to gather, protect, and defend the interests of its members in order to improve their quality and optimize all their potential, and to create a more fair and prosperous Indonesian society. To be beneficial to both Indonesia and Germany is our main vision.
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        
+
+        <!-- Section 3: Short History -->
+        
+          <div class="bg-[#0161bf] text-white">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="px-4 md:px-[48px] pt-6 pb-12">
+                <section class="max-w-none">
+                  <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="body-text space-y-6 text-lg leading-relaxed text-white flex-1 text-justify">
+                      <h2 class="heading-2-home text-white text-center">Short History</h2>
+                      <div>
+                        PPI Aachen didirikan pada 4 Mei 1956 bersamaan dengan berdirinya PPI Jerman. PPI Aachen pertama didirikan oleh Peter Manusama, dengan Liem Keng Kie sebagai bendahara dan Presiden Republik Indonesia ke-3, B. J. Habibie sebagai sekretaris pada masa dia berkuliah di RWTH Aachen. Sidang perwakilan anggota pertama diadakan pada 1957, dimana melalui pemilihan umum, B. J. Habibie terpilih menjadi ketua PPI Aachen. PPI Aachen sendiri didirikan karena ada rasa diperlukannya sebuah organisasi yang bisa mendukung dan membantu pelajar-pelajar Indonesia di Aachen.<br/><br/>PPI Aachen was founded on May 4, 1956 at the same time as PPI Jerman (Vereinigung Indonesischer Studenten e.V). PPI Aachen was first founded by Peter Manusama, with Liem Keng Kie as treasurer and the 3rd President of the Republic of Indonesia, B. J. Habibie as secretary while he was studying at RWTH Aachen. The first member representative assembly was held in 1957, where through elections, B. J. Habibie was elected chairman of PPI Aachen. PPI Aachen itself was established because there was a sense of need for an organization that could support and help Indonesian students in Aachen.
+
+                      </div>
+                    </div>
+                    <div class="w-full md:w-1/3 flex-shrink-0">
+                      <img
+                        src="images/home/habibie_history.jpg"
+                        alt="Short History"
+                        class="rounded-lg shadow-lg w-full h-auto object-cover border-4 border-white/20"
+                      />
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        
+
+        <!-- Section 4: Our Logo -->
+        
+          <div class="bg-white">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="px-4 md:px-[48px] pt-6 pb-12">
+                <section class="max-w-none">
+                  <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-1/3 flex-shrink-0">
+                      <img
+                        src="images/home/logo_description.png"
+                        alt="Our Logo"
+                        class="rounded-lg shadow-lg w-full h-auto object-cover"
+                      />
+                    </div>
+                    <div class="body-text space-y-6 text-lg text-gray-700 leading-relaxed flex-1 text-justify">
+                      <h2 class="heading-2-home text-center">Our Logo</h2>
+                      <div>
+                        Logo kami terdiri dari 2 garis, dengan 2 jenis warna biru yang berbeda. Warna-warna ini mewakili Universitas RWTH Aachen yang terkenal. Di sisinya, Anda juga dapat menemukan profil samping Charlemagne yang agung, kaisar abad pertengahan yang pernah memerintah sebagian besar Eropa Barat dari Aachen.<br/><br/>Our logo consists of 2 lines, adored with 2 different kinds of blue. These colors represent the famous RWTH Aachen University. On its side, you can also find the side profile of the great Charlemagne, a medieval emperor who once ruled much of Western Europe from Aachen.
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        
+
+        <!-- Section 5: Aachen für Dummies -->
+        <div class="bg-[#0161bf] text-white">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="px-4 md:px-[48px] pt-6 pb-12">
+              <section class="max-w-none">
+                <h2 class="heading-2-home text-white text-center">Aachen für Dummies</h2>
+
+                <div class="my-8 flex justify-center">
+                  <div
+                    id="pdf-trigger"
+                    class="relative w-full max-w-2xl h-[400px] md:h-[800px] rounded-lg shadow-lg border-0 overflow-hidden cursor-pointer group"
+                  >
+                    <iframe
+                      src="https://drive.google.com/file/d/1JtwUe0FkGHvXqIJbFa0i6iVw79eA-Cu4/preview"
+                      class="w-full h-full pointer-events-none"
+                      allow="autoplay"
+                      title="Aachen für Dummies Preview"
+                    ></iframe>
+
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                      <div class="bg-white/90 text-[#0161bf] px-6 py-3 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 font-bold shadow-lg flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        Click to Read
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="body-text space-y-6 text-lg leading-relaxed text-white text-center">
+                  <p>
+                    Buku panduan yang dibuat khusus untuk pelajar Indonesia yang baru saja tiba di Aachen<br />
+                    A guide book specially made for Indonesian students that have just arrived in Aachen
+                  </p>
+                  <div class="mt-4 flex justify-center">
+                    <a href="wiki-aachen.html" class="btn-primary bg-white text-[#002F6C] hover:bg-gray-100 rounded-xl px-6 py-2">
+                      Buka wiki online
+                    </a>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 6: Peta Wilayah Kerja -->
+        
+          <div class="bg-white">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="px-4 md:px-[48px] pt-6 pb-12">
+                <section class="max-w-none">
+                  <h2 class="heading-2-home text-center">Peta Wilayah Kerja</h2>
+                  <div class="body-text space-y-6 text-lg text-gray-700 leading-relaxed">
+                    <div class="mt-8 flex justify-center">
+                      <img
+                        src="images/home/peta_wilayah.jpg"
+                        alt="Peta Wilayah Kerja"
+                        class="rounded-lg shadow-md w-full max-w-lg h-auto"
+                      />
+                    </div>
+                    <div class="body-text space-y-6 text-lg leading-relaxed text-gray-700 text-center">
+                      Peta wilayah kerja PPI Aachen, daerah dimana PPI Aachen beroperasi di Jerman. <br />
+PPI Aachen operates in the following regions of Germany.
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        
+
+        <!-- PDF Modal (Aachen für Dummies) -->
+        <div
+          id="pdf-modal"
+          class="fixed inset-0 z-50 items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity hidden"
+        >
+          <div class="bg-white rounded-xl shadow-2xl w-full max-w-5xl h-[85vh] relative flex flex-col">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-4 border-b border-gray-100">
+              <h3 class="font-bold text-gray-900 text-lg">Aachen für Dummies</h3>
+              <div class="flex items-center gap-2">
+                <a
+                  href="https://drive.google.com/file/d/1JtwUe0FkGHvXqIJbFa0i6iVw79eA-Cu4/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-2 text-gray-500 hover:text-[#0161bf] hover:bg-blue-50 rounded-full transition-colors"
+                  title="Open in new tab"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+                <button
+                  id="close-pdf-btn"
+                  class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
+                  aria-label="Close"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-hidden">
+              <iframe
+                src="https://drive.google.com/file/d/1JtwUe0FkGHvXqIJbFa0i6iVw79eA-Cu4/preview"
+                class="w-full h-full rounded-lg bg-white border-0"
+                allow="autoplay"
+                title="Aachen für Dummies Fullscreen"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </main>
+    
+    
+      <footer class="bg-dark text-white py-8 mt-12">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="px-12 md:px-[48px]">
+            <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+              <div>
+                <h3 class="heading-3 text-white mb-4">Contact</h3>
+                <div class="body-text space-y-2 text-white/90">
+                  <p>
+                    <a href="mailto:info@ppiaachen.de" class="hover:text-primary-light transition-colors">
+                      info@ppiaachen.de
+                    </a>
+                  </p>
+                  <p>
+                    <a href="tel:+4915679027862" class="hover:text-primary-light transition-colors">
+                      +49 15679 027862 (TEL/WhatsApp)
+                    </a>
+                  </p>
+                  <p>
+                    An der Schanz 1, 52064 Aachen, Germany
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="heading-3 text-white mb-4">Follow Us</h3>
+                <div class="flex flex-wrap gap-4">
+                  <a href="https://www.instagram.com/ppiaachen" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all text-white" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                  <a href="https://www.facebook.com/ppiaachen" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all text-white" aria-label="Facebook">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                  <a href="https://www.linkedin.com/company/ppiaachen" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all text-white" aria-label="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                  <a href="https://www.youtube.com/@ppiaachen" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all text-white" aria-label="YouTube">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                  <a href="https://www.tiktok.com/@ppiaachen" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all text-white" aria-label="TikTok">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                    </svg>
+                  </a>
+                  <a href="https://wa.me/message/U7EYCVZDKP7WG1" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all text-white" aria-label="WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="heading-3 text-white mb-4">PPI Aachen</h3>
+                <p class="body-text text-white/90">
+                  Mendukung dan membantu pelajar Indonesia di Aachen sejak 1956.<br />
+                  <em>Supporting and helping Indonesian students in Aachen since 1956.</em>
+                </p>
+              </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-6">
+              <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="body-text text-white/70 text-center md:text-left">
+                  © 2026 Perhimpunan Pelajar Indonesia di Aachen
+                </p>
+                <div class="flex gap-4">
+                  <a href="impressum.html" class="body-text text-white/70 hover:text-primary-light transition-colors">
+                    Impressum & Datenschutzerklärung
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+  </div>
+
+  <script src="js/main.js"></script>
+  
+  <script src="js/home.js"></script>
+</body>
+</html>

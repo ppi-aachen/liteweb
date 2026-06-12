@@ -1,0 +1,18 @@
+{
+  "name": "ppi-aachen-static",
+  "version": "1.0.0",
+  "description": "Static HTML website for PPI Aachen",
+  "type": "module",
+  "scripts": {
+    "build:html": "node build-static.js",
+    "build:css": "npx tailwindcss -i src/index.css -o css/styles.css --minify",
+    "build": "npm run build:html && npm run build:css",
+    "dev:css": "npx tailwindcss -i src/index.css -o css/styles.css --watch",
+    "dev:server": "npx -y http-server -p 3000",
+    "dev": "npm run build && npx -y concurrently \"npm run dev:css\" \"npm run dev:server\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "tailwindcss": "^3.3.6"
+  }
+}
