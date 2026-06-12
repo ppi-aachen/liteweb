@@ -296,7 +296,7 @@ const IframeSectionModel = {
 export default defineStackbitConfig({
   stackbitVersion: '~0.6.0',
   ssgName: 'custom',
-  devCommand: 'npm run dev',
+  devCommand: 'npm run build && npx concurrently "node build-static.js --watch" "npx tailwindcss -i src/index.css -o css/styles.css --watch" "npx -y http-server . -p {PORT} -a {HOSTNAME} -c-1"',
   buildCommand: 'npm run build',
   siteMap: ({ documents, models }) => {
     const pageModels = models.filter((m) => m.type === 'page');
