@@ -663,14 +663,24 @@ const compileIframePage = (jsonFilename, outputFilename, pageTitle) => {
     if (!iframeSection) return;
 
     const body = `
-      <div class="w-full h-[calc(100vh-64px)] desktop:mt-[0px]">
-        <div class="h-full">
+      <div class="w-full h-[calc(100vh-64px)] desktop:mt-[0px] flex flex-col overflow-hidden">
+        <!-- Banner bantuan akses untuk perangkat seluler -->
+        <div class="desktop:hidden bg-[#0161bf] text-white text-xs px-4 py-3 flex justify-between items-center border-b border-white/10 shrink-0">
+          <span>Mengalami kendala scrolling di HP?</span>
+          <a href="${iframeSection.src}" target="_blank" rel="noopener noreferrer" class="font-semibold underline flex items-center gap-1">
+            Buka Halaman Langsung ↗
+          </a>
+        </div>
+        <!-- Wadah iframe dengan fix scrolling untuk mobile -->
+        <div class="flex-grow w-full overflow-y-auto -webkit-overflow-scrolling-touch">
           <iframe
             src="${iframeSection.src}"
             class="w-full h-full border-0"
+            style="display: block; overflow: auto; -webkit-overflow-scrolling: touch;"
             title="${iframeSection.title || pageTitle}"
             allow="fullscreen"
             loading="lazy"
+            scrolling="yes"
           ></iframe>
         </div>
       </div>

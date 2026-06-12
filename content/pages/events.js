@@ -13,15 +13,15 @@ window.eventsData = {
             "title": "Events",
             "events": [
                 {
-                    "type": "Event",
-                    "title": "Charlemagne Cup 2025",
+                    "longDescription": "🔥 CHARLEMAGNE CUP 2025 – PPI Aachen Esports Tournament 🔥\n“Be Better Than Ever”\n\nPPI Aachen proudly presents a futuristic multi-game esports cup for Indonesian students in Europe! 🚀\n\n🎮 Games & Entry Fees\n\\- Mobile Legends : €20 / team\n\\- Valorant : €20 / team\n\\- Clash Royale : €4 / player\n\\- Chess : €4 / player\n\\- FIFA : €4 / player\n\\- Roblox Naik Gunung : FREE\n\n🏆 Prizepool\n€450 ++\n\n📅 \\*Tournament date: 13-14 Desember\n📝 \\*Registration: 30 November - 11 December 2025\n\n📥 Register here:\nhttps\\://linktr.ee/CharlemagneCup\n\nGather your squad, lock in your roles, and get ready for the Charlemagne Cup.\nLet’s see who really is better than ever. 💫\n\n",
+                    "linkText": "Linktree",
                     "date": "13-14 January 2026",
                     "location": "Online",
-                    "description": "Lomba E-Sport bersama teman-teman. Yuk daftar!",
-                    "image": "/images/charlemagnecup.jpg",
-                    "longDescription": "🔥 CHARLEMAGNE CUP 2025 – PPI Aachen Esports Tournament 🔥\n“Be Better Than Ever”\n\nPPI Aachen proudly presents a futuristic multi-game esports cup for Indonesian students in Europe! 🚀\n\n🎮 Games & Entry Fees\n\\- Mobile Legends : €20 / team\n\\- Valorant : €20 / team\n\\- Clash Royale : €4 / player\n\\- Chess : €4 / player\n\\- FIFA : €4 / player\n\\- Roblox Naik Gunung : FREE\n\n🏆 Prizepool\n€450 ++\n\n📅 \\*Tournament date: 13-14 Desember\n📝 \\*Registration: 30 November - 11 December 2025\n\n📥 Register here:\nhttps\\://linktr.ee/CharlemagneCup\n\nGather your squad, lock in your roles, and get ready for the Charlemagne Cup.\nLet’s see who really is better than ever. 💫\n\n",
+                    "title": "Charlemagne Cup 2025",
+                    "type": "Event",
                     "link": "https://linktr.ee/CharlemagneCup",
-                    "linkText": "Linktree"
+                    "image": "/images/charlemagnecup.jpg",
+                    "description": "Lomba E-Sport bersama teman-teman. Yuk daftar!"
                 },
                 {
                     "title": "Aachen Open 2025",
@@ -34,15 +34,15 @@ window.eventsData = {
                     "longDescription": "📔LEARN YOUR ABCs📔\n\nWALK THE TALK, NOT ONLY TALK THE TALK🗣️. THIS YEAR, IN AACHEN OPEN: TRI-NATION LEAGUE 🇲🇾🇮🇩🇨🇳, COMPETE IN:\n\n⚽️ FUTSAL ⚽️\n🏀 BASKETBALL 🏀\n🏸 BADMINTON 🏸\n🏐 VOLLEYBALL 🏐\n\n📍BERUFSKOLLEG NORD, Bardenbergerstr. 72, 52134 Herzogenrath📍\n\n📣REGISTRATION WILL OPEN ON 02.11.2025📣\n\n📕Booklet is available in the link on our Linktree!!📕\n"
                 },
                 {
-                    "title": "RAIA: Research Assembly Indonesia-Aachen",
-                    "date": "5 Desember 2025",
-                    "time": "17:30",
-                    "location": "Humboldt-Haus, Aachen",
-                    "description": "Tempat kita yang lagi S1, S2, atau doktoral bisa ketemu, ngobrol santai soal riset, dan saling belajar dari perjalanan akademik masing-masing.",
                     "longDescription": "🎓 RAIA: Research Assembly Indonesia-Aachen 📚\n\nTempat kita yang lagi S1, S2, atau doktoral bisa ketemu, ngobrol santai soal riset, dan saling belajar dari perjalanan akademik masing-masing.\nBukan cuma soal ilmu, tapi juga soal teman baru, insight baru, dan rasa “oh, ternyata kita nggak sendiri di sini.” 🤝💡\n\n📍 Humboldt-Haus, Aachen\n📅 5 Desember 2025\n🕒 17:30\n\nYuk daftar pake link di bio! Siapa tahu obrolan kecil hari itu jadi langkah besar perjalanan kalian di Jerman.🤞🏼\n\n\n",
-                    "link": "https://tally.so/r/81oEpl",
                     "linkText": "Daftar Sekarang",
-                    "image": "/images/events/raia.jpg"
+                    "time": "17:30",
+                    "date": "5 Desember 2025",
+                    "location": "Humboldt-Haus, Aachen",
+                    "title": "RAIA: Research Assembly Indonesia-Aachen",
+                    "link": "https://tally.so/r/81oEpl",
+                    "image": "/images/events/raia.jpg",
+                    "description": "Tempat kita yang lagi S1, S2, atau doktoral bisa ketemu, ngobrol santai soal riset, dan saling belajar dari perjalanan akademik masing-masing."
                 },
                 {
                     "title": "Aachen Book Club Ep. 3",
@@ -80,15 +80,15 @@ window.eventsData = {
                     "longDescription": "‼️HEI PARA ERSTI‼️\n\n\\*Udah pada kenal sama sesama Ersti belum?\\*\nKalau belum, ini nih saatnya! Jangan biarin Aachen kerasa asing. Mending kita kenalan & seru-seruan bareng di Welcoming Party Ersti PPI Aachen 2025 🎉\n\n📍 Humboldt Haus, Pontstraße 41\n🕑 Jam 14.00 - 21.00\n👔 Dresscode: Prep School 🏫\n\n✨ nanti bakal ada:\n\\* Ice breaking asik 🧊\n\\* Games-games seru 🎲\n\\* ⁠Aachen City Tour 🚩\n\\* ⁠Snack Gratis 🫔\n• Makan bersama 🍛🍴\n\nAcara ini terbuka juga buat yang non-Ersti ya😉\n\n🔗https\\://bit.ly/AcKickoff\n\nJadi tunggu apa lagi? ‼️ \\*SAVE THE DATE DARI SEKARANG\\*‼️\n\n"
                 },
                 {
-                    "title": "Gema Merdeka - 80th Indonesia",
-                    "date": "22 Agustus 2025",
-                    "time": "15:00 – 20:00",
-                    "location": "Aula 1 Hauptgebäude RWTH Aachen",
-                    "description": "Agustusan bareng yuk! Games seru, performance band, fashion show, quiz berhadiah, karaoke, dan aneka ragam makanan Indonesia.",
-                    "link": "https://linktr.ee/ppiaachen17an",
+                    "longDescription": "Ikan hiu ikan lele,\nAgustusan bareng yuk le! 🇮🇩✨\n\nSiapa yang kangen ikut Agustusan di Indo?🖐️ Tenang aja gais ! Tahun ini, PPI Aachen kembali mengadakan Agustusan bersama warga Indo di Aachen! Dari main games bareng, nonton Perfomance, karaoke bareng, sampai nyobain lebih dari 11 aneka ragam makanan Indonesia yang pastinya ngangenin banget! 🎉🍲 Jangan lupa bawa semangat 45 dan perut kosong biar puas jajan dan seru-seruan bareng!\n\n📅 Jumat, 22 Agustus 2025\n📍 Aula 1 Hauptgebäude RWTH Aachen\nTemplergraben 55, 52062 Aachen\n\n🇮🇩 Upacara Bendera: 12:00 – 12:45\n🎊 Acara “Gema Merdeka”: 15:00 – 20:00\n\nBakal ada games seru, performance band, fashion show, quiz berhadiah, karaoke, dan joget bareng sampai puas! 🥳\n",
                     "linkText": "Linktree 17an",
+                    "time": "15:00 – 20:00",
+                    "date": "22 Agustus 2025",
+                    "location": "Aula 1 Hauptgebäude RWTH Aachen",
+                    "title": "Gema Merdeka - 80th Indonesia",
+                    "link": "https://linktr.ee/ppiaachen17an",
                     "image": "/images/events/gema-merdeka.jpg",
-                    "longDescription": "Ikan hiu ikan lele,\nAgustusan bareng yuk le! 🇮🇩✨\n\nSiapa yang kangen ikut Agustusan di Indo?🖐️ Tenang aja gais ! Tahun ini, PPI Aachen kembali mengadakan Agustusan bersama warga Indo di Aachen! Dari main games bareng, nonton Perfomance, karaoke bareng, sampai nyobain lebih dari 11 aneka ragam makanan Indonesia yang pastinya ngangenin banget! 🎉🍲 Jangan lupa bawa semangat 45 dan perut kosong biar puas jajan dan seru-seruan bareng!\n\n📅 Jumat, 22 Agustus 2025\n📍 Aula 1 Hauptgebäude RWTH Aachen\nTemplergraben 55, 52062 Aachen\n\n🇮🇩 Upacara Bendera: 12:00 – 12:45\n🎊 Acara “Gema Merdeka”: 15:00 – 20:00\n\nBakal ada games seru, performance band, fashion show, quiz berhadiah, karaoke, dan joget bareng sampai puas! 🥳\n"
+                    "description": "Agustusan bareng yuk! Games seru, performance band, fashion show, quiz berhadiah, karaoke, dan aneka ragam makanan Indonesia."
                 },
                 {
                     "title": "Warung Nusantara",
@@ -99,15 +99,15 @@ window.eventsData = {
                     "image": "/images/events/warung-nusantara.jpg"
                 },
                 {
-                    "title": "Sommergrillen 2025",
-                    "date": "14 Juni 2025",
-                    "time": "14:00 - 19:30",
-                    "location": "Westpark, Aachen",
-                    "description": "PPI Aachen is back again with Sommergrillen! Paketan grill murah meriah, games, dan keseruan bareng teman-teman.",
-                    "link": "https://bit.ly/SommerGrillen2025",
+                    "longDescription": "‼️ PERGANTIAN TANGGAL ‼️\n\nALOHA🌞🐚🌴🌸\n\nThe sun’s finally out, so PPI Aachen is back again with: SOMMERGRILLEN🤩\n\nMark your calendar‼️\n📆 Sabtu, 14 Juni 2025\n🕜14.00 - 19.30\n📍 Westpark, Aachen\n👚Dresscode: Hawaii\n🔗 Link Registrasi: bit.ly/SommerGrillen2025\n\n🗣️”Apasih yg spesial tahun ini?”\nPsst, kali ini kami udah siapin DOORPRIZE untuk 1 peserta beruntung loh!!🤫\n1 orang akan berkesempatan untuk memenangkan... 🥁🥁🥁\n😯AIRFRYER🤯\n\n🗣️”Acaranya ngapain aja?”\n\\- Games dalam bentuk Scavenger Hunt😯\n\\- Bakar-bakar + makan enak🤤\n\\- Nongkrong santai bareng temen baru🤟🏼\n\\- Pulang bawa airfryer baru😌\n\n🗣️”Makanannya apa aja?”\nPaket yg kami sediakan isinya:\n\\- Nasi bakar isi ayam\n\\- Sate (FREE FLOW)\n\\- Es teh (FREE FLOW)\n\\- Sambal bawang\n\n🗣️”Wow banyak banget, pasti mahal!”\nEitss, itu semua cuma seharga 6,5€ per paket lohh.\nTapiiii, kalau 4 orang daftar sekaligus, harga per paket jadi MAKIN MURAH LAGI!! Cuma seharga 5,5€‼️‼️\n\n🌴Jadi tunggu apa lagi? Gasss daftar bareng teman-teman kalian!\n\nBatas pendaftaran:\n10 Juni 2025\n\n",
                     "linkText": "Daftar Sommergrillen",
+                    "time": "14:00 - 19:30",
+                    "date": "14 Juni 2025",
+                    "location": "Westpark, Aachen",
+                    "title": "Sommergrillen 2025",
+                    "link": "https://bit.ly/SommerGrillen2025",
                     "image": "/images/events/sommergrillen-2025.jpg",
-                    "longDescription": "‼️ PERGANTIAN TANGGAL ‼️\n\nALOHA🌞🐚🌴🌸\n\nThe sun’s finally out, so PPI Aachen is back again with: SOMMERGRILLEN🤩\n\nMark your calendar‼️\n📆 Sabtu, 14 Juni 2025\n🕜14.00 - 19.30\n📍 Westpark, Aachen\n👚Dresscode: Hawaii\n🔗 Link Registrasi: bit.ly/SommerGrillen2025\n\n🗣️”Apasih yg spesial tahun ini?”\nPsst, kali ini kami udah siapin DOORPRIZE untuk 1 peserta beruntung loh!!🤫\n1 orang akan berkesempatan untuk memenangkan... 🥁🥁🥁\n😯AIRFRYER🤯\n\n🗣️”Acaranya ngapain aja?”\n\\- Games dalam bentuk Scavenger Hunt😯\n\\- Bakar-bakar + makan enak🤤\n\\- Nongkrong santai bareng temen baru🤟🏼\n\\- Pulang bawa airfryer baru😌\n\n🗣️”Makanannya apa aja?”\nPaket yg kami sediakan isinya:\n\\- Nasi bakar isi ayam\n\\- Sate (FREE FLOW)\n\\- Es teh (FREE FLOW)\n\\- Sambal bawang\n\n🗣️”Wow banyak banget, pasti mahal!”\nEitss, itu semua cuma seharga 6,5€ per paket lohh.\nTapiiii, kalau 4 orang daftar sekaligus, harga per paket jadi MAKIN MURAH LAGI!! Cuma seharga 5,5€‼️‼️\n\n🌴Jadi tunggu apa lagi? Gasss daftar bareng teman-teman kalian!\n\nBatas pendaftaran:\n10 Juni 2025\n\n"
+                    "description": "PPI Aachen is back again with Sommergrillen! Paketan grill murah meriah, games, dan keseruan bareng teman-teman."
                 },
                 {
                     "title": "Aachen Book Club Ep. 2",
@@ -120,26 +120,26 @@ window.eventsData = {
                     "image": "/images/events/book-club-2.jpg"
                 },
                 {
-                    "title": "Aachen Book Club Ep. 1",
-                    "date": "9 Mei 2025",
-                    "time": "18:00 – 20:00",
-                    "location": "Humboldthaus Aachen (2. OG)",
-                    "description": "Sharing buku, diskusi santai, ngobrol asik, dan snack gratis. Bawa buku kesayanganmu atau cukup bawa rasa penasaranmu.",
-                    "link": "http://bit.ly/aachenbookclub",
+                    "longDescription": "Hallo Aachener 👋🏻\nPPI Aachen kali ini mengadakan diskusi literasi dengan nama AACHEN BOOK CLUB 📚!!\n\nIni menjadi kesempatan untuk sharing buku-buku yang telah kalian baca, terutama arti lebih mendalam yang terkandung di dalamnya. Pantau terus IG kami, so you don’t miss out the next episode dan bisa mengenal hasil dari diskusi kami yang seru ini!!\n\nAs they say “Today a reader, tomorrow a leader!”\n",
                     "linkText": "Daftar Book Club",
+                    "time": "18:00 – 20:00",
+                    "date": "9 Mei 2025",
+                    "location": "Humboldthaus Aachen (2. OG)",
+                    "title": "Aachen Book Club Ep. 1",
+                    "link": "http://bit.ly/aachenbookclub",
                     "image": "/images/events/book-club-1.jpg",
-                    "longDescription": "Hallo Aachener 👋🏻\nPPI Aachen kali ini mengadakan diskusi literasi dengan nama AACHEN BOOK CLUB 📚!!\n\nIni menjadi kesempatan untuk sharing buku-buku yang telah kalian baca, terutama arti lebih mendalam yang terkandung di dalamnya. Pantau terus IG kami, so you don’t miss out the next episode dan bisa mengenal hasil dari diskusi kami yang seru ini!!\n\nAs they say “Today a reader, tomorrow a leader!”\n"
+                    "description": "Sharing buku, diskusi santai, ngobrol asik, dan snack gratis. Bawa buku kesayanganmu atau cukup bawa rasa penasaranmu."
                 },
                 {
-                    "title": "Sidang Perwakilan Anggota (SPA) 2025",
-                    "date": "14 Februari 2025",
-                    "time": "17:00 CET",
-                    "location": "Super C, Templergraben 57",
-                    "description": "Forum tertinggi PPI Aachen untuk evaluasi kepengurusan, menyusun rencana, dan memilih Ketua PPI Aachen yang baru.",
-                    "link": "https://www.ppiaachen.de/organization/spa",
+                    "longDescription": "**Sidang Perwakilan Anggota (SPA) PPI Aachen 2024/2025**\n\n📍: Super C, Templergraben 57, 52062 Aachen\n🗓️: Jumat, 14 Februari 2025\n⏰️: 16:00 CET\n\nTak terasa, kepengurusan PPI Aachen 2024/2025 sudah mendekati akhir. Kini saatnya kita bersama-sama mengevaluasi perjalanan satu tahun terakhir, menyusun rencana ke depan, dan memilih Ketua PPI Aachen yang baru.\n\nKami mengundang seluruh pelajar Indonesia di Aachen dan sekitarnya untuk hadir dalam forum tertinggi PPI Aachen ini. Partisipasi aktifmu akan menjadi kontribusi nyata bagi kemajuan organisasi!\n\nMari jadikan momen ini sebagai ajang refleksi, aspirasi, dan kontribusi demi PPI Aachen yang lebih baik!\n\nSeluruh peserta sidang diwajibkan mengenakan pakaian sopan dan formal.\n\nAnggota PPI Aachen:\n\nAnggota penuh adalah Warga Negara Indonesia yang terdaftar pada salah satu lembaga pendidikan atau pengajaran dan bertempat tinggal di Aachen serta wilayah kerja PPI Aachen.\n\nWilayah kerja PPI Aachen mencakup:\n\nStädteregion Aachen, Kreis Düren (Jülich dan Düren) dan Kreis Heinsberg (Geilenkirchen dan Heinsberg)\n\n",
                     "linkText": "Info SPA",
+                    "time": "17:00 CET",
+                    "date": "14 Februari 2025",
+                    "location": "Super C, Templergraben 57",
+                    "title": "Sidang Perwakilan Anggota (SPA) 2025",
+                    "link": "https://www.ppiaachen.de/organization/spa",
                     "image": "/images/events/spa-2025.jpg",
-                    "longDescription": "**Sidang Perwakilan Anggota (SPA) PPI Aachen 2024/2025**\n\n📍: Super C, Templergraben 57, 52062 Aachen\n🗓️: Jumat, 14 Februari 2025\n⏰️: 16:00 CET\n\nTak terasa, kepengurusan PPI Aachen 2024/2025 sudah mendekati akhir. Kini saatnya kita bersama-sama mengevaluasi perjalanan satu tahun terakhir, menyusun rencana ke depan, dan memilih Ketua PPI Aachen yang baru.\n\nKami mengundang seluruh pelajar Indonesia di Aachen dan sekitarnya untuk hadir dalam forum tertinggi PPI Aachen ini. Partisipasi aktifmu akan menjadi kontribusi nyata bagi kemajuan organisasi!\n\nMari jadikan momen ini sebagai ajang refleksi, aspirasi, dan kontribusi demi PPI Aachen yang lebih baik!\n\nSeluruh peserta sidang diwajibkan mengenakan pakaian sopan dan formal.\n\nAnggota PPI Aachen:\n\nAnggota penuh adalah Warga Negara Indonesia yang terdaftar pada salah satu lembaga pendidikan atau pengajaran dan bertempat tinggal di Aachen serta wilayah kerja PPI Aachen.\n\nWilayah kerja PPI Aachen mencakup:\n\nStädteregion Aachen, Kreis Düren (Jülich dan Düren) dan Kreis Heinsberg (Geilenkirchen dan Heinsberg)\n\n"
+                    "description": "Forum tertinggi PPI Aachen untuk evaluasi kepengurusan, menyusun rencana, dan memilih Ketua PPI Aachen yang baru."
                 },
                 {
                     "title": "Open Registration Ketua PPIA 25/26",
@@ -149,15 +149,15 @@ window.eventsData = {
                     "image": "/images/events/open-registration-chair.jpg"
                 },
                 {
-                    "title": "CESPI: Beasiswa & Riset",
-                    "date": "23 Januari 2025",
-                    "time": "14:00 CET",
-                    "location": "Instagram Live @ppiaachen",
-                    "description": "Info beasiswa CESP untuk S3 dari Kemendikbud dan beasiswa lainnya di RWTH Aachen bersama narasumber inspiratif.",
-                    "link": "https://www.instagram.com/reel/DFK8Tcsty46/?igsh=MmQxd2xmem8xbnJk",
+                    "longDescription": "🎙️ CESPI (CESP Student Interview) 🎓\n\nIngin tahu lebih banyak tentang Beasiswa CESP untuk S3 dari Kemendikbud dan info beasiswa lainnya di RWTH Aachen? Yuk, simak IG Live kami bersama dua narasumber inspiratif:\n\n👩‍🎓 Sinta Uri El Hakim\n• Universitas: Universitas Gadjah Mada\n• Kursus: Chair for Information and Automation System for Process and Material Technology (IAT)\n\n👩‍🎓 Nadiyatur Rahmatikal Wasiah\n• Universitas: Institut Teknologi Bandung\n• Kursus: Decision Analysis and Socio-economic Assessment, School of Business and Economics\n\n📍 Tempat: IG Live [@PPIAachen](https://www.instagram.com/PPIAachen/)\n🕑 Waktu: Kamis, 23 Januari 2025, pukul 14.00 (Waktu Jerman)\n\nDapatkan wawasan langsung dari para penerima beasiswa dan pelajari peluang untuk melanjutkan studi ke jenjang S3 di RWTH Aachen!\n\nJangan lewatkan, catat tanggalnya sekarang! ✨\n\n",
                     "linkText": "Tonton Rekaman",
+                    "time": "14:00 CET",
+                    "date": "23 Januari 2025",
+                    "location": "Instagram Live @ppiaachen",
+                    "title": "CESPI: Beasiswa & Riset",
+                    "link": "https://www.instagram.com/reel/DFK8Tcsty46/?igsh=MmQxd2xmem8xbnJk",
                     "image": "/images/events/cespi.jpg",
-                    "longDescription": "🎙️ CESPI (CESP Student Interview) 🎓\n\nIngin tahu lebih banyak tentang Beasiswa CESP untuk S3 dari Kemendikbud dan info beasiswa lainnya di RWTH Aachen? Yuk, simak IG Live kami bersama dua narasumber inspiratif:\n\n👩‍🎓 Sinta Uri El Hakim\n• Universitas: Universitas Gadjah Mada\n• Kursus: Chair for Information and Automation System for Process and Material Technology (IAT)\n\n👩‍🎓 Nadiyatur Rahmatikal Wasiah\n• Universitas: Institut Teknologi Bandung\n• Kursus: Decision Analysis and Socio-economic Assessment, School of Business and Economics\n\n📍 Tempat: IG Live [@PPIAachen](https://www.instagram.com/PPIAachen/)\n🕑 Waktu: Kamis, 23 Januari 2025, pukul 14.00 (Waktu Jerman)\n\nDapatkan wawasan langsung dari para penerima beasiswa dan pelajari peluang untuk melanjutkan studi ke jenjang S3 di RWTH Aachen!\n\nJangan lewatkan, catat tanggalnya sekarang! ✨\n\n"
+                    "description": "Info beasiswa CESP untuk S3 dari Kemendikbud dan beasiswa lainnya di RWTH Aachen bersama narasumber inspiratif."
                 },
                 {
                     "title": "Lerncafe",
@@ -307,6 +307,18 @@ window.eventsData = {
                     "location": "Humboldt-Haus, Aachen",
                     "description": "Welcoming party untuk Ersti. Games, snack gratis, dan info seputar Aachen.",
                     "image": "/images/events/aachener-101.jpg"
+                },
+                {
+                    "longDescription": "Tak terasa, kepengurusan PPI Aachen 2025/2026 sudah mendekati akhir. Kini saatnya kita bersama-sama mengevaluasi perjalanan satu tahun terakhir, menyusun rencana ke depan, dan memilih Ketua PPI Aachen yang baru.\nKami mengundang seluruh pelajar Indonesia di Aachen dan sekitarnya untuk hadir dalam forum tertinggi PPI Aachen ini. Partisipasi aktifmu akan menjadi kontribusi nyata bagi kemajuan organisasi!\nMari jadikan momen ini sebagai ajang refleksi, aspirasi, dan kontribusi demi PPI Aachen yang lebih baik!\nSeluruh peserta sidang diwajibkan mengenakan pakaian sopan dan formal. \n🕟 Waktu terbaru: 16.30 CET\n📅 27 Februari 2026\n📍 Super C, Templergraben 57, 52062 Aachen\nSampai bertemu di SPA!",
+                    "linkText": "Detail SPA",
+                    "time": "16:30",
+                    "date": "27 Februari 2026",
+                    "location": "Super C, Templergraben 57, 52062 Aachen",
+                    "title": "Sidang Perwakilan Anggota PPI Aachen 2026",
+                    "type": "Event",
+                    "link": "https://ppiaachen.de/spa",
+                    "image": "/images/events/spa26.jpg",
+                    "description": "Suaramu menentukan masa depan PPI Aachen! Mari hadir ke forum tertinggi PPI Aachen untuk mengevaluasi dan menentukan arah masa depan PPI Aachen."
                 }
             ]
         }

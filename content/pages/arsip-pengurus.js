@@ -129,8 +129,53 @@ window.cabinetData = {
                 {
                     "period": "2026/2027",
                     "chair": "Jason Louis Laksono",
-                    "vice": "",
-                    "departments": []
+                    "vice": "Dheo Santoso",
+                    "departments": [
+                        {
+                            "name": "BPKK",
+                            "members": [
+                                "Ghithrafi Fadhgazka Syarif",
+                                "Briggita Graciella"
+                            ]
+                        },
+                        {
+                            "name": "Sekretaris",
+                            "members": [
+                                "Rizki Shaqi Vanilla"
+                            ]
+                        },
+                        {
+                            "name": "Bendahara",
+                            "members": [
+                                "Benedictus Warren Nugraha"
+                            ]
+                        },
+                        {
+                            "name": "Pendidikan dan Seni Budaya",
+                            "members": [
+                                "Ruciragati Maheswari",
+                                "Jonathan Alexander Tresna",
+                                "Jesslyn Florence"
+                            ]
+                        },
+                        {
+                            "name": "Hubungan Masyarakat & Multimedia",
+                            "members": [
+                                "Shalvensky Cornelly",
+                                "Ruth Nathaline Sarumaha",
+                                "Wiratama Admaja Wahono"
+                            ]
+                        },
+                        {
+                            "name": "Event Organizer",
+                            "members": [
+                                "Riovalen Wijaya",
+                                "Izz Kiram Prastowo",
+                                "Samuel Rowenville Krezenskoei"
+                            ]
+                        }
+                    ],
+                    "image": "/images/events/kabinet-laksana.png"
                 },
                 {
                     "period": "2025/2026",

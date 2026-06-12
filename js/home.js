@@ -80,7 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const closePdfBtn = document.getElementById('close-pdf-btn');
 
     if (pdfTrigger && pdfModal && closePdfBtn) {
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const pdfUrl = "https://drive.google.com/file/d/1JtwUe0FkGHvXqIJbFa0i6iVw79eA-Cu4/view?usp=sharing";
+
         const openModal = () => {
+            if (isMobile) {
+                window.open(pdfUrl, '_blank');
+                return;
+            }
             pdfModal.classList.remove('hidden');
             pdfModal.classList.add('flex');
             document.body.classList.add('overflow-hidden');
