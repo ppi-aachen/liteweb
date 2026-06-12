@@ -8,14 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (adartTrigger && adartModal && closeAdartBtn) {
         const docUrl = "https://docs.google.com/document/d/e/2PACX-1vS1P12969Vut22ytyBniEyIdopjk08xi5fk73IlC4ZA90_lp01PiB9L78Rz-86c7D7BUgVpnb1Q4Ito/pub?embedded=true";
 
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
         const openModal = () => {
-            if (isMobile) {
-                window.open("https://docs.google.com/document/d/e/2PACX-1vS1P12969Vut22ytyBniEyIdopjk08xi5fk73IlC4ZA90_lp01PiB9L78Rz-86c7D7BUgVpnb1Q4Ito/pub", '_blank');
-                return;
-            }
-            if (adartIframe && (adartIframe.src === 'about:blank' || !adartIframe.src)) {
+            if (adartIframe && adartIframe.src === 'about:blank' || !adartIframe.src) {
                 adartIframe.src = docUrl;
             }
             adartModal.classList.remove('hidden');

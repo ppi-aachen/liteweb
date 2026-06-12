@@ -35,16 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalNewtab = document.getElementById('modal-lpj-newtab');
 
     if (lpjModal && closeLpjBtn) {
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
         const openModal = (card) => {
             const year = card.getAttribute('data-year');
             const url = card.getAttribute('data-url');
-            
-            if (isMobile) {
-                window.open(url, '_blank');
-                return;
-            }
             
             const previewUrl = url.replace('/view', '/preview');
 

@@ -636,10 +636,11 @@ const compileHome = () => {
               </div>
             </div>
             <!-- Content -->
-            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-hidden">
+            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-y-auto -webkit-overflow-scrolling-touch">
               <iframe
                 src="https://drive.google.com/file/d/1JtwUe0FkGHvXqIJbFa0i6iVw79eA-Cu4/preview"
                 class="w-full h-full rounded-lg bg-white border-0"
+                style="display: block; width: 100%; height: 100%; min-height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;"
                 allow="autoplay"
                 title="Aachen für Dummies Fullscreen"
               ></iframe>
@@ -1232,11 +1233,12 @@ const compileAdArt = () => {
               </div>
             </div>
             <!-- Content -->
-            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-hidden">
+            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-y-auto -webkit-overflow-scrolling-touch">
               <iframe
                 id="adart-iframe"
                 src="about:blank"
                 class="w-full h-full rounded-lg bg-white"
+                style="display: block; width: 100%; height: 100%; min-height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;"
                 allow="autoplay"
                 title="Official AD/ART Document"
               ></iframe>
@@ -1341,11 +1343,12 @@ const compileArsipLpj = () => {
             </div>
 
             <!-- Content -->
-            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-hidden">
+            <div class="flex-grow bg-gray-100 p-2 rounded-b-xl overflow-y-auto -webkit-overflow-scrolling-touch">
               <iframe
                 id="modal-lpj-iframe"
                 src="about:blank"
                 class="w-full h-full rounded-lg bg-white"
+                style="display: block; width: 100%; height: 100%; min-height: 100%; overflow: auto; -webkit-overflow-scrolling: touch;"
                 allow="autoplay"
                 title="LPJ Document"
               ></iframe>
