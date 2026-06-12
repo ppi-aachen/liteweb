@@ -62,6 +62,7 @@ const getJsonData = (filename) => {
 
 // Global Layout template compiler
 const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataScript = null) => {
+    const baseUrl = 'https://cf.ppiaachen.de';
     const isLinktree = currentPath === 'linktree.html';
 
     // Helper to check if a navigation item is active
@@ -321,17 +322,17 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://git.ppiaachen.de/${currentPath}" />
+  <meta property="og:url" content="${baseUrl}/${currentPath}" />
   <meta property="og:title" content="PPI Aachen - ${title}" />
   <meta property="og:description" content="Perhimpunan Pelajar Indonesia di Aachen - Indonesian Students Association in Aachen" />
-  <meta property="og:image" content="https://git.ppiaachen.de/og-image.png" />
+  <meta property="og:image" content="${baseUrl}/og-image.png" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://git.ppiaachen.de/${currentPath}" />
+  <meta property="twitter:url" content="${baseUrl}/${currentPath}" />
   <meta property="twitter:title" content="PPI Aachen - ${title}" />
   <meta property="twitter:description" content="Perhimpunan Pelajar Indonesia di Aachen - Indonesian Students Association in Aachen" />
-  <meta property="twitter:image" content="https://git.ppiaachen.de/og-image.png" />
+  <meta property="twitter:image" content="${baseUrl}/og-image.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
