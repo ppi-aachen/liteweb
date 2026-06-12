@@ -12,10 +12,6 @@ window.lpjData = {
             "type": "LpjList",
             "items": [
                 {
-                    "year": "2025/2026",
-                    "url": "https://drive.google.com/file/d/1JtL0zz9--6Ghbxt5BDnM7mmYfRol2dMT/view?usp=sharing"
-                },
-				{
                     "year": "2024/2025",
                     "url": "https://drive.google.com/file/d/1kihZELUHJ_n4p2SapyjLLovX6Lqc4Web/view?usp=sharing"
                 },

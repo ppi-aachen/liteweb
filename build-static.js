@@ -60,6 +60,13 @@ const getJsonData = (filename) => {
     return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 };
 
+// Write JS data helper
+const saveJsData = (filename, varName, data) => {
+    const filePath = path.join(contentDir, filename);
+    const content = `window.${varName} = ${JSON.stringify(data, null, 4)};\n`;
+    fs.writeFileSync(filePath, content, 'utf-8');
+};
+
 // Global Layout template compiler
 const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataScript = null) => {
     const baseUrl = 'https://cf.ppiaachen.de';
@@ -880,6 +887,9 @@ const compileEvents = () => {
     const data = getJsonData('events.json');
     if (!data) return;
 
+    // Generate events.js dynamically
+    saveJsData('events.js', 'eventsData', data);
+
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Events', subtitle: 'Kegiatan PPI Aachen' };
     const eventGrid = data.sections.find(s => s.type === 'EventGrid');
 
@@ -1098,6 +1108,9 @@ const compileKepengurusan = () => {
     const data = getJsonData('kepengurusan.json');
     if (!data) return;
 
+    // Generate kepengurusan.js dynamically
+    saveJsData('kepengurusan.js', 'kepengurusanData', data);
+
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Kepengurusan', subtitle: 'Susunan Kepengurusan PPI Aachen 2025/2026' };
 
     const body = `
@@ -1267,6 +1280,9 @@ const compileArsipLpj = () => {
     const data = getJsonData('arsip-lpj.json');
     if (!data) return;
 
+    // Generate arsip-lpj.js dynamically
+    saveJsData('arsip-lpj.js', 'lpjData', data);
+
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Arsip LPJ', subtitle: 'Laporan Pertanggungjawaban' };
 
     const body = `
@@ -1339,6 +1355,9 @@ const compileArsipLpj = () => {
 const compileArsipPengurus = () => {
     const data = getJsonData('arsip-pengurus.json');
     if (!data) return;
+
+    // Generate arsip-pengurus.js dynamically
+    saveJsData('arsip-pengurus.js', 'cabinetData', data);
 
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Arsip Pengurus', subtitle: 'Past Cabinet Archive' };
     const cabinetArchive = data.sections.find(s => s.type === 'CabinetArchive');
