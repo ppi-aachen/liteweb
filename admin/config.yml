@@ -1,6 +1,11 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: ppi-aachen/liteweb
   branch: main
+  base_url: https://cf.ppiaachen.de
+  auth_endpoint: api/auth
+
+local_backend: true
 
 media_folder: "images/events"
 public_folder: "/images/events"
