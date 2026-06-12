@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const lpjGrid = document.getElementById('lpj-grid');
     if (lpjGrid) {
         const lpjListSection = window.lpjData.sections.find(s => s.type === 'LpjList');
-        const lpjList = lpjListSection ? lpjListSection.items : [];
+        const lpjList = lpjListSection ? [...lpjListSection.items] : [];
+        lpjList.sort((a, b) => b.year.localeCompare(a.year, undefined, { numeric: true }));
 
         lpjGrid.innerHTML = lpjList.map((lpj) => `
             <div

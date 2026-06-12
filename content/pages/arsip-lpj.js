@@ -34,6 +34,10 @@ window.lpjData = {
                 {
                     "year": "2017/2018",
                     "url": "https://drive.google.com/file/d/1BVT9wmvOEdXqyKy_4VUjnBpADqr-lR7I/view?usp=sharing"
+                },
+                {
+                    "year": "2025/2026",
+                    "url": "https://drive.google.com/file/d/1JtL0zz9--6Ghbxt5BDnM7mmYfRol2dMT/view?usp=sharing"
                 }
             ]
         }
