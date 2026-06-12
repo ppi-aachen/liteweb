@@ -298,6 +298,22 @@ export default defineStackbitConfig({
   ssgName: 'custom',
   devCommand: 'npm run dev',
   buildCommand: 'npm run build',
+  siteMap: ({ documents, models }) => {
+    const pageModels = models.filter((m) => m.type === 'page');
+    return documents
+      .filter((d) => pageModels.some((m) => m.name === d.modelName))
+      .map((document) => {
+        const slug = document.fields.slug?.value || document.id.split('/').pop().replace('.json', '');
+        const isHomePage = slug === 'home';
+        const urlPath = isHomePage ? '/' : `/${slug}.html`;
+        return {
+          stableId: document.id,
+          urlPath: urlPath,
+          document,
+          isHomePage
+        };
+      });
+  },
   contentSources: [
     new GitContentSource({
       rootPath: __dirname,
