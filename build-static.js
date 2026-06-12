@@ -1667,26 +1667,43 @@ const compileImpressum = () => {
 // --- Build execution ---
 const build = () => {
     console.log('Starting static site compilation...');
-    
-    compileHome();
-    compileIframePage('lapor-diri.json', 'lapor-diri.html', 'Lapor Diri');
-    compileEvents();
-    compileCommunities();
-    compileIframePage('merchandise.json', 'merchandise.html', 'Merchandise');
-    compileSejarah();
-    compileKepengurusan();
-    compileAdArt();
-    compileSpa();
-    compileArsipLpj();
-    compileArsipPengurus();
-    compileKontakEmail();
-    compileLinktree();
-    compileIframePage('acop2025.json', 'acop-2025.html', 'ACOP 2025');
-    compileIframePage('wiki-aachen.json', 'wiki-aachen.html', 'Wiki Aachen');
-    compilePressKit();
-    compileImpressum();
-
-    console.log('Static site compilation complete!');
+    try {
+        compileHome();
+        compileIframePage('lapor-diri.json', 'lapor-diri.html', 'Lapor Diri');
+        compileEvents();
+        compileCommunities();
+        compileIframePage('merchandise.json', 'merchandise.html', 'Merchandise');
+        compileSejarah();
+        compileKepengurusan();
+        compileAdArt();
+        compileSpa();
+        compileArsipLpj();
+        compileArsipPengurus();
+        compileKontakEmail();
+        compileLinktree();
+        compileIframePage('acop2025.json', 'acop-2025.html', 'ACOP 2025');
+        compileIframePage('wiki-aachen.json', 'wiki-aachen.html', 'Wiki Aachen');
+        compilePressKit();
+        compileImpressum();
+        console.log('Static site compilation complete!');
+    } catch (error) {
+        console.error('Build compilation failed:', error);
+    }
 };
 
-build();
+if (process.argv.includes('--watch')) {
+    build();
+    console.log(`Watching for changes in ${contentDir}...`);
+    let timeoutId = null;
+    fs.watch(contentDir, { recursive: true }, (eventType, filename) => {
+        if (filename && (filename.endsWith('.json') || filename.endsWith('.js'))) {
+            if (timeoutId) clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                console.log(`File ${filename} changed. Rebuilding...`);
+                build();
+            }, 100);
+        }
+    });
+} else {
+    build();
+}

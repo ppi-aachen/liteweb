@@ -7,11 +7,14 @@
     "build:html": "node build-static.js",
     "build:css": "npx tailwindcss -i src/index.css -o css/styles.css --minify",
     "build": "npm run build:html && npm run build:css",
+    "dev:html": "node build-static.js --watch",
     "dev:css": "npx tailwindcss -i src/index.css -o css/styles.css --watch",
     "dev:server": "npx -y http-server -p 3000 -c-1",
-    "dev": "npm run build && npx -y concurrently \"npm run dev:css\" \"npm run dev:server\""
+    "dev": "npm run build && npx -y concurrently \"npm run dev:html\" \"npm run dev:css\" \"npm run dev:server\""
   },
   "devDependencies": {
+    "@stackbit/cms-git": "^1.0.38",
+    "@stackbit/types": "^2.1.15",
     "concurrently": "^8.2.2",
     "tailwindcss": "^3.3.6"
   }
