@@ -1,928 +1,973 @@
 {
-    "type": "Page",
-    "title": "Arsip Pengurus",
-    "slug": "arsip-pengurus",
-    "sections": [
+  "type": "Page",
+  "title": "Arsip Pengurus",
+  "slug": "arsip-pengurus",
+  "sections": [
+    {
+      "type": "Hero",
+      "title": "Arsip Pengurus",
+      "subtitle": "Past Cabinet Archive"
+    },
+    {
+      "type": "CabinetArchive",
+      "title": "Arsip Pengurus Kabinet",
+      "pastChairs": [
         {
-            "type": "Hero",
-            "title": "Arsip Pengurus",
-            "subtitle": "Past Cabinet Archive"
+          "name": "Peter Manusama",
+          "period": "1956-1957"
         },
         {
-            "type": "CabinetArchive",
-            "title": "Arsip Pengurus Kabinet",
-            "pastChairs": [
-                {
-                    "name": "Peter Manusama",
-                    "period": "1956-1957"
-                },
-                {
-                    "name": "Bacharuddin Jusuf Habibie",
-                    "period": "1957-1959"
-                },
-                {
-                    "name": "Sjafaril",
-                    "period": "1959-1961"
-                },
-                {
-                    "name": "Midian Sirait",
-                    "period": "1961-1964"
-                },
-                {
-                    "name": "Tidak diketahui",
-                    "period": "1964-1992"
-                },
-                {
-                    "name": "Yoshua",
-                    "period": "1992-1994"
-                },
-                {
-                    "name": "Andy Sugiarto",
-                    "period": "1994-1996"
-                },
-                {
-                    "name": "Yapto",
-                    "period": "1996-1998"
-                },
-                {
-                    "name": "Irwan Suwartana",
-                    "period": "1998-1999"
-                },
-                {
-                    "name": "Vakum",
-                    "period": "1999-2004"
-                },
-                {
-                    "name": "Tidak diketahui",
-                    "period": "2004-2006"
-                },
-                {
-                    "name": "Feby Kumara Adi",
-                    "period": "2006-2008"
-                },
-                {
-                    "name": "Imee Oktiara Tjoeng",
-                    "period": "2008-2010"
-                },
-                {
-                    "name": "Yoshua Pohan Iskandar",
-                    "period": "2010-2011"
-                },
-                {
-                    "name": "Sasmaya Tilottama",
-                    "period": "2011-2015"
-                },
-                {
-                    "name": "Dimaz Ibrahim",
-                    "period": "2015-2016"
-                },
-                {
-                    "name": "Randy Cendieno",
-                    "period": "2016-2017"
-                },
-                {
-                    "name": "Irsyad Adri Wicaksono",
-                    "period": "2017-2018"
-                },
-                {
-                    "name": "Christian Stainly Pungus",
-                    "period": "2018-2019"
-                },
-                {
-                    "name": "Tegar Diyado Permana",
-                    "period": "2019-2020"
-                },
-                {
-                    "name": "Bintan Dzulfikar Hakim",
-                    "period": "2020-2021"
-                },
-                {
-                    "name": "Faryansyah Putra Rahadian (PLT)",
-                    "period": "2021-2021"
-                },
-                {
-                    "name": "Muhammad Al Hasni",
-                    "period": "2021-2021"
-                },
-                {
-                    "name": "Reza Rahman Susilo",
-                    "period": "2021-2022"
-                },
-                {
-                    "name": "Tifano Muhammad Noor Isykio",
-                    "period": "2022-2024"
-                },
-                {
-                    "name": "Nathan Matthew Kurnia",
-                    "period": "2024-2025"
-                },
-                {
-                    "name": "Adriano Ferane Gunawan",
-                    "period": "2025-2026"
-                },
-                {
-                    "name": "Jason Louis Laksono",
-                    "period": "2026-2027"
-                }
-            ],
-            "cabinets": [
-                {
-                    "period": "2026/2027",
-                    "chair": "Jason Louis Laksono",
-                    "vice": "",
-                    "departments": []
-                },
-                {
-                    "period": "2025/2026",
-                    "chair": "Adriano Ferane Gunawan",
-                    "vice": "Alfred Triza & Nathanael Lumen Sukmana",
-                    "image": "/images/pengurus/2025-2026.jpg",
-                    "departments": [
-                        {
-                            "name": "BPKK",
-                            "members": [
-                                "Nathan Matthew Kurnia",
-                                "Muhammad Mulya Salam"
-                            ]
-                        },
-                        {
-                            "name": "Human Resources",
-                            "members": [
-                                "Aisha Safwa Fatiha",
-                                "Briggita Graciella"
-                            ]
-                        },
-                        {
-                            "name": "Sekretaris",
-                            "members": [
-                                "Tresy Prawita Silalahi",
-                                "Vivian Prudence Chen",
-                                "Michelle Anwar"
-                            ]
-                        },
-                        {
-                            "name": "Bendahara",
-                            "members": [
-                                "Marlyne Tanankia",
-                                "Macario Zachary Machmud"
-                            ]
-                        },
-                        {
-                            "name": "Hubungan Masyarakat",
-                            "members": [
-                                "Pascal Joseph Nathaniel (Ketua)",
-                                "Marie Elaine Winona Silap",
-                                "Muhammad Hanif Utomo",
-                                "Fictor Marcelbrian",
-                                "Andriyani Monica Susanto",
-                                "Rafi Arya Putra Hariyadi",
-                                "Mervin Yuan Arkana"
-                            ]
-                        },
-                        {
-                            "name": "Pendidikan",
-                            "members": [
-                                "Brendon Arie Putra (Ketua)",
-                                "Jason Louis Laksono",
-                                "Sheifer Sidney Cornelly",
-                                "Timothy Setiawan",
-                                "Dheo Santoso",
-                                "Ahmad Maulana",
-                                "Ghithrafi Fadhgazka Syarif"
-                            ]
-                        },
-                        {
-                            "name": "Seni Budaya",
-                            "members": [
-                                "Nicholas Daniel Tjandrasa (Ketua)",
-                                "Renata Shannon Rijanto",
-                                "Delix Andea",
-                                "Filbert Filbert",
-                                "Joan Ivanka",
-                                "Jesslyn Aurelia Tjen",
-                                "Bonfilio Onassis Setiawan"
-                            ]
-                        },
-                        {
-                            "name": "Olahraga",
-                            "members": [
-                                "Gede Pradnya Paramartha (Ketua)",
-                                "Roger Marcelbrian",
-                                "Stanislaus Joey Gunawan",
-                                "Hanif Aulia Ibrahim",
-                                "Kevin Kristianto Widjaja",
-                                "Grant Elliot Thomas",
-                                "William Krisna Sunjoto"
-                            ]
-                        },
-                        {
-                            "name": "Kewirausahaan",
-                            "members": [
-                                "Liorio Anargya Putra Wibowo (Ketua)",
-                                "Imelda Halim",
-                                "Grace Adeline",
-                                "Philipus Dean Laurent",
-                                "Kenzie Weili Wangkawa Winarto",
-                                "Keanu Rafif Shadiq Hidayat",
-                                "James Edward"
-                            ]
-                        },
-                        {
-                            "name": "Multimedia dan IT",
-                            "members": [
-                                "Bartholomeus Marciano Nathan (Ketua)",
-                                "Michael Xhristiano Espranata",
-                                "Rafael Billy Jayadi",
-                                "Deronn Jehosaphat",
-                                "Fachrial Dimas Putra Perdana",
-                                "Matthew Nathaniel Panggabean",
-                                "Navy Hanan",
-                                "Samuel Raphael Tanos",
-                                "Olivier Al Drich"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "period": "2024/2025",
-                    "chair": "Nathan Matthew Kurnia",
-                    "vice": "Muhammad Mulya Salam",
-                    "image": "/images/pengurus/2024-2025.jpg",
-                    "departments": [
-                        {
-                            "name": "BPKK",
-                            "members": [
-                                "Randy Cendiano"
-                            ]
-                        },
-                        {
-                            "name": "Human Resources",
-                            "members": [
-                                "Fachrial Dimas Putra Perdana",
-                                "Tifano Muhammad Noor Isykio"
-                            ]
-                        },
-                        {
-                            "name": "Sekretaris",
-                            "members": [
-                                "Aisha Safwa Fatiha",
-                                "Briggita Graciella"
-                            ]
-                        },
-                        {
-                            "name": "Bendahara",
-                            "members": [
-                                "Andriyani Monica Susanto"
-                            ]
-                        },
-                        {
-                            "name": "Hubungan Masyarakat",
-                            "members": [
-                                "Darrell Octavianus (Ketua)",
-                                "Edwin Kusuma",
-                                "Vivian Prudence Chen",
-                                "Valensya Djoe",
-                                "Hasyim Putro"
-                            ]
-                        },
-                        {
-                            "name": "Pendidikan dan Seni Budaya",
-                            "members": [
-                                "Gerdan Bergadewata (Ketua)",
-                                "Anderson Widjaja",
-                                "Adriano Ferane Gunawan",
-                                "Muhammad Hadzy Fauzan",
-                                "Ammyrah Riztyanti Fahira"
-                            ]
-                        },
-                        {
-                            "name": "Olahraga",
-                            "members": [
-                                "Andreas Welly Octavianus (Ketua)",
-                                "Albert Triza",
-                                "Medwin Samudra",
-                                "Kenvara Solivo Lwie",
-                                "Pascal Joseph Nathaniel",
-                                "Roger Marcelbrian"
-                            ]
-                        },
-                        {
-                            "name": "Kewirausahaan",
-                            "members": [
-                                "Jessica Angelina (Ketua)",
-                                "Jannice Risse",
-                                "Jerry Pranoto",
-                                "Jovi Laurent",
-                                "Marlyne Tanankia",
-                                "Salma Benanni"
-                            ]
-                        },
-                        {
-                            "name": "Multimedia dan IT",
-                            "members": [
-                                "Anindya Putri Diandra (Ketua)",
-                                "Imelda Halim",
-                                "Bartholomeus Marciano Nathan",
-                                "Vania Trianjani Iskandar",
-                                "Liorio A. Putra Wibowo",
-                                "Muhammad Dito Prastyo"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "period": "2022/2024",
-                    "chair": "Tifano Muhammad Noor",
-                    "vice": "Mohammad Agnar Khafani",
-                    "image": "/images/pengurus/2022-2024.jpg",
-                    "departments": [
-                        {
-                            "name": "BPKK",
-                            "members": [
-                                "Daniel Ariel Yobel"
-                            ]
-                        },
-                        {
-                            "name": "Sekretaris",
-                            "members": [
-                                "Anindya Putri Diandra",
-                                "Tarisa Putri Nandita"
-                            ]
-                        },
-                        {
-                            "name": "Bendahara",
-                            "members": [
-                                "Salma Benanni"
-                            ]
-                        },
-                        {
-                            "name": "Hubungan Masyarakat",
-                            "members": [
-                                "Tasallia Nima Kamil",
-                                "Jerry Pranoto",
-                                "Nathan Matthew Kurnia"
-                            ]
-                        },
-                        {
-                            "name": "Akademik dan Riset",
-                            "members": [
-                                "Anderson Widjaya",
-                                "Elberth Sebastian",
-                                "Jessica Angelina"
-                            ]
-                        },
-                        {
-                            "name": "Olahraga",
-                            "members": [
-                                "Hasyim Asyari Adi Putro",
-                                "Christopher Ryan Suwito",
-                                "Nur Wahyu Widodo",
-                                "Triega Annisa Banowati"
-                            ]
-                        },
-                        {
-                            "name": "Seni Budaya",
-                            "members": [
-                                "Muhammad Dito Prastyo",
-                                "Aisha Safwa Fatiha",
-                                "Purbo Suseno"
-                            ]
-                        },
-                        {
-                            "name": "Multimedia dan IT",
-                            "members": [
-                                "Aira Danendra Sutadisastra",
-                                "Anindya Putri Diandra",
-                                "Muhammad Dito Prastyo"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "period": "2021/2022",
-                    "chair": "Reza Rahman Susilo",
-                    "vice": "Matilda Nydia Harista",
-                    "image": "/images/pengurus/2021-2022.jpg",
-                    "departments": [
-                        {
-                            "name": "BPKK",
-                            "members": [
-                                "Faryansyah Putra Rahardian"
-                            ]
-                        },
-                        {
-                            "name": "Sekretaris",
-                            "members": [
-                                "Gabriela Giraldine Lutter",
-                                "Amirah Amany Hakim"
-                            ]
-                        },
-                        {
-                            "name": "Bendahara",
-                            "members": [
-                                "Wa Ode Halda Nuzlia"
-                            ]
-                        },
-                        {
-                            "name": "Internal",
-                            "members": [
-                                "Bratasena M. Airlangga",
-                                "Jonathan Reynaldo",
-                                "Calvin Van Drago",
-                                "Dennis Timothy Soetijoso"
-                            ]
-                        },
-                        {
-                            "name": "Hubungan Masyarakat",
-                            "members": [
-                                "Devika Audian Ghaffary",
-                                "Dyah Ayu Myangsari",
-                                "Bryan Matthew"
-                            ]
-                        },
-                        {
-                            "name": "Dana Usaha",
-                            "members": [
-                                "Izzi Aufa Di Falah",
-                                "Ananda Armand Sumana"
-                            ]
-                        },
-                        {
-                            "name": "Akademik dan Riset",
-                            "members": [
-                                "Antonio Baldwin",
-                                "Jeremy W. Mulyono",
-                                "Arya Hafiidh Kumalajati",
-                                "Tifano M. Noor Isykio"
-                            ]
-                        },
-                        {
-                            "name": "Olahraga",
-                            "members": [
-                                "Raul Fachwira",
-                                "Aditya T. Augrestian",
-                                "Vincent Lewinski",
-                                "Mahendra Dhaneswara"
-                            ]
-                        },
-                        {
-                            "name": "Seni Budaya",
-                            "members": [
-                                "Fransisca Davina Lorenza",
-                                "Maria Anastasia Sinarso",
-                                "Komang Ayu Restu",
-                                "Ricard Kristian Sugiharto"
-                            ]
-                        },
-                        {
-                            "name": "Multimedia dan IT",
-                            "members": [
-                                "Dominic Denzell",
-                                "Jovan Medianto Riman",
-                                "Pieter P. Patonedi",
-                                "Wira Pandita"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "period": "2021/2021",
-                    "chair": "Muhammad Al Hasni",
-                    "vice": "-",
-                    "departments": [
-                        {
-                            "name": "BPKK",
-                            "members": [
-                                "Daniel Ariel Yobel",
-                                "Tegar Permana Diyado"
-                            ]
-                        },
-                        {
-                            "name": "Sekretaris",
-                            "members": [
-                                "Shafira Febriana Ekaputri",
-                                "Kradicek Nozky Danit"
-                            ]
-                        },
-                        {
-                            "name": "Bendahara",
-                            "members": [
-                                "Astriana Hajar Ansori"
-                            ]
-                        },
-                        {
-                            "name": "Humas & Perizinan",
-                            "members": [
-                                "Zafira Kanara",
-                                "Reza Rahman Susilo",
-                                "Najma Rania Nazhifa",
-                                "Heronimus Dimas Pandu Utomo"
-                            ]
-                        },
-                        {
-                            "name": "Dana Usaha",
-                            "members": [
-                                "Nikolas Edi Pujantoro",
-                                "Calvin Van Drago",
-                                "Winston Alexander Yauvira"
-                            ]
-                        },
-                        {
-                            "name": "Pendidikan",
-                            "members": [
-                                "Arsyan Mohamad Virio Andreyana",
-                                "Tifano Muh. Noor Isykio",
-                                "Musthofa Kemal Bandu",
-                                "Hansen Frenico"
-                            ]
-                        },
-                        {
-                            "name": "Olahraga",
-                            "members": [
-                                "Muhammad Farrel Orzya Riko",
-                                "Muhammad Rizky Mulachela",
-                                "Patrick Andersen Kanginan"
-                            ]
-                        },
-                        {
-                            "name": "Seni Budaya",
-                            "members": [
-                                "Natasya Deliana Dewi",
-                                "Shidqii Dhiya Ulhaq",
-                                "Saddam Haikal Mubaraq"
-                            ]
-                        },
-                        {
-                            "name": "Media dan Dokumentasi",
-                            "members": [
-                                "Nadia",
-                                "Avanindra Ramdhantyo Utomo",
-                                "Diandra Akbar Arifki Siregar"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "period": "2020/2021",
-                    "chair": "Bintan Dzulfikar Hakim",
-                    "vice": "Faryansyah Putra Rahadian",
-                    "image": "/images/pengurus/2020-2021.jpg",
-                    "departments": [
-                        {
-                            "name": "BPKK",
-                            "members": [
-                                "Daniel Ariel Yobel",
-                                "Tegar Permana Diyado"
-                            ]
-                        },
-                        {
-                            "name": "Sekretaris",
-                            "members": [
-                                "Shafira Febriana Ekaputri"
-                            ]
-                        },
-                        {
-                            "name": "Bendahara",
-                            "members": [
-                                "Kradicek Nozky Danit"
-                            ]
-                        },
-                        {
-                            "name": "Humas",
-                            "members": [
-                                "Zafira Kanara",
-                                "Reza Rahman Susilo",
-                                "Najma Rania Nazhifa",
-                                "Heronimus Dimas Pandu Utomo"
-                            ]
-                        },
-                        {
-                            "name": "Dana Usaha",
-                            "members": [
-                                "Nikolas Edi Pujantoro",
-                                "Calvin Van Drago",
-                                "Winston Alexander Yauvira"
-                            ]
-                        },
-                        {
-                            "name": "Pendidikan",
-                            "members": [
-                                "Arsyan Mohadhamad Virio Andreyana",
-                                "Tifano Muh. Noor Isykio",
-                                "Musthofa Kemal Bandu",
-                                "Hansen Frenico"
-                            ]
-                        },
-                        {
-                            "name": "Olahraga",
-                            "members": [
-                                "Muh. Al-Hasni",
-                                "Farrel Orzya Riko",
-                                "Rizky Mulachela"
-                            ]
-                        },
-                        {
-                            "name": "Media dan Dokumentasi",
-                            "members": [
-                                "Nadia",
-                                "A. Ramdhantyo Utomo",
-                                "Diandra Akbar Arifki Siregar"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "period": "2019/2020",
-                    "chair": "Tegar Diyado Permana",
-                    "vice": "Muhammad Sofyan",
-                    "departments": [
-                        {
-                            "name": "BPKK",
-                            "members": [
-                                "Fadli Rohman"
-                            ]
-                        },
-                        {
-                            "name": "Sekretaris",
-                            "members": [
-                                "Muhammad Haykal Akbar"
-                            ]
-                        },
-                        {
-                            "name": "Bendahara",
-                            "members": [
-                                "Daniel Ariel Yobel"
-                            ]
-                        },
-                        {
-                            "name": "Eksternal",
-                            "members": [
-                                "Dewa Gede Dhanda Prastya"
-                            ]
-                        },
-                        {
-                            "name": "Keilmuan",
-                            "members": [
-                                "Arsyan Mohamad Virio Andreyana",
-                                "Gustav Beka Sayudha"
-                            ]
-                        },
-                        {
-                            "name": "Internal",
-                            "members": [
-                                "Zaki Fachryan",
-                                "Muhammad Brilliant Ardhana",
-                                "Muhammad Fajar Ramadhan Triputra"
-                            ]
-                        },
-                        {
-                            "name": "Olahraga",
-                            "members": [
-                                "Mohammad Agnar Khalfani",
-                                "Putu Gede Bayu Agastya"
-                            ]
-                        },
-                        {
-                            "name": "Seni Budaya",
-                            "members": [
-                                "Faryansyah Putra Rahardian",
-                                "Muhammad Yudith Imanullah"
-                            ]
-                        },
-                        {
-                            "name": "Kreatif",
-                            "members": [
-                                "Zusril Sudiro Abdul Manap"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "period": "2018/2019",
-                    "chair": "Christian Stainly Pungus",
-                    "vice": "Tegar Diyado Permana",
-                    "image": "/images/pengurus/2018-2019.jpg",
-                    "departments": [
-                        {
-                            "name": "BPKK",
-                            "members": [
-                                "Romualdus Nugraha Catur Utomo"
-                            ]
-                        },
-                        {
-                            "name": "Sekretaris",
-                            "members": [
-                                "Regina Diptahsing Hadiwinata"
-                            ]
-                        },
-                        {
-                            "name": "Bendahara",
-                            "members": [
-                                "Deyland Alfattia Asyhari"
-                            ]
-                        },
-                        {
-                            "name": "Hubungan Masyarakat",
-                            "members": [
-                                "Daniel Ariel Yobel",
-                                "Fheuli Risa Dini Ginting",
-                                "Tesalonika Dwi Putri Sianturi"
-                            ]
-                        },
-                        {
-                            "name": "Web, Media dan Dokumentasi",
-                            "members": [
-                                "Cosmas Adri Prabowo",
-                                "Zhakiatul Imama"
-                            ]
-                        },
-                        {
-                            "name": "Pendidikan",
-                            "members": [
-                                "Adiwan Suwono",
-                                "Muthia Dewi Alawiyah"
-                            ]
-                        },
-                        {
-                            "name": "Seni dan Budaya",
-                            "members": [
-                                "Yusril Sudiro Abdul Manap",
-                                "Wati Putri Sihotang",
-                                "Nathalia Marlina Runtuwene",
-                                "Anindita Indri Hapsari",
-                                "Ie Clarissa Naomi Purnomo"
-                            ]
-                        },
-                        {
-                            "name": "Divisi Olahraga",
-                            "members": [
-                                "Muhammad Farhan Tawakkal",
-                                "Farhan Shafy Sasono",
-                                "Adli Anaan Ferasa Prawira Kusuma"
-                            ]
-                        },
-                        {
-                            "name": "Dana dan Usaha",
-                            "members": [
-                                "Muhammad Sofyan"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "period": "2017/2018",
-                    "chair": "Irsyad Adri Wicaksono",
-                    "vice": "Kadang Bujana",
-                    "departments": [
-                        {
-                            "name": "Sekretaris",
-                            "members": [
-                                "Andra Yulandra"
-                            ]
-                        },
-                        {
-                            "name": "Bendahara",
-                            "members": [
-                                "Purandra Ramadhan"
-                            ]
-                        },
-                        {
-                            "name": "Dana Usaha",
-                            "members": [
-                                "Cahyono Iriawan",
-                                "Marcel Rieger"
-                            ]
-                        },
-                        {
-                            "name": "Humas",
-                            "members": [
-                                "Ryan Risyadul Maruf"
-                            ]
-                        },
-                        {
-                            "name": "Kekeluargaan",
-                            "members": [
-                                "Tegar Diyado Permana",
-                                "Satria",
-                                "Febrianto"
-                            ]
-                        },
-                        {
-                            "name": "Seni dan Budaya",
-                            "members": [
-                                "Ferina Indriyani",
-                                "Deasy Gayatri"
-                            ]
-                        },
-                        {
-                            "name": "Web dan Media",
-                            "members": [
-                                "Hafizhul Qisthi"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "period": "2016/2017",
-                    "chair": "Randy Cendieno",
-                    "vice": "Handy Valerian",
-                    "departments": [
-                        {
-                            "name": "Sekretaris",
-                            "members": [
-                                "Satria Febrianto",
-                                "Azka Savanti"
-                            ]
-                        },
-                        {
-                            "name": "Humas",
-                            "members": [
-                                "Ayu R. Dananti Dewi",
-                                "Andreas David Gunardi"
-                            ]
-                        },
-                        {
-                            "name": "Divisi Pendidikan",
-                            "members": [
-                                "Putu Teguh Satria Adi",
-                                "Dedy Christopher Ongkowidjaja",
-                                "Muh Rizki Alim Maulana Wibawa"
-                            ]
-                        },
-                        {
-                            "name": "Seni dan Budaya",
-                            "members": [
-                                "Caesar Adam Sophian",
-                                "Irsyad Adri Wicaksono",
-                                "Muhammad Rizki"
-                            ]
-                        },
-                        {
-                            "name": "Internal",
-                            "members": [
-                                "Tito Prianggana",
-                                "Tegar Diyado Permana"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "period": "2015/2016",
-                    "chair": "Dimaz Ibrahim",
-                    "vice": "Joko Pradityo Moekti Putra",
-                    "departments": [
-                        {
-                            "name": "Sekretaris",
-                            "members": [
-                                "Randy Cendieno",
-                                "Intan Purnamasari"
-                            ]
-                        },
-                        {
-                            "name": "Bendahara",
-                            "members": [
-                                "Irsyad Adri"
-                            ]
-                        },
-                        {
-                            "name": "Humas",
-                            "members": [
-                                "Asyraf Rizkyawan Syamsul"
-                            ]
-                        },
-                        {
-                            "name": "Seni dan Budaya",
-                            "members": [
-                                "Nathania Amber Suryoputri"
-                            ]
-                        },
-                        {
-                            "name": "Informasi Pendidikan",
-                            "members": [
-                                "Imam T. Rahman"
-                            ]
-                        },
-                        {
-                            "name": "Olahraga",
-                            "members": [
-                                "Alfie Dhau'i"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "period": "2011 - 2015",
-                    "chair": "Sasmaya Tilottama",
-                    "vice": "Caretaker (Ketua, Sekretaris, Bendahara)",
-                    "departments": []
-                },
-                {
-                    "period": "2010/2011",
-                    "chair": "Yoshua Pohan Iskandar",
-                    "vice": "Gloria Abidin",
-                    "departments": []
-                }
-            ]
+          "name": "Bacharuddin Jusuf Habibie",
+          "period": "1957-1959"
+        },
+        {
+          "name": "Sjafaril",
+          "period": "1959-1961"
+        },
+        {
+          "name": "Midian Sirait",
+          "period": "1961-1964"
+        },
+        {
+          "name": "Tidak diketahui",
+          "period": "1964-1992"
+        },
+        {
+          "name": "Yoshua",
+          "period": "1992-1994"
+        },
+        {
+          "name": "Andy Sugiarto",
+          "period": "1994-1996"
+        },
+        {
+          "name": "Yapto",
+          "period": "1996-1998"
+        },
+        {
+          "name": "Irwan Suwartana",
+          "period": "1998-1999"
+        },
+        {
+          "name": "Vakum",
+          "period": "1999-2004"
+        },
+        {
+          "name": "Tidak diketahui",
+          "period": "2004-2006"
+        },
+        {
+          "name": "Feby Kumara Adi",
+          "period": "2006-2008"
+        },
+        {
+          "name": "Imee Oktiara Tjoeng",
+          "period": "2008-2010"
+        },
+        {
+          "name": "Yoshua Pohan Iskandar",
+          "period": "2010-2011"
+        },
+        {
+          "name": "Sasmaya Tilottama",
+          "period": "2011-2015"
+        },
+        {
+          "name": "Dimaz Ibrahim",
+          "period": "2015-2016"
+        },
+        {
+          "name": "Randy Cendieno",
+          "period": "2016-2017"
+        },
+        {
+          "name": "Irsyad Adri Wicaksono",
+          "period": "2017-2018"
+        },
+        {
+          "name": "Christian Stainly Pungus",
+          "period": "2018-2019"
+        },
+        {
+          "name": "Tegar Diyado Permana",
+          "period": "2019-2020"
+        },
+        {
+          "name": "Bintan Dzulfikar Hakim",
+          "period": "2020-2021"
+        },
+        {
+          "name": "Faryansyah Putra Rahadian (PLT)",
+          "period": "2021-2021"
+        },
+        {
+          "name": "Muhammad Al Hasni",
+          "period": "2021-2021"
+        },
+        {
+          "name": "Reza Rahman Susilo",
+          "period": "2021-2022"
+        },
+        {
+          "name": "Tifano Muhammad Noor Isykio",
+          "period": "2022-2024"
+        },
+        {
+          "name": "Nathan Matthew Kurnia",
+          "period": "2024-2025"
+        },
+        {
+          "name": "Adriano Ferane Gunawan",
+          "period": "2025-2026"
+        },
+        {
+          "name": "Jason Louis Laksono",
+          "period": "2026-2027"
         }
-    ]
+      ],
+      "cabinets": [
+        {
+          "period": "2026/2027",
+          "chair": "Jason Louis Laksono",
+          "vice": "Dheo Santoso",
+          "departments": [
+            {
+              "name": "BPKK",
+              "members": [
+                "Ghithrafi Fadhgazka Syarif",
+                "Briggita Graciella"
+              ]
+            },
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Rizki Shaqi Vanilla"
+              ]
+            },
+            {
+              "name": "Bendahara",
+              "members": [
+                "Benedictus Warren Nugraha"
+              ]
+            },
+            {
+              "name": "Pendidikan dan Seni Budaya",
+              "members": [
+                "Ruciragati Maheswari",
+                "Jonathan Alexander Tresna",
+                "Jesslyn Florence"
+              ]
+            },
+            {
+              "name": "Hubungan Masyarakat & Multimedia",
+              "members": [
+                "Shalvensky Cornelly",
+                "Ruth Nathaline Sarumaha",
+                "Wiratama Admaja Wahono"
+              ]
+            },
+            {
+              "name": "Event Organizer",
+              "members": [
+                "Riovalen Wijaya",
+                "Izz Kiram Prastowo",
+                "Samuel Rowenville Krezenskoei"
+              ]
+            }
+          ],
+          "image": "/images/events/kabinet-laksana.png"
+        },
+        {
+          "period": "2025/2026",
+          "chair": "Adriano Ferane Gunawan",
+          "vice": "Alfred Triza & Nathanael Lumen Sukmana",
+          "image": "/images/pengurus/2025-2026.jpg",
+          "departments": [
+            {
+              "name": "BPKK",
+              "members": [
+                "Nathan Matthew Kurnia",
+                "Muhammad Mulya Salam"
+              ]
+            },
+            {
+              "name": "Human Resources",
+              "members": [
+                "Aisha Safwa Fatiha",
+                "Briggita Graciella"
+              ]
+            },
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Tresy Prawita Silalahi",
+                "Vivian Prudence Chen",
+                "Michelle Anwar"
+              ]
+            },
+            {
+              "name": "Bendahara",
+              "members": [
+                "Marlyne Tanankia",
+                "Macario Zachary Machmud"
+              ]
+            },
+            {
+              "name": "Hubungan Masyarakat",
+              "members": [
+                "Pascal Joseph Nathaniel (Ketua)",
+                "Marie Elaine Winona Silap",
+                "Muhammad Hanif Utomo",
+                "Fictor Marcelbrian",
+                "Andriyani Monica Susanto",
+                "Rafi Arya Putra Hariyadi",
+                "Mervin Yuan Arkana"
+              ]
+            },
+            {
+              "name": "Pendidikan",
+              "members": [
+                "Brendon Arie Putra (Ketua)",
+                "Jason Louis Laksono",
+                "Sheifer Sidney Cornelly",
+                "Timothy Setiawan",
+                "Dheo Santoso",
+                "Ahmad Maulana",
+                "Ghithrafi Fadhgazka Syarif"
+              ]
+            },
+            {
+              "name": "Seni Budaya",
+              "members": [
+                "Nicholas Daniel Tjandrasa (Ketua)",
+                "Renata Shannon Rijanto",
+                "Delix Andea",
+                "Filbert Filbert",
+                "Joan Ivanka",
+                "Jesslyn Aurelia Tjen",
+                "Bonfilio Onassis Setiawan"
+              ]
+            },
+            {
+              "name": "Olahraga",
+              "members": [
+                "Gede Pradnya Paramartha (Ketua)",
+                "Roger Marcelbrian",
+                "Stanislaus Joey Gunawan",
+                "Hanif Aulia Ibrahim",
+                "Kevin Kristianto Widjaja",
+                "Grant Elliot Thomas",
+                "William Krisna Sunjoto"
+              ]
+            },
+            {
+              "name": "Kewirausahaan",
+              "members": [
+                "Liorio Anargya Putra Wibowo (Ketua)",
+                "Imelda Halim",
+                "Grace Adeline",
+                "Philipus Dean Laurent",
+                "Kenzie Weili Wangkawa Winarto",
+                "Keanu Rafif Shadiq Hidayat",
+                "James Edward"
+              ]
+            },
+            {
+              "name": "Multimedia dan IT",
+              "members": [
+                "Bartholomeus Marciano Nathan (Ketua)",
+                "Michael Xhristiano Espranata",
+                "Rafael Billy Jayadi",
+                "Deronn Jehosaphat",
+                "Fachrial Dimas Putra Perdana",
+                "Matthew Nathaniel Panggabean",
+                "Navy Hanan",
+                "Samuel Raphael Tanos",
+                "Olivier Al Drich"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2024/2025",
+          "chair": "Nathan Matthew Kurnia",
+          "vice": "Muhammad Mulya Salam",
+          "image": "/images/pengurus/2024-2025.jpg",
+          "departments": [
+            {
+              "name": "BPKK",
+              "members": [
+                "Randy Cendiano"
+              ]
+            },
+            {
+              "name": "Human Resources",
+              "members": [
+                "Fachrial Dimas Putra Perdana",
+                "Tifano Muhammad Noor Isykio"
+              ]
+            },
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Aisha Safwa Fatiha",
+                "Briggita Graciella"
+              ]
+            },
+            {
+              "name": "Bendahara",
+              "members": [
+                "Andriyani Monica Susanto"
+              ]
+            },
+            {
+              "name": "Hubungan Masyarakat",
+              "members": [
+                "Darrell Octavianus (Ketua)",
+                "Edwin Kusuma",
+                "Vivian Prudence Chen",
+                "Valensya Djoe",
+                "Hasyim Putro"
+              ]
+            },
+            {
+              "name": "Pendidikan dan Seni Budaya",
+              "members": [
+                "Gerdan Bergadewata (Ketua)",
+                "Anderson Widjaja",
+                "Adriano Ferane Gunawan",
+                "Muhammad Hadzy Fauzan",
+                "Ammyrah Riztyanti Fahira"
+              ]
+            },
+            {
+              "name": "Olahraga",
+              "members": [
+                "Andreas Welly Octavianus (Ketua)",
+                "Albert Triza",
+                "Medwin Samudra",
+                "Kenvara Solivo Lwie",
+                "Pascal Joseph Nathaniel",
+                "Roger Marcelbrian"
+              ]
+            },
+            {
+              "name": "Kewirausahaan",
+              "members": [
+                "Jessica Angelina (Ketua)",
+                "Jannice Risse",
+                "Jerry Pranoto",
+                "Jovi Laurent",
+                "Marlyne Tanankia",
+                "Salma Benanni"
+              ]
+            },
+            {
+              "name": "Multimedia dan IT",
+              "members": [
+                "Anindya Putri Diandra (Ketua)",
+                "Imelda Halim",
+                "Bartholomeus Marciano Nathan",
+                "Vania Trianjani Iskandar",
+                "Liorio A. Putra Wibowo",
+                "Muhammad Dito Prastyo"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2022/2024",
+          "chair": "Tifano Muhammad Noor",
+          "vice": "Mohammad Agnar Khafani",
+          "image": "/images/pengurus/2022-2024.jpg",
+          "departments": [
+            {
+              "name": "BPKK",
+              "members": [
+                "Daniel Ariel Yobel"
+              ]
+            },
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Anindya Putri Diandra",
+                "Tarisa Putri Nandita"
+              ]
+            },
+            {
+              "name": "Bendahara",
+              "members": [
+                "Salma Benanni"
+              ]
+            },
+            {
+              "name": "Hubungan Masyarakat",
+              "members": [
+                "Tasallia Nima Kamil",
+                "Jerry Pranoto",
+                "Nathan Matthew Kurnia"
+              ]
+            },
+            {
+              "name": "Akademik dan Riset",
+              "members": [
+                "Anderson Widjaya",
+                "Elberth Sebastian",
+                "Jessica Angelina"
+              ]
+            },
+            {
+              "name": "Olahraga",
+              "members": [
+                "Hasyim Asyari Adi Putro",
+                "Christopher Ryan Suwito",
+                "Nur Wahyu Widodo",
+                "Triega Annisa Banowati"
+              ]
+            },
+            {
+              "name": "Seni Budaya",
+              "members": [
+                "Muhammad Dito Prastyo",
+                "Aisha Safwa Fatiha",
+                "Purbo Suseno"
+              ]
+            },
+            {
+              "name": "Multimedia dan IT",
+              "members": [
+                "Aira Danendra Sutadisastra",
+                "Anindya Putri Diandra",
+                "Muhammad Dito Prastyo"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2021/2022",
+          "chair": "Reza Rahman Susilo",
+          "vice": "Matilda Nydia Harista",
+          "image": "/images/pengurus/2021-2022.jpg",
+          "departments": [
+            {
+              "name": "BPKK",
+              "members": [
+                "Faryansyah Putra Rahardian"
+              ]
+            },
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Gabriela Giraldine Lutter",
+                "Amirah Amany Hakim"
+              ]
+            },
+            {
+              "name": "Bendahara",
+              "members": [
+                "Wa Ode Halda Nuzlia"
+              ]
+            },
+            {
+              "name": "Internal",
+              "members": [
+                "Bratasena M. Airlangga",
+                "Jonathan Reynaldo",
+                "Calvin Van Drago",
+                "Dennis Timothy Soetijoso"
+              ]
+            },
+            {
+              "name": "Hubungan Masyarakat",
+              "members": [
+                "Devika Audian Ghaffary",
+                "Dyah Ayu Myangsari",
+                "Bryan Matthew"
+              ]
+            },
+            {
+              "name": "Dana Usaha",
+              "members": [
+                "Izzi Aufa Di Falah",
+                "Ananda Armand Sumana"
+              ]
+            },
+            {
+              "name": "Akademik dan Riset",
+              "members": [
+                "Antonio Baldwin",
+                "Jeremy W. Mulyono",
+                "Arya Hafiidh Kumalajati",
+                "Tifano M. Noor Isykio"
+              ]
+            },
+            {
+              "name": "Olahraga",
+              "members": [
+                "Raul Fachwira",
+                "Aditya T. Augrestian",
+                "Vincent Lewinski",
+                "Mahendra Dhaneswara"
+              ]
+            },
+            {
+              "name": "Seni Budaya",
+              "members": [
+                "Fransisca Davina Lorenza",
+                "Maria Anastasia Sinarso",
+                "Komang Ayu Restu",
+                "Ricard Kristian Sugiharto"
+              ]
+            },
+            {
+              "name": "Multimedia dan IT",
+              "members": [
+                "Dominic Denzell",
+                "Jovan Medianto Riman",
+                "Pieter P. Patonedi",
+                "Wira Pandita"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2021/2021",
+          "chair": "Muhammad Al Hasni",
+          "vice": "-",
+          "departments": [
+            {
+              "name": "BPKK",
+              "members": [
+                "Daniel Ariel Yobel",
+                "Tegar Permana Diyado"
+              ]
+            },
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Shafira Febriana Ekaputri",
+                "Kradicek Nozky Danit"
+              ]
+            },
+            {
+              "name": "Bendahara",
+              "members": [
+                "Astriana Hajar Ansori"
+              ]
+            },
+            {
+              "name": "Humas & Perizinan",
+              "members": [
+                "Zafira Kanara",
+                "Reza Rahman Susilo",
+                "Najma Rania Nazhifa",
+                "Heronimus Dimas Pandu Utomo"
+              ]
+            },
+            {
+              "name": "Dana Usaha",
+              "members": [
+                "Nikolas Edi Pujantoro",
+                "Calvin Van Drago",
+                "Winston Alexander Yauvira"
+              ]
+            },
+            {
+              "name": "Pendidikan",
+              "members": [
+                "Arsyan Mohamad Virio Andreyana",
+                "Tifano Muh. Noor Isykio",
+                "Musthofa Kemal Bandu",
+                "Hansen Frenico"
+              ]
+            },
+            {
+              "name": "Olahraga",
+              "members": [
+                "Muhammad Farrel Orzya Riko",
+                "Muhammad Rizky Mulachela",
+                "Patrick Andersen Kanginan"
+              ]
+            },
+            {
+              "name": "Seni Budaya",
+              "members": [
+                "Natasya Deliana Dewi",
+                "Shidqii Dhiya Ulhaq",
+                "Saddam Haikal Mubaraq"
+              ]
+            },
+            {
+              "name": "Media dan Dokumentasi",
+              "members": [
+                "Nadia",
+                "Avanindra Ramdhantyo Utomo",
+                "Diandra Akbar Arifki Siregar"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2020/2021",
+          "chair": "Bintan Dzulfikar Hakim",
+          "vice": "Faryansyah Putra Rahadian",
+          "image": "/images/pengurus/2020-2021.jpg",
+          "departments": [
+            {
+              "name": "BPKK",
+              "members": [
+                "Daniel Ariel Yobel",
+                "Tegar Permana Diyado"
+              ]
+            },
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Shafira Febriana Ekaputri"
+              ]
+            },
+            {
+              "name": "Bendahara",
+              "members": [
+                "Kradicek Nozky Danit"
+              ]
+            },
+            {
+              "name": "Humas",
+              "members": [
+                "Zafira Kanara",
+                "Reza Rahman Susilo",
+                "Najma Rania Nazhifa",
+                "Heronimus Dimas Pandu Utomo"
+              ]
+            },
+            {
+              "name": "Dana Usaha",
+              "members": [
+                "Nikolas Edi Pujantoro",
+                "Calvin Van Drago",
+                "Winston Alexander Yauvira"
+              ]
+            },
+            {
+              "name": "Pendidikan",
+              "members": [
+                "Arsyan Mohadhamad Virio Andreyana",
+                "Tifano Muh. Noor Isykio",
+                "Musthofa Kemal Bandu",
+                "Hansen Frenico"
+              ]
+            },
+            {
+              "name": "Olahraga",
+              "members": [
+                "Muh. Al-Hasni",
+                "Farrel Orzya Riko",
+                "Rizky Mulachela"
+              ]
+            },
+            {
+              "name": "Media dan Dokumentasi",
+              "members": [
+                "Nadia",
+                "A. Ramdhantyo Utomo",
+                "Diandra Akbar Arifki Siregar"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2019/2020",
+          "chair": "Tegar Diyado Permana",
+          "vice": "Muhammad Sofyan",
+          "departments": [
+            {
+              "name": "BPKK",
+              "members": [
+                "Fadli Rohman"
+              ]
+            },
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Muhammad Haykal Akbar"
+              ]
+            },
+            {
+              "name": "Bendahara",
+              "members": [
+                "Daniel Ariel Yobel"
+              ]
+            },
+            {
+              "name": "Eksternal",
+              "members": [
+                "Dewa Gede Dhanda Prastya"
+              ]
+            },
+            {
+              "name": "Keilmuan",
+              "members": [
+                "Arsyan Mohamad Virio Andreyana",
+                "Gustav Beka Sayudha"
+              ]
+            },
+            {
+              "name": "Internal",
+              "members": [
+                "Zaki Fachryan",
+                "Muhammad Brilliant Ardhana",
+                "Muhammad Fajar Ramadhan Triputra"
+              ]
+            },
+            {
+              "name": "Olahraga",
+              "members": [
+                "Mohammad Agnar Khalfani",
+                "Putu Gede Bayu Agastya"
+              ]
+            },
+            {
+              "name": "Seni Budaya",
+              "members": [
+                "Faryansyah Putra Rahardian",
+                "Muhammad Yudith Imanullah"
+              ]
+            },
+            {
+              "name": "Kreatif",
+              "members": [
+                "Zusril Sudiro Abdul Manap"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2018/2019",
+          "chair": "Christian Stainly Pungus",
+          "vice": "Tegar Diyado Permana",
+          "image": "/images/pengurus/2018-2019.jpg",
+          "departments": [
+            {
+              "name": "BPKK",
+              "members": [
+                "Romualdus Nugraha Catur Utomo"
+              ]
+            },
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Regina Diptahsing Hadiwinata"
+              ]
+            },
+            {
+              "name": "Bendahara",
+              "members": [
+                "Deyland Alfattia Asyhari"
+              ]
+            },
+            {
+              "name": "Hubungan Masyarakat",
+              "members": [
+                "Daniel Ariel Yobel",
+                "Fheuli Risa Dini Ginting",
+                "Tesalonika Dwi Putri Sianturi"
+              ]
+            },
+            {
+              "name": "Web, Media dan Dokumentasi",
+              "members": [
+                "Cosmas Adri Prabowo",
+                "Zhakiatul Imama"
+              ]
+            },
+            {
+              "name": "Pendidikan",
+              "members": [
+                "Adiwan Suwono",
+                "Muthia Dewi Alawiyah"
+              ]
+            },
+            {
+              "name": "Seni dan Budaya",
+              "members": [
+                "Yusril Sudiro Abdul Manap",
+                "Wati Putri Sihotang",
+                "Nathalia Marlina Runtuwene",
+                "Anindita Indri Hapsari",
+                "Ie Clarissa Naomi Purnomo"
+              ]
+            },
+            {
+              "name": "Divisi Olahraga",
+              "members": [
+                "Muhammad Farhan Tawakkal",
+                "Farhan Shafy Sasono",
+                "Adli Anaan Ferasa Prawira Kusuma"
+              ]
+            },
+            {
+              "name": "Dana dan Usaha",
+              "members": [
+                "Muhammad Sofyan"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2017/2018",
+          "chair": "Irsyad Adri Wicaksono",
+          "vice": "Kadang Bujana",
+          "departments": [
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Andra Yulandra"
+              ]
+            },
+            {
+              "name": "Bendahara",
+              "members": [
+                "Purandra Ramadhan"
+              ]
+            },
+            {
+              "name": "Dana Usaha",
+              "members": [
+                "Cahyono Iriawan",
+                "Marcel Rieger"
+              ]
+            },
+            {
+              "name": "Humas",
+              "members": [
+                "Ryan Risyadul Maruf"
+              ]
+            },
+            {
+              "name": "Kekeluargaan",
+              "members": [
+                "Tegar Diyado Permana",
+                "Satria",
+                "Febrianto"
+              ]
+            },
+            {
+              "name": "Seni dan Budaya",
+              "members": [
+                "Ferina Indriyani",
+                "Deasy Gayatri"
+              ]
+            },
+            {
+              "name": "Web dan Media",
+              "members": [
+                "Hafizhul Qisthi"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2016/2017",
+          "chair": "Randy Cendieno",
+          "vice": "Handy Valerian",
+          "departments": [
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Satria Febrianto",
+                "Azka Savanti"
+              ]
+            },
+            {
+              "name": "Humas",
+              "members": [
+                "Ayu R. Dananti Dewi",
+                "Andreas David Gunardi"
+              ]
+            },
+            {
+              "name": "Divisi Pendidikan",
+              "members": [
+                "Putu Teguh Satria Adi",
+                "Dedy Christopher Ongkowidjaja",
+                "Muh Rizki Alim Maulana Wibawa"
+              ]
+            },
+            {
+              "name": "Seni dan Budaya",
+              "members": [
+                "Caesar Adam Sophian",
+                "Irsyad Adri Wicaksono",
+                "Muhammad Rizki"
+              ]
+            },
+            {
+              "name": "Internal",
+              "members": [
+                "Tito Prianggana",
+                "Tegar Diyado Permana"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2015/2016",
+          "chair": "Dimaz Ibrahim",
+          "vice": "Joko Pradityo Moekti Putra",
+          "departments": [
+            {
+              "name": "Sekretaris",
+              "members": [
+                "Randy Cendieno",
+                "Intan Purnamasari"
+              ]
+            },
+            {
+              "name": "Bendahara",
+              "members": [
+                "Irsyad Adri"
+              ]
+            },
+            {
+              "name": "Humas",
+              "members": [
+                "Asyraf Rizkyawan Syamsul"
+              ]
+            },
+            {
+              "name": "Seni dan Budaya",
+              "members": [
+                "Nathania Amber Suryoputri"
+              ]
+            },
+            {
+              "name": "Informasi Pendidikan",
+              "members": [
+                "Imam T. Rahman"
+              ]
+            },
+            {
+              "name": "Olahraga",
+              "members": [
+                "Alfie Dhau'i"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2011 - 2015",
+          "chair": "Sasmaya Tilottama",
+          "vice": "Caretaker (Ketua, Sekretaris, Bendahara)",
+          "departments": []
+        },
+        {
+          "period": "2010/2011",
+          "chair": "Yoshua Pohan Iskandar",
+          "vice": "Gloria Abidin",
+          "departments": []
+        }
+      ]
+    }
+  ]
 }
