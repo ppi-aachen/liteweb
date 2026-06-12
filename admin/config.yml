@@ -55,3 +55,120 @@ collections:
                       - { label: "Link URL", name: "link", widget: "string", required: false }
                       - { label: "Link Text", name: "linkText", widget: "string", required: false }
                       - { label: "Tag", name: "tag", widget: "string", required: false }
+
+      - file: "content/pages/kepengurusan.json"
+        label: "Kepengurusan Page"
+        name: "kepengurusan"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "ExecutiveBoard"
+                label: "Executive Board"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "ExecutiveBoard" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Chair", name: "chair", widget: "string" }
+                  - { label: "Vice Chair", name: "vice", widget: "string" }
+              - name: "DepartmentList"
+                label: "Department List Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "DepartmentList" }
+                  - name: "departments"
+                    label: "Departments"
+                    widget: "list"
+                    fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "Description", name: "description", widget: "text" }
+                      - { label: "Members", name: "members", widget: "list", field: { label: "Member Name", name: "name", widget: "string" } }
+
+      - file: "content/pages/arsip-lpj.json"
+        label: "Arsip LPJ Page"
+        name: "arsip-lpj"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "LpjList"
+                label: "LPJ List Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "LpjList" }
+                  - name: "items"
+                    label: "LPJ Items"
+                    widget: "list"
+                    fields:
+                      - { label: "Year", name: "year", widget: "string" }
+                      - { label: "Document URL (Google Drive)", name: "url", widget: "string" }
+
+      - file: "content/pages/arsip-pengurus.json"
+        label: "Arsip Pengurus Page"
+        name: "arsip-pengurus"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "CabinetArchive"
+                label: "Cabinet Archive Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "CabinetArchive" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - name: "pastChairs"
+                    label: "Past Chairs List"
+                    widget: "list"
+                    fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "Period", name: "period", widget: "string" }
+                  - name: "cabinets"
+                    label: "Cabinets Details"
+                    widget: "list"
+                    fields:
+                      - { label: "Period", name: "period", widget: "string" }
+                      - { label: "Chair", name: "chair", widget: "string" }
+                      - { label: "Vice Chair(s)", name: "vice", widget: "string", required: false }
+                      - { label: "Cabinet Image", name: "image", widget: "image", required: false }
+                      - name: "departments"
+                        label: "Departments"
+                        widget: "list"
+                        fields:
+                          - { label: "Department Name", name: "name", widget: "string" }
+                          - { label: "Members", name: "members", widget: "list", field: { label: "Member Name", name: "name", widget: "string" } }
