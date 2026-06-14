@@ -673,32 +673,50 @@ const compileIframePage = (jsonFilename, outputFilename, pageTitle) => {
     const iframeSection = data.sections.find(s => s.type === 'IframeSection');
     if (!iframeSection) return;
 
-    const body = `
-      <!-- Iframe container uses explicit viewport height so the wrapper div has a
-           real pixel height, making overflow-y-scroll work on all browsers / iOS Safari -->
+    // Determine scroll mode:
+    //   "no"  → fixed tall height, outer page scrolls through it then continues to footer
+    //   "yes" → full-viewport height container, iframe handles internal scroll (ACOP style)
+    const iframeScrolling = iframeSection.scrolling || 'yes';
+    const iframeHeight = iframeSection.height || 'calc(100vh - 48px)';
+    const isScrollChain = iframeScrolling === 'no';
+
+    const body = isScrollChain ? `
+      <!-- Mobile helper banner -->
+      <div class="desktop:hidden bg-[#0161bf] text-white text-xs px-4 py-3 flex justify-between items-center border-b border-white/10">
+        <span>Konten di bawah ini bisa di-scroll! Atau:</span>
+        <a href="${iframeSection.src.replace('?embedded=true', '')}" target="_blank" rel="noopener noreferrer" class="font-semibold underline flex items-center gap-1">
+          Buka Halaman Langsung ↗
+        </a>
+      </div>
+
+      <!-- Natural-scroll iframe: tall fixed height so the outer page scrolls through it.
+           Once the iframe ends the page continues to the footer below. -->
+      <div class="w-full">
+        <iframe
+          src="${iframeSection.src}"
+          class="w-full border-0"
+          style="display: block; height: ${iframeHeight}; min-height: ${iframeHeight};"
+          title="${iframeSection.title || pageTitle}"
+          allow="fullscreen"
+          loading="lazy"
+          scrolling="no"
+        ></iframe>
+      </div>
+    ` : `
+      <!-- Full-viewport iframe container: iframe has its own scroll (e.g. ACOP) -->
       <div
         class="w-full flex flex-col"
         style="height: 100dvh; max-height: 100dvh;"
       >
-        <!-- Navbar spacer (desktop only, navbar is 48 px / 3 rem) -->
+        <!-- Navbar spacer (desktop only) -->
         <div class="hidden desktop:block" style="height: 48px; flex-shrink: 0;"></div>
 
-        <!-- Mobile helper banner -->
-        <div class="desktop:hidden bg-[#0161bf] text-white text-xs px-4 py-3 flex justify-between items-center border-b border-white/10" style="flex-shrink: 0;">
-          <span>Mengalami kendala scrolling di HP?</span>
-          <a href="${iframeSection.src}" target="_blank" rel="noopener noreferrer" class="font-semibold underline flex items-center gap-1">
-            Buka Halaman Langsung ↗
-          </a>
-        </div>
-
-        <!-- Scrollable iframe wrapper: the key is that the parent has an explicit px height -->
-        <div
-          style="flex: 1 1 0%; overflow-y: scroll; -webkit-overflow-scrolling: touch; min-height: 0;"
-        >
+        <!-- Scrollable iframe wrapper -->
+        <div style="flex: 1 1 0%; overflow-y: scroll; -webkit-overflow-scrolling: touch; min-height: 0;">
           <iframe
             src="${iframeSection.src}"
             class="w-full border-0"
-            style="display: block; height: 100%; min-height: 100%; -webkit-overflow-scrolling: touch;"
+            style="display: block; height: 100%; min-height: 100%;"
             title="${iframeSection.title || pageTitle}"
             allow="fullscreen"
             loading="lazy"

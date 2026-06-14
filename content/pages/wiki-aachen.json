@@ -7,7 +7,8 @@
             "type": "IframeSection",
             "title": "Aachen Für Dummies",
             "src": "https://ppi-aachen.notion.site/ebd/1dc303bfd78480cc9bdeca069e2fb63a?v=1dc303bfd78481efb6c4000cc6bbe3ee",
-            "height": "calc(100vh - 64px)"
+            "height": "5000px",
+            "scrolling": "no"
         }
     ]
 }
