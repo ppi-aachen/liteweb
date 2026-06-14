@@ -68,7 +68,7 @@ const saveJsData = (filename, varName, data) => {
 };
 
 // Global Layout template compiler
-const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataScript = null, showFooter = true) => {
+const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataScript = null) => {
     const baseUrl = 'https://cf.ppiaachen.de';
     const isLinktree = currentPath === 'linktree.html';
 
@@ -233,7 +233,7 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
     `;
 
     // Render Footer
-    const footerHtml = showFooter ? `
+    const footerHtml = `
       <footer class="bg-dark text-white py-8 mt-12">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="px-12 md:px-[48px]">
@@ -317,10 +317,10 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
           </div>
         </div>
       </footer>
-    ` : '';
+    `;
 
     return `<!doctype html>
-<html lang="en" class="${showFooter ? '' : 'h-full overflow-hidden'}">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="favicon.png" />
@@ -347,11 +347,11 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
   <link rel="stylesheet" href="css/styles.css" />
   <title>PPI Aachen - ${title}</title>
 </head>
-<body class="font-sans text-dark bg-white ${showFooter ? '' : 'h-full overflow-hidden'}">
-  <div class="${showFooter ? 'flex flex-col min-h-screen' : 'flex flex-col h-full overflow-hidden'}">
+<body class="font-sans text-dark bg-white">
+  <div class="flex flex-col min-h-screen">
     ${sideNavigationHtml}
     
-    <main class="flex-1 w-full min-w-0 ${isLinktree ? '' : 'desktop:mt-[48px]'} ${showFooter ? '' : 'overflow-hidden'}">
+    <main class="flex-1 w-full min-w-0 ${isLinktree ? '' : 'desktop:mt-[48px]'}">
       ${bodyContent}
     </main>
     
@@ -674,20 +674,31 @@ const compileIframePage = (jsonFilename, outputFilename, pageTitle) => {
     if (!iframeSection) return;
 
     const body = `
-      <div class="w-full h-full flex flex-col overflow-hidden">
-        <!-- Banner bantuan akses untuk perangkat seluler -->
-        <div class="desktop:hidden bg-[#0161bf] text-white text-xs px-4 py-3 flex justify-between items-center border-b border-white/10 shrink-0">
+      <!-- Iframe container uses explicit viewport height so the wrapper div has a
+           real pixel height, making overflow-y-scroll work on all browsers / iOS Safari -->
+      <div
+        class="w-full flex flex-col"
+        style="height: 100dvh; max-height: 100dvh;"
+      >
+        <!-- Navbar spacer (desktop only, navbar is 48 px / 3 rem) -->
+        <div class="hidden desktop:block" style="height: 48px; flex-shrink: 0;"></div>
+
+        <!-- Mobile helper banner -->
+        <div class="desktop:hidden bg-[#0161bf] text-white text-xs px-4 py-3 flex justify-between items-center border-b border-white/10" style="flex-shrink: 0;">
           <span>Mengalami kendala scrolling di HP?</span>
           <a href="${iframeSection.src}" target="_blank" rel="noopener noreferrer" class="font-semibold underline flex items-center gap-1">
             Buka Halaman Langsung ↗
           </a>
         </div>
-        <!-- Wadah iframe dengan fix scrolling untuk mobile -->
-        <div class="flex-grow w-full overflow-y-auto -webkit-overflow-scrolling-touch">
+
+        <!-- Scrollable iframe wrapper: the key is that the parent has an explicit px height -->
+        <div
+          style="flex: 1 1 0%; overflow-y: scroll; -webkit-overflow-scrolling: touch; min-height: 0;"
+        >
           <iframe
             src="${iframeSection.src}"
-            class="w-full h-full border-0"
-            style="display: block; overflow: auto; -webkit-overflow-scrolling: touch;"
+            class="w-full border-0"
+            style="display: block; height: 100%; min-height: 100%; -webkit-overflow-scrolling: touch;"
             title="${iframeSection.title || pageTitle}"
             allow="fullscreen"
             loading="lazy"
@@ -697,7 +708,7 @@ const compileIframePage = (jsonFilename, outputFilename, pageTitle) => {
       </div>
     `;
 
-    const html = renderLayout(body, pageTitle, outputFilename, null, null, false);
+    const html = renderLayout(body, pageTitle, outputFilename);
     fs.writeFileSync(path.join(outputDir, outputFilename), html);
     console.log(`${outputFilename} compiled.`);
 };
