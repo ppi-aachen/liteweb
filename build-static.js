@@ -521,29 +521,11 @@ const compileHome = () => {
                 return new Date(dateStr);
             };
 
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-
-            // Filter for upcoming events
-            const upcomingEvents = eventGrid.events.filter(event => {
-                return parseDateLocal(event.date) >= today;
-            });
-
-            let displayEvents = [];
-            let sectionTitle = 'Kegiatan Mendatang';
-
-            if (upcomingEvents.length > 0) {
-                // Sort ascending (soonest first)
-                displayEvents = upcomingEvents.sort((a, b) => {
-                    return parseDateLocal(a.date).getTime() - parseDateLocal(b.date).getTime();
-                }).slice(0, 3);
-            } else {
-                // Fallback to most recent past events
-                displayEvents = [...eventGrid.events].sort((a, b) => {
-                    return parseDateLocal(b.date).getTime() - parseDateLocal(a.date).getTime();
-                }).slice(0, 3);
-                sectionTitle = 'Kegiatan Terbaru Kami';
-            }
+            // Always show the 3 most recent events sorted by date descending
+            const displayEvents = [...eventGrid.events].sort((a, b) => {
+                return parseDateLocal(b.date).getTime() - parseDateLocal(a.date).getTime();
+            }).slice(0, 3);
+            const sectionTitle = 'Latest Events';
 
             latestEventsHtml = `
             <!-- Section 2.5: Upcoming / Latest Events -->
