@@ -563,8 +563,22 @@ const compileHome = () => {
                         } else {
                             responsiveClass = 'flex';
                         }
+                        const longDescEscaped = (event.longDescription || event.description || '').replace(/"/g, '&quot;');
+                        const descEscaped = (event.description || '').replace(/"/g, '&quot;');
                         return `
-                        <div class="${responsiveClass} bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 flex-col group text-dark">
+                        <div
+                          class="${responsiveClass} event-card bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 flex-col group text-dark cursor-pointer"
+                          data-title="${event.title || ''}"
+                          data-date="${event.date || ''}"
+                          data-tag="${event.tag || ''}"
+                          data-location="${event.location || ''}"
+                          data-time="${event.time || ''}"
+                          data-description="${descEscaped}"
+                          data-long-description="${longDescEscaped}"
+                          data-image="${makeRelativePath(event.image)}"
+                          data-link="${event.link || ''}"
+                          data-link-text="${event.linkText || ''}"
+                        >
                           <!-- Image Section -->
                           ${event.image ? `
                             <div class="h-48 w-full overflow-hidden relative">
@@ -631,6 +645,79 @@ const compileHome = () => {
                       </a>
                     </div>
                   </section>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event Details Modal -->
+            <div
+              id="event-modal"
+              class="fixed inset-0 z-50 items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity hidden text-dark"
+            >
+              <div
+                class="bg-white rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden relative flex flex-col md:flex-row"
+              >
+                <!-- Close Button -->
+                <button
+                  id="close-event-btn"
+                  class="absolute top-4 right-4 p-2 bg-white/80 rounded-full hover:bg-gray-100 transition-colors z-10 text-gray-800 shadow-sm"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                <!-- Modal Image - Left Side -->
+                <div id="modal-event-image-container" class="w-full md:w-1/2 h-64 md:h-auto relative shrink-0">
+                  <img
+                    id="modal-event-image"
+                    src=""
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <!-- Modal Content - Right Side -->
+                <div class="w-full md:w-1/2 p-6 sm:p-8 overflow-y-auto max-h-[60vh] md:max-h-[90vh] bg-white">
+                  <div class="mb-6">
+                    <div class="flex flex-wrap items-center gap-3 mb-3 pr-8">
+                      <span id="modal-event-date" class="bg-[#0161bf] text-white px-3 py-1 rounded-full text-sm font-medium"></span>
+                      <span id="modal-event-tag" class="bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-medium"></span>
+                    </div>
+
+                    <h2 id="modal-event-title" class="heading-2 mb-4 pr-8 text-2xl font-bold text-gray-900"></h2>
+
+                    <div class="flex flex-col gap-2 text-gray-600 mb-6 bg-gray-50 p-4 rounded-lg">
+                      <div id="modal-event-time-container" class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#0161bf]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span id="modal-event-time" class="font-medium"></span>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#0161bf]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span id="modal-event-location" class="font-medium"></span>
+                      </div>
+                    </div>
+
+                    <div class="prose max-w-none text-gray-700 leading-relaxed body-text text-lg">
+                      <p id="modal-event-desc" class="whitespace-pre-line"></p>
+                    </div>
+                  </div>
+
+                  <div id="modal-event-link-section" class="pt-6 border-t border-gray-100 flex justify-end mt-auto">
+                    <a
+                      id="modal-event-link"
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-primary inline-flex items-center gap-2"
+                    >
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
