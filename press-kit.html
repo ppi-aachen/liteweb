@@ -46,18 +46,20 @@
         role="navigation"
       >
         <div class="w-full flex items-center justify-between px-8">
-          <!-- Left group: Logo + Nav items -->
-          <div class="flex items-center gap-2 flex-1 min-w-0">
-            <div class="flex items-center flex-shrink-0">
-              <a href="index.html" class="flex items-center h-full py-2">
-                <img
-                  src="logo.png"
-                  alt="PPI Aachen"
-                  class="h-10 object-contain"
-                  onerror="this.style.display='none'; const text=document.createElement('span'); text.className='logo-text text-dark text-xl font-light'; text.textContent='PPI Aachen'; this.parentElement.appendChild(text);"
-                />
-              </a>
-            </div>
+          <!-- Logo (Left) -->
+          <div class="flex items-center flex-shrink-0">
+            <a href="index.html" class="flex items-center h-full py-2">
+              <img
+                src="logo.png"
+                alt="PPI Aachen"
+                class="h-10 object-contain"
+                onerror="this.style.display='none'; const text=document.createElement('span'); text.className='logo-text text-dark text-xl font-light'; text.textContent='PPI Aachen'; this.parentElement.appendChild(text);"
+              />
+            </a>
+          </div>
+
+          <!-- Nav items + Language Switcher (Right) -->
+          <div class="flex items-center flex-shrink-0">
             <div class="flex items-center space-x-1 flex-shrink-0">
               
                       <a
@@ -217,15 +219,15 @@
                       </div>
                       
             </div>
-          </div>
 
-          <!-- Language Switcher (Desktop) — pinned right -->
-          <div data-lang-switcher="desktop" class="flex items-center gap-1 ml-3 pl-3 border-l border-gray-200 flex-shrink-0">
-            <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-[#0161bf] font-bold" data-lang="id" title="Bahasa Indonesia">ID</button>
-            <span class="text-gray-300 select-none text-xs">|</span>
-            <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-gray-400 font-light" data-lang="en" title="English">EN</button>
-            <span class="text-gray-300 select-none text-xs">|</span>
-            <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-gray-400 font-light" data-lang="de" title="Deutsch">DE</button>
+            <!-- Language Switcher (Desktop) -->
+            <div data-lang-switcher="desktop" class="flex items-center gap-1 ml-3 pl-3 border-l border-gray-200 flex-shrink-0">
+              <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-[#0161bf] font-bold" data-lang="id" title="Bahasa Indonesia">ID</button>
+              <span class="text-gray-300 select-none text-xs">|</span>
+              <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-gray-400 font-light" data-lang="en" title="English">EN</button>
+              <span class="text-gray-300 select-none text-xs">|</span>
+              <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-gray-400 font-light" data-lang="de" title="Deutsch">DE</button>
+            </div>
           </div>
         </div>
       </nav>
