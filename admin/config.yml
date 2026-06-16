@@ -7,8 +7,10 @@ backend:
 
 local_backend: true
 
-media_folder: "images/events"
-public_folder: "/images/events"
+show_preview_links: false
+
+media_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "active-pages"
