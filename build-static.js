@@ -105,64 +105,67 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
         role="navigation"
       >
         <div class="w-full flex items-center justify-between px-8">
-          <div class="flex items-center flex-shrink-0">
-            <a href="index.html" class="flex items-center h-full py-2">
-              <img
-                src="logo.png"
-                alt="PPI Aachen"
-                class="h-10 object-contain"
-                onerror="this.style.display='none'; const text=document.createElement('span'); text.className='logo-text text-dark text-xl font-light'; text.textContent='PPI Aachen'; this.parentElement.appendChild(text);"
-              />
-            </a>
-          </div>
-          <div class="flex items-center space-x-1 flex-shrink-0">
-            ${navigationItems.map(item => {
-                const itemActive = isActive(item);
-                if (item.children) {
-                    return `
-                    <div class="relative group">
-                      <button
-                        class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 ${itemActive ? 'text-black font-bold' : 'font-light'}"
+          <!-- Left group: Logo + Nav items -->
+          <div class="flex items-center gap-2 flex-1 min-w-0">
+            <div class="flex items-center flex-shrink-0">
+              <a href="index.html" class="flex items-center h-full py-2">
+                <img
+                  src="logo.png"
+                  alt="PPI Aachen"
+                  class="h-10 object-contain"
+                  onerror="this.style.display='none'; const text=document.createElement('span'); text.className='logo-text text-dark text-xl font-light'; text.textContent='PPI Aachen'; this.parentElement.appendChild(text);"
+                />
+              </a>
+            </div>
+            <div class="flex items-center space-x-1 flex-shrink-0">
+              ${navigationItems.map(item => {
+                  const itemActive = isActive(item);
+                  if (item.children) {
+                      return `
+                      <div class="relative group">
+                        <button
+                          class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 ${itemActive ? 'text-black font-bold' : 'font-light'}"
+                        >
+                          <span data-lang-id="${item.label.id}" data-lang-en="${item.label.en}" data-lang-de="${item.label.de}">${item.label.id}</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        <div
+                          class="absolute hidden group-hover:block top-full left-0 bg-white shadow-lg min-w-[200px] py-2 z-50 border border-gray-100"
+                        >
+                          ${item.children.map(child => `
+                            <a
+                              href="${child.path}"
+                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light ${isChildActive(child.path) ? 'text-black font-bold bg-primary/10' : 'font-light'}"
+                            >
+                              <span data-lang-id="${child.label.id}" data-lang-en="${child.label.en}" data-lang-de="${child.label.de}">${child.label.id}</span>
+                            </a>
+                          `).join('')}
+                        </div>
+                      </div>
+                      `;
+                  } else {
+                      return `
+                      <a
+                        href="${item.path}"
+                        class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light ${itemActive ? 'text-black font-bold' : 'font-light'}"
                       >
                         <span data-lang-id="${item.label.id}" data-lang-en="${item.label.en}" data-lang-de="${item.label.de}">${item.label.id}</span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
-                      <div
-                        class="absolute hidden group-hover:block top-full right-0 bg-white shadow-lg min-w-[200px] py-2 z-50 border border-gray-100"
-                      >
-                        ${item.children.map(child => `
-                          <a
-                            href="${child.path}"
-                            class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light ${isChildActive(child.path) ? 'text-black font-bold bg-primary/10' : 'font-light'}"
-                          >
-                            <span data-lang-id="${child.label.id}" data-lang-en="${child.label.en}" data-lang-de="${child.label.de}">${child.label.id}</span>
-                          </a>
-                        `).join('')}
-                      </div>
-                    </div>
-                    `;
-                } else {
-                    return `
-                    <a
-                      href="${item.path}"
-                      class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light ${itemActive ? 'text-black font-bold' : 'font-light'}"
-                    >
-                      <span data-lang-id="${item.label.id}" data-lang-en="${item.label.en}" data-lang-de="${item.label.de}">${item.label.id}</span>
-                    </a>
-                    `;
-                }
-            }).join('')}
+                      </a>
+                      `;
+                  }
+              }).join('')}
+            </div>
           </div>
 
-          <!-- Language Switcher (Desktop) -->
+          <!-- Language Switcher (Desktop) — pinned right -->
           <div data-lang-switcher="desktop" class="flex items-center gap-1 ml-3 pl-3 border-l border-gray-200 flex-shrink-0">
             <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-[#0161bf] font-bold" data-lang="id" title="Bahasa Indonesia">ID</button>
             <span class="text-gray-300 select-none text-xs">|</span>
