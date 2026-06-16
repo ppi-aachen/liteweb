@@ -547,15 +547,24 @@ const compileHome = () => {
 
             latestEventsHtml = `
             <!-- Section 2.5: Upcoming / Latest Events -->
-            <div class="bg-gray-50 border-t border-b border-gray-100">
+            <div class="bg-[#0161bf] text-white border-t border-b border-white/10">
               <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="px-4 md:px-[48px] py-16">
                   <section class="max-w-none">
-                    <h2 class="heading-2-home text-center mb-10">${sectionTitle}</h2>
+                    <h2 class="heading-2-home text-white text-center mb-10">${sectionTitle}</h2>
                     
-                    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-10">
-                      ${displayEvents.map(event => `
-                        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col group">
+                    <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10">
+                      ${displayEvents.map((event, index) => {
+                        let responsiveClass = '';
+                        if (index === 1) {
+                            responsiveClass = 'hidden md:flex';
+                        } else if (index === 2) {
+                            responsiveClass = 'hidden lg:flex';
+                        } else {
+                            responsiveClass = 'flex';
+                        }
+                        return `
+                        <div class="${responsiveClass} bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 flex-col group text-dark">
                           <!-- Image Section -->
                           ${event.image ? `
                             <div class="h-48 w-full overflow-hidden relative">
@@ -568,7 +577,7 @@ const compileHome = () => {
                             </div>
                           ` : ''}
 
-                          <div class="p-6 flex flex-col flex-grow">
+                          <div class="p-6 flex flex-col flex-grow text-left">
                             <div class="mb-4">
                               <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
                                 ${event.date}
@@ -606,13 +615,14 @@ const compileHome = () => {
                             </p>
                           </div>
                         </div>
-                      `).join('')}
+                        `;
+                      }).join('')}
                     </div>
 
                     <div class="flex justify-center">
                       <a
                         href="events.html"
-                        class="bg-[#0161bf] hover:bg-[#004e9a] text-white font-bold py-3 px-8 rounded-lg shadow-md transition-all transform hover:scale-102 flex items-center gap-2"
+                        class="bg-white hover:bg-gray-100 text-[#002f6c] font-bold py-3 px-8 rounded-lg shadow-md transition-all transform hover:scale-102 flex items-center gap-2"
                       >
                         <span>Lihat Semua Kegiatan</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -701,8 +711,6 @@ const compileHome = () => {
           </div>
         ` : ''}
 
-        ${latestEventsHtml}
-
         <!-- Section 3: Short History -->
         ${historySection ? `
           <div class="bg-[#0161bf] text-white">
@@ -757,12 +765,14 @@ const compileHome = () => {
           </div>
         ` : ''}
 
+        ${latestEventsHtml}
+
         <!-- Section 5: Aachen für Dummies -->
-        <div class="bg-[#0161bf] text-white">
+        <div class="bg-white">
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="px-4 md:px-[48px] pt-6 pb-12">
               <section class="max-w-none">
-                <h2 class="heading-2-home text-white text-center">Aachen für Dummies</h2>
+                <h2 class="heading-2-home text-center">Aachen für Dummies</h2>
 
                 <div class="my-8 flex justify-center">
                   <div
@@ -789,13 +799,13 @@ const compileHome = () => {
                   </div>
                 </div>
 
-                <div class="body-text space-y-6 text-lg leading-relaxed text-white text-center">
+                <div class="body-text space-y-6 text-lg leading-relaxed text-gray-700 text-center">
                   <p>
                     Buku panduan yang dibuat khusus untuk pelajar Indonesia yang baru saja tiba di Aachen<br />
                     A guide book specially made for Indonesian students that have just arrived in Aachen
                   </p>
                   <div class="mt-4 flex justify-center">
-                    <a href="wiki-aachen.html" class="btn-primary bg-white text-[#002F6C] hover:bg-gray-100 rounded-xl px-6 py-2">
+                    <a href="wiki-aachen.html" class="btn-primary bg-[#0161bf] text-white hover:bg-[#004e9a] rounded-xl px-6 py-2">
                       Buka wiki online
                     </a>
                   </div>
@@ -807,20 +817,20 @@ const compileHome = () => {
 
         <!-- Section 6: Peta Wilayah Kerja -->
         ${petaSection ? `
-          <div class="bg-white">
+          <div class="bg-[#0161bf] text-white">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div class="px-4 md:px-[48px] pt-6 pb-12">
                 <section class="max-w-none">
-                  <h2 class="heading-2-home text-center">${petaSection.title}</h2>
-                  <div class="body-text space-y-6 text-lg text-gray-700 leading-relaxed">
+                  <h2 class="heading-2-home text-white text-center">${petaSection.title}</h2>
+                  <div class="body-text space-y-6 text-lg leading-relaxed">
                     <div class="mt-8 flex justify-center">
                       <img
                         src="${makeRelativePath(petaSection.image)}"
                         alt="${petaSection.title}"
-                        class="rounded-lg shadow-md w-full max-w-lg h-auto"
+                        class="rounded-lg shadow-md w-full max-w-lg h-auto border-4 border-white/20"
                       />
                     </div>
-                    <div class="body-text space-y-6 text-lg leading-relaxed text-gray-700 text-center">
+                    <div class="body-text space-y-6 text-lg leading-relaxed text-white text-center">
                       ${renderMarkdown(petaSection.content)}
                     </div>
                   </div>
