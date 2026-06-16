@@ -9,34 +9,34 @@ const __dirname = path.dirname(__filename);
 const contentDir = path.join(__dirname, 'content', 'pages');
 const outputDir = __dirname; // Root directory
 
-// Navigation items configuration matching React app (pointing to static files)
+// Navigation items configuration — labels are multilang objects { id, en, de }
 const navigationItems = [
-    { label: 'Home', path: 'index.html' },
-    { label: 'Lapor Diri', path: 'lapor-diri.html' },
-    { label: 'Events', path: 'events.html' },
-    { label: 'Communities', path: 'communities.html' },
-    { label: 'Merchandise', path: 'merchandise.html' },
+    { label: { id: 'Beranda', en: 'Home', de: 'Startseite' }, path: 'index.html' },
+    { label: { id: 'Lapor Diri', en: 'Register', de: 'Anmeldung' }, path: 'lapor-diri.html' },
+    { label: { id: 'Kegiatan', en: 'Events', de: 'Veranstaltungen' }, path: 'events.html' },
+    { label: { id: 'Komunitas', en: 'Communities', de: 'Gemeinschaften' }, path: 'communities.html' },
+    { label: { id: 'Merchandise', en: 'Merchandise', de: 'Merchandise' }, path: 'merchandise.html' },
     {
-        label: 'Organization',
+        label: { id: 'Organisasi', en: 'Organization', de: 'Organisation' },
         path: '#',
         children: [
-            { label: 'Sejarah', path: 'sejarah.html' },
-            { label: 'Kepengurusan', path: 'kepengurusan.html' },
-            { label: 'AD/ART PPI Aachen', path: 'ad-art.html' },
-            { label: 'SPA PPI Aachen', path: 'spa.html' },
-            { label: 'Arsip LPJ', path: 'arsip-lpj.html' },
-            { label: 'Arsip Pengurus', path: 'arsip-pengurus.html' },
-            { label: 'Kontak Email', path: 'kontak-email.html' },
+            { label: { id: 'Sejarah', en: 'History', de: 'Geschichte' }, path: 'sejarah.html' },
+            { label: { id: 'Kepengurusan', en: 'Management', de: 'Vorstand' }, path: 'kepengurusan.html' },
+            { label: { id: 'AD/ART PPI Aachen', en: 'Bylaws', de: 'Satzung' }, path: 'ad-art.html' },
+            { label: { id: 'SPA PPI Aachen', en: 'General Assembly', de: 'Generalversammlung' }, path: 'spa.html' },
+            { label: { id: 'Arsip LPJ', en: 'LPJ Archive', de: 'LPJ-Archiv' }, path: 'arsip-lpj.html' },
+            { label: { id: 'Arsip Pengurus', en: 'Board Archive', de: 'Vorstandsarchiv' }, path: 'arsip-pengurus.html' },
+            { label: { id: 'Kontak', en: 'Contact', de: 'Kontakt' }, path: 'kontak-email.html' },
         ],
     },
     {
-        label: 'Others',
+        label: { id: 'Lainnya', en: 'Others', de: 'Sonstiges' },
         path: '#',
         children: [
-            { label: 'Linktree', path: 'linktree.html' },
-            { label: 'ACOP 2025', path: 'acop-2025.html' },
-            { label: 'Wiki Aachen für Dummies', path: 'wiki-aachen.html' },
-            { label: 'Press Kit', path: 'press-kit.html' },
+            { label: { id: 'Linktree', en: 'Linktree', de: 'Linktree' }, path: 'linktree.html' },
+            { label: { id: 'ACOP 2025', en: 'ACOP 2025', de: 'ACOP 2025' }, path: 'acop-2025.html' },
+            { label: { id: 'Wiki Aachen für Dummies', en: 'Wiki Aachen', de: 'Wiki Aachen' }, path: 'wiki-aachen.html' },
+            { label: { id: 'Press Kit', en: 'Press Kit', de: 'Pressemappe' }, path: 'press-kit.html' },
         ],
     },
 ];
@@ -124,7 +124,7 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
                       <button
                         class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 ${itemActive ? 'text-black font-bold' : 'font-light'}"
                       >
-                        ${item.label}
+                        <span data-lang-id="${item.label.id}" data-lang-en="${item.label.en}" data-lang-de="${item.label.de}">${item.label.id}</span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
@@ -143,7 +143,7 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
                             href="${child.path}"
                             class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light ${isChildActive(child.path) ? 'text-black font-bold bg-primary/10' : 'font-light'}"
                           >
-                            ${child.label}
+                            <span data-lang-id="${child.label.id}" data-lang-en="${child.label.en}" data-lang-de="${child.label.de}">${child.label.id}</span>
                           </a>
                         `).join('')}
                       </div>
@@ -155,11 +155,20 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
                       href="${item.path}"
                       class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light ${itemActive ? 'text-black font-bold' : 'font-light'}"
                     >
-                      ${item.label}
+                      <span data-lang-id="${item.label.id}" data-lang-en="${item.label.en}" data-lang-de="${item.label.de}">${item.label.id}</span>
                     </a>
                     `;
                 }
             }).join('')}
+          </div>
+
+          <!-- Language Switcher (Desktop) -->
+          <div data-lang-switcher="desktop" class="flex items-center gap-1 ml-3 pl-3 border-l border-gray-200 flex-shrink-0">
+            <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-[#0161bf] font-bold" data-lang="id" title="Bahasa Indonesia">ID</button>
+            <span class="text-gray-300 select-none text-xs">|</span>
+            <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-gray-400 font-light" data-lang="en" title="English">EN</button>
+            <span class="text-gray-300 select-none text-xs">|</span>
+            <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-gray-400 font-light" data-lang="de" title="Deutsch">DE</button>
           </div>
         </div>
       </nav>
@@ -181,7 +190,7 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
                       data-target="${groupId}"
                       class="mobile-group-toggle w-full text-left py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white flex items-center justify-between ${itemActive ? 'text-primary-light' : ''}"
                     >
-                      ${item.label}
+                      <span data-lang-id="${item.label.id}" data-lang-en="${item.label.en}" data-lang-de="${item.label.de}">${item.label.id}</span>
                       <span class="flex-shrink-0 ml-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -204,7 +213,7 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
                             href="${child.path}"
                             class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white ${isChildActive(child.path) ? 'text-primary-light font-normal' : ''}"
                           >
-                            ${child.label}
+                            <span data-lang-id="${child.label.id}" data-lang-en="${child.label.en}" data-lang-de="${child.label.de}">${child.label.id}</span>
                           </a>
                         `).join('')}
                       </div>
@@ -217,11 +226,21 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
                     href="${item.path}"
                     class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white ${itemActive ? 'text-primary-light' : ''}"
                   >
-                    ${item.label}
+                    <span data-lang-id="${item.label.id}" data-lang-en="${item.label.en}" data-lang-de="${item.label.de}">${item.label.id}</span>
                   </a>
                   `;
               }
           }).join('')}
+
+          <!-- Language Switcher (Mobile) -->
+          <div class="mt-6 px-2 pt-4 border-t border-white/20">
+            <p class="text-white/60 text-xs uppercase tracking-wider mb-3" data-lang-id="Bahasa" data-lang-en="Language" data-lang-de="Sprache">Bahasa</p>
+            <div data-lang-switcher="mobile" class="flex gap-2">
+              <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all bg-white text-[#002f6c] font-bold" data-lang="id">🇮🇩 ID</button>
+              <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all text-white bg-white/10 font-light" data-lang="en">🇬🇧 EN</button>
+              <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all text-white bg-white/10 font-light" data-lang="de">🇩🇪 DE</button>
+            </div>
+          </div>
         </div>
       </nav>
 
@@ -239,7 +258,7 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
           <div class="px-12 md:px-[48px]">
             <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
               <div>
-                <h3 class="heading-3 text-white mb-4">Contact</h3>
+                <h3 class="heading-3 text-white mb-4" data-lang-id="Kontak" data-lang-en="Contact" data-lang-de="Kontakt">Kontak</h3>
                 <div class="body-text space-y-2 text-white/90">
                   <p>
                     <a href="mailto:info@ppiaachen.de" class="hover:text-primary-light transition-colors">
@@ -258,7 +277,7 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
               </div>
 
               <div>
-                <h3 class="heading-3 text-white mb-4">Follow Us</h3>
+                <h3 class="heading-3 text-white mb-4" data-lang-id="Ikuti Kami" data-lang-en="Follow Us" data-lang-de="Folge Uns">Ikuti Kami</h3>
                 <div class="flex flex-wrap gap-4">
                   <a href="https://www.instagram.com/ppiaachen" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all text-white" aria-label="Instagram">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -296,8 +315,9 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
               <div>
                 <h3 class="heading-3 text-white mb-4">PPI Aachen</h3>
                 <p class="body-text text-white/90">
-                  Mendukung dan membantu pelajar Indonesia di Aachen sejak 1956.<br />
-                  <em>Supporting and helping Indonesian students in Aachen since 1956.</em>
+                  <span class="lang-block" lang="id">Mendukung dan membantu pelajar Indonesia di Aachen sejak 1956.</span>
+                  <span class="lang-block" lang="en" style="display:none">Supporting and helping Indonesian students in Aachen since 1956.</span>
+                  <span class="lang-block" lang="de" style="display:none">Unterstützung und Hilfe für indonesische Studierende in Aachen seit 1956.</span>
                 </p>
               </div>
             </div>
@@ -308,9 +328,7 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
                   © ${new Date().getFullYear()} Perhimpunan Pelajar Indonesia di Aachen
                 </p>
                 <div class="flex gap-4">
-                  <a href="impressum.html" class="body-text text-white/70 hover:text-primary-light transition-colors">
-                    Impressum & Datenschutzerklärung
-                  </a>
+                  <a href="impressum.html" class="body-text text-white/70 hover:text-primary-light transition-colors" data-lang-id="Impressum & Datenschutzerklärung" data-lang-en="Impressum & Privacy Policy" data-lang-de="Impressum & Datenschutzerklärung">Impressum & Datenschutzerklärung</a>
                 </div>
               </div>
             </div>
@@ -358,6 +376,7 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
     ${footerHtml}
   </div>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
   ${dataScript ? `<script src="${dataScript}"></script>` : ''}
   ${pageScript ? `<script src="js/${pageScript}"></script>` : ''}
@@ -456,6 +475,33 @@ const renderMarkdown = (content) => {
     return html;
 };
 
+// Render content with multi-language support
+// If the section has content_en or content_de, renders lang-block spans.
+// Otherwise falls back to plain renderMarkdown(section.content).
+const renderLangContent = (section) => {
+    const hasEN = !!(section.content_en);
+    const hasDE = !!(section.content_de);
+    if (hasEN || hasDE) {
+        return [
+            `<span class="lang-block" lang="id">${renderMarkdown(section.content || '')}</span>`,
+            `<span class="lang-block" lang="en" style="display:none">${renderMarkdown(section.content_en || section.content || '')}</span>`,
+            `<span class="lang-block" lang="de" style="display:none">${renderMarkdown(section.content_de || section.content_en || section.content || '')}</span>`,
+        ].join('\n');
+    }
+    return renderMarkdown(section.content || '');
+};
+
+// Build data-lang-* attribute string for a section title
+const sectionTitleAttrs = (section) => {
+    if (section.title_en || section.title_de) {
+        const id = section.title_id || section.title || '';
+        const en = section.title_en || section.title || '';
+        const de = section.title_de || section.title_en || section.title || '';
+        return `data-lang-id="${id}" data-lang-en="${en}" data-lang-de="${de}"`;
+    }
+    return '';
+};
+
 // --- Page Compilers ---
 
 // 1. Home Page Compiler
@@ -525,15 +571,14 @@ const compileHome = () => {
             const displayEvents = [...eventGrid.events].sort((a, b) => {
                 return parseDateLocal(b.date).getTime() - parseDateLocal(a.date).getTime();
             }).slice(0, 3);
-            const sectionTitle = 'Latest Events';
 
             latestEventsHtml = `
-            <!-- Section 2.5: Upcoming / Latest Events -->
+            <!-- Section 2.5: Latest Events -->
             <div class="bg-[#0161bf] text-white border-t border-b border-white/10">
               <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="px-4 md:px-[48px] py-16">
                   <section class="max-w-none">
-                    <h2 class="heading-2-home text-white text-center mb-10">${sectionTitle}</h2>
+                    <h2 class="heading-2-home text-white text-center mb-10" data-lang-id="Kegiatan Terbaru" data-lang-en="Latest Events" data-lang-de="Neueste Veranstaltungen">Kegiatan Terbaru</h2>
                     
                     <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10">
                       ${displayEvents.map((event, index) => {
@@ -620,7 +665,7 @@ const compileHome = () => {
                         href="events.html"
                         class="bg-white hover:bg-gray-100 text-[#002f6c] font-bold py-3 px-8 rounded-lg shadow-md transition-all transform hover:scale-102 flex items-center gap-2"
                       >
-                        <span>Lihat Semua Kegiatan</span>
+                        <span data-lang-id="Lihat Semua Kegiatan" data-lang-en="View All Events" data-lang-de="Alle Veranstaltungen">Lihat Semua Kegiatan</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
@@ -753,7 +798,7 @@ const compileHome = () => {
                   rel="noopener noreferrer"
                   class="bg-white hover:bg-gray-100 text-[#002F6C] font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-105 flex items-center gap-2"
                 >
-                  <span>Visit our Linktree</span>
+                  <span data-lang-id="Kunjungi Linktree Kami" data-lang-en="Visit our Linktree" data-lang-de="Unser Linktree">Kunjungi Linktree Kami</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                   </svg>
@@ -770,9 +815,9 @@ const compileHome = () => {
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div class="px-4 md:px-[48px] pt-6 pb-12">
                 <section class="max-w-none">
-                  <h2 class="heading-2-home text-center">${aboutSection.title}</h2>
+                  <h2 class="heading-2-home text-center" ${sectionTitleAttrs(aboutSection)}>${aboutSection.title_id || aboutSection.title}</h2>
                   <div class="body-text space-y-6 text-lg text-gray-700 leading-relaxed text-justify">
-                    ${renderMarkdown(aboutSection.content)}
+                    ${renderLangContent(aboutSection)}
                   </div>
                 </section>
               </div>
@@ -788,9 +833,9 @@ const compileHome = () => {
                 <section class="max-w-none">
                   <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="body-text space-y-6 text-lg leading-relaxed text-white flex-1 text-justify">
-                      <h2 class="heading-2-home text-white text-center">${historySection.title}</h2>
+                      <h2 class="heading-2-home text-white text-center" ${sectionTitleAttrs(historySection)}>${historySection.title_id || historySection.title}</h2>
                       <div>
-                        ${renderMarkdown(historySection.content)}
+                        ${renderLangContent(historySection)}
                       </div>
                     </div>
                     <div class="w-full md:w-1/3 flex-shrink-0">
@@ -822,9 +867,9 @@ const compileHome = () => {
                       />
                     </div>
                     <div class="body-text space-y-6 text-lg text-gray-700 leading-relaxed flex-1 text-justify">
-                      <h2 class="heading-2-home text-center">${logoSection.title}</h2>
+                      <h2 class="heading-2-home text-center" ${sectionTitleAttrs(logoSection)}>${logoSection.title_id || logoSection.title}</h2>
                       <div>
-                        ${renderMarkdown(logoSection.content)}
+                        ${renderLangContent(logoSection)}
                       </div>
                     </div>
                   </div>
@@ -841,7 +886,7 @@ const compileHome = () => {
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="px-4 md:px-[48px] pt-6 pb-12">
               <section class="max-w-none">
-                <h2 class="heading-2-home text-center">Aachen für Dummies</h2>
+                <h2 class="heading-2-home text-center" data-lang-id="Aachen für Dummies" data-lang-en="Aachen für Dummies" data-lang-de="Aachen für Dummies">Aachen für Dummies</h2>
 
                 <div class="my-8 flex justify-center">
                   <div
@@ -863,7 +908,7 @@ const compileHome = () => {
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                         </svg>
-                        Click to Read
+                        <span data-lang-id="Klik untuk Baca" data-lang-en="Click to Read" data-lang-de="Zum Lesen klicken">Klik untuk Baca</span>
                       </div>
                     </div>
                   </div>
@@ -871,13 +916,12 @@ const compileHome = () => {
 
                 <div class="body-text space-y-6 text-lg leading-relaxed text-gray-700 text-center">
                   <p>
-                    Buku panduan yang dibuat khusus untuk pelajar Indonesia yang baru saja tiba di Aachen<br />
-                    A guide book specially made for Indonesian students that have just arrived in Aachen
+                    <span class="lang-block" lang="id">Buku panduan yang dibuat khusus untuk pelajar Indonesia yang baru saja tiba di Aachen</span>
+                    <span class="lang-block" lang="en" style="display:none">A guide book specially made for Indonesian students that have just arrived in Aachen</span>
+                    <span class="lang-block" lang="de" style="display:none">Ein Leitfaden speziell für indonesische Studierende, die gerade in Aachen angekommen sind</span>
                   </p>
                   <div class="mt-4 flex justify-center">
-                    <a href="wiki-aachen.html" class="btn-primary bg-[#0161bf] text-white hover:bg-[#004e9a] rounded-xl px-6 py-2">
-                      Buka wiki online
-                    </a>
+                    <a href="wiki-aachen.html" class="btn-primary bg-[#0161bf] text-white hover:bg-[#004e9a] rounded-xl px-6 py-2" data-lang-id="Buka Wiki Online" data-lang-en="Open Online Wiki" data-lang-de="Online-Wiki öffnen">Buka Wiki Online</a>
                   </div>
                 </div>
               </section>
@@ -891,7 +935,7 @@ const compileHome = () => {
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div class="px-4 md:px-[48px] pt-6 pb-12">
                 <section class="max-w-none">
-                  <h2 class="heading-2-home text-white text-center">${petaSection.title}</h2>
+                  <h2 class="heading-2-home text-white text-center" ${sectionTitleAttrs(petaSection)}>${petaSection.title_id || petaSection.title}</h2>
                   <div class="body-text space-y-6 text-lg leading-relaxed">
                     <div class="mt-8 flex justify-center">
                       <img
@@ -901,7 +945,7 @@ const compileHome = () => {
                       />
                     </div>
                     <div class="body-text space-y-6 text-lg leading-relaxed text-white text-center">
-                      ${renderMarkdown(petaSection.content)}
+                      ${renderLangContent(petaSection)}
                     </div>
                   </div>
                 </section>
@@ -1376,16 +1420,19 @@ const compileSejarah = () => {
 
         ${contentSections.map((section, index) => {
             const isAlternate = index % 2 !== 0;
+            const titleId = section.title_id || section.title;
+            const titleEn = section.title_en || section.title;
+            const titleDe = section.title_de || section.title_en || section.title;
             return `
             <section class="py-3 md:py-6 ${isAlternate ? 'bg-[#e5e5e5]' : 'bg-white'}">
               <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="px-4 md:px-[48px]">
-                  ${section.title ? `<h2 class="heading-2 mb-8 md:mb-12">${section.title}</h2>` : ''}
+                  ${section.title ? `<h2 class="heading-2 mb-8 md:mb-12" data-lang-id="${titleId}" data-lang-en="${titleEn}" data-lang-de="${titleDe}">${titleId}</h2>` : ''}
                   <div class="body-text space-y-6 text-lg text-gray-700 leading-relaxed text-justify">
                     <div class="flex flex-col ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center">
                       <!-- Content Side -->
                       <div class="flex-1 space-y-6">
-                        ${renderMarkdown(section.content)}
+                        ${renderLangContent(section)}
                       </div>
                       
                       <!-- Image Side -->

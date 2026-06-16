@@ -1,8 +1,8 @@
 backend:
   name: github
   repo: ppi-aachen/liteweb
-  branch: main
-  base_url: https://cf.ppiaachen.de
+  branch: preview
+  base_url: https://liteweb-9sk.pages.dev
   auth_endpoint: api/auth
 
 local_backend: true
@@ -209,8 +209,13 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
-                  - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "markdown" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
                   - { label: "Background Color", name: "backgroundColor", widget: "select", options: ["white", "blue", "gray"], required: false }
                   - { label: "Image", name: "image", widget: "image", required: false }
                   - { label: "Image Caption", name: "imageCaption", widget: "string", required: false }
@@ -242,8 +247,13 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
-                  - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "markdown" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
                   - { label: "Image", name: "image", widget: "image", required: false }
                   - { label: "Image Caption", name: "imageCaption", widget: "string", required: false }
                   - { label: "Image Position", name: "imagePosition", widget: "select", options: ["left", "right", "center"], required: false }
@@ -336,8 +346,13 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
-                  - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "markdown" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
 
       - file: "content/pages/ad-art.json"
         label: "AD/ART Page"
@@ -363,8 +378,13 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
-                  - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "markdown" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
 
       - file: "content/pages/impressum.json"
         label: "Impressum Page"
@@ -390,8 +410,13 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
-                  - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "markdown" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
 
       - file: "content/pages/kontak-email.json"
         label: "Kontak Email Page"
@@ -501,8 +526,13 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
-                  - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "markdown" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
 
       - file: "content/pages/lapor-diri.json"
         label: "Lapor Diri Page"

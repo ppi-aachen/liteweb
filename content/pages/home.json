@@ -11,13 +11,23 @@
     {
       "type": "Section",
       "title": "About Us",
-      "content": "**Perhimpunan Pelajar Indonesia di Aachen** atau PPI Aachen adalah sebuah perkumpulan pelajar Indonesia yang bersifat politik non partais, ilmiah, sosial, dan independen yang berpusat di Aachen. PPI Aachen memiliki misi untuk menghimpun, melindungi, dan membela kepentingan para anggotanya dalam rangka meningkatkan kualitas diri dan mengoptimalkan seluruh potensi yang dimiliki, serta mewujudkan masyarakat Indonesia yang lebih adil dan sejahtera. Menjadi bermanfaat bagi Indonesia dan Jerman adalah visi utama kami.\n\n\n\n**Perhimpunan Pelajar Indonesia di Aachen (Indonesian Students Association in Aachen)** or PPI Aachen is a non-party political, scientific, social and independent student association based in Aachen. PPI Aachen has a mission to gather, protect, and defend the interests of its members in order to improve their quality and optimize all their potential, and to create a more fair and prosperous Indonesian society. To be beneficial to both Indonesia and Germany is our main vision.",
+      "title_id": "Tentang Kami",
+      "title_en": "About Us",
+      "title_de": "Über Uns",
+      "content": "**Perhimpunan Pelajar Indonesia di Aachen** atau PPI Aachen adalah sebuah perkumpulan pelajar Indonesia yang bersifat politik non partais, ilmiah, sosial, dan independen yang berpusat di Aachen. PPI Aachen memiliki misi untuk menghimpun, melindungi, dan membela kepentingan para anggotanya dalam rangka meningkatkan kualitas diri dan mengoptimalkan seluruh potensi yang dimiliki, serta mewujudkan masyarakat Indonesia yang lebih adil dan sejahtera. Menjadi bermanfaat bagi Indonesia dan Jerman adalah visi utama kami.",
+      "content_en": "**Perhimpunan Pelajar Indonesia di Aachen (Indonesian Students Association in Aachen)** or PPI Aachen is a non-party political, scientific, social and independent student association based in Aachen. PPI Aachen has a mission to gather, protect, and defend the interests of its members in order to improve their quality and optimize all their potential, and to create a more fair and prosperous Indonesian society. To be beneficial to both Indonesia and Germany is our main vision.",
+      "content_de": "**Perhimpunan Pelajar Indonesia di Aachen (Indonesische Studentenvereinigung in Aachen)** oder PPI Aachen ist eine überparteiliche, wissenschaftliche, soziale und unabhängige Studentenvereinigung mit Sitz in Aachen. Die Mission von PPI Aachen ist es, die Interessen ihrer Mitglieder zu vereinen, zu schützen und zu vertreten, um ihre Qualität zu verbessern und ihr volles Potenzial zu entfalten sowie eine gerechtere und wohlhabendere indonesische Gesellschaft zu schaffen. Von Nutzen für Indonesien und Deutschland zu sein ist unsere Hauptvision.",
       "backgroundColor": "white"
     },
     {
       "type": "Section",
       "title": "Short History",
-      "content": "PPI Aachen didirikan pada 4 Mei 1956 bersamaan dengan berdirinya PPI Jerman. PPI Aachen pertama didirikan oleh Peter Manusama, dengan Liem Keng Kie sebagai bendahara dan Presiden Republik Indonesia ke-3, B. J. Habibie sebagai sekretaris pada masa dia berkuliah di RWTH Aachen. Sidang perwakilan anggota pertama diadakan pada 1957, dimana melalui pemilihan umum, B. J. Habibie terpilih menjadi ketua PPI Aachen. PPI Aachen sendiri didirikan karena ada rasa diperlukannya sebuah organisasi yang bisa mendukung dan membantu pelajar-pelajar Indonesia di Aachen.\n\n\n\n\n\nPPI Aachen was founded on May 4, 1956 at the same time as PPI Jerman (Vereinigung Indonesischer Studenten e.V). PPI Aachen was first founded by Peter Manusama, with Liem Keng Kie as treasurer and the 3rd President of the Republic of Indonesia, B. J. Habibie as secretary while he was studying at RWTH Aachen. The first member representative assembly was held in 1957, where through elections, B. J. Habibie was elected chairman of PPI Aachen. PPI Aachen itself was established because there was a sense of need for an organization that could support and help Indonesian students in Aachen.",
+      "title_id": "Sejarah Singkat",
+      "title_en": "Short History",
+      "title_de": "Kurze Geschichte",
+      "content": "PPI Aachen didirikan pada 4 Mei 1956 bersamaan dengan berdirinya PPI Jerman. PPI Aachen pertama didirikan oleh Peter Manusama, dengan Liem Keng Kie sebagai bendahara dan Presiden Republik Indonesia ke-3, B. J. Habibie sebagai sekretaris pada masa dia berkuliah di RWTH Aachen. Sidang perwakilan anggota pertama diadakan pada 1957, dimana melalui pemilihan umum, B. J. Habibie terpilih menjadi ketua PPI Aachen. PPI Aachen sendiri didirikan karena ada rasa diperlukannya sebuah organisasi yang bisa mendukung dan membantu pelajar-pelajar Indonesia di Aachen.",
+      "content_en": "PPI Aachen was founded on May 4, 1956 at the same time as PPI Jerman (Vereinigung Indonesischer Studenten e.V). PPI Aachen was first founded by Peter Manusama, with Liem Keng Kie as treasurer and the 3rd President of the Republic of Indonesia, B. J. Habibie as secretary while he was studying at RWTH Aachen. The first member representative assembly was held in 1957, where through elections, B. J. Habibie was elected chairman of PPI Aachen. PPI Aachen itself was established because there was a sense of need for an organization that could support and help Indonesian students in Aachen.",
+      "content_de": "PPI Aachen wurde am 4. Mai 1956 gleichzeitig mit der Gründung des PPI Jerman (Vereinigung Indonesischer Studenten e.V.) gegründet. PPI Aachen wurde zunächst von Peter Manusama gegründet, mit Liem Keng Kie als Schatzmeister und dem 3. Präsidenten der Republik Indonesien, B. J. Habibie, als Sekretär, während er an der RWTH Aachen studierte. Die erste Mitgliederversammlung fand 1957 statt, bei der B. J. Habibie durch Wahlen zum Vorsitzenden von PPI Aachen gewählt wurde. PPI Aachen wurde gegründet, weil das Bedürfnis nach einer Organisation bestand, die indonesische Studierende in Aachen unterstützen und ihnen helfen sollte.",
       "backgroundColor": "blue",
       "image": "/images/home/habibie_history.jpg",
       "imagePosition": "right"
@@ -25,7 +35,12 @@
     {
       "type": "Section",
       "title": "Our Logo",
-      "content": "Logo kami terdiri dari 2 garis, dengan 2 jenis warna biru yang berbeda. Warna-warna ini mewakili Universitas RWTH Aachen yang terkenal. Di sisinya, Anda juga dapat menemukan profil samping Charlemagne yang agung, kaisar abad pertengahan yang pernah memerintah sebagian besar Eropa Barat dari Aachen.\n\n\n\nOur logo consists of 2 lines, adored with 2 different kinds of blue. These colors represent the famous RWTH Aachen University. On its side, you can also find the side profile of the great Charlemagne, a medieval emperor who once ruled much of Western Europe from Aachen.",
+      "title_id": "Logo Kami",
+      "title_en": "Our Logo",
+      "title_de": "Unser Logo",
+      "content": "Logo kami terdiri dari 2 garis, dengan 2 jenis warna biru yang berbeda. Warna-warna ini mewakili Universitas RWTH Aachen yang terkenal. Di sisinya, Anda juga dapat menemukan profil samping Charlemagne yang agung, kaisar abad pertengahan yang pernah memerintah sebagian besar Eropa Barat dari Aachen.",
+      "content_en": "Our logo consists of 2 lines, adorned with 2 different shades of blue. These colors represent the famous RWTH Aachen University. On its side, you can also find the side profile of the great Charlemagne, a medieval emperor who once ruled much of Western Europe from Aachen.",
+      "content_de": "Unser Logo besteht aus 2 Linien, geschmückt mit 2 verschiedenen Blautönen. Diese Farben repräsentieren die renommierte RWTH Aachen University. An der Seite befindet sich auch das Seitenprofil des großen Karl des Großen, eines mittelalterlichen Kaisers, der einst einen Großteil Westeuropas von Aachen aus regierte.",
       "backgroundColor": "white",
       "image": "/images/home/logo_description.png",
       "imagePosition": "left"
@@ -33,7 +48,12 @@
     {
       "type": "Section",
       "title": "Peta Wilayah Kerja",
-      "content": "Peta wilayah kerja PPI Aachen, daerah dimana PPI Aachen beroperasi di Jerman.\n\nPPI Aachen operates in the following regions of Germany.",
+      "title_id": "Peta Wilayah Kerja",
+      "title_en": "Working Area Map",
+      "title_de": "Arbeitsgebietskarte",
+      "content": "Peta wilayah kerja PPI Aachen, daerah dimana PPI Aachen beroperasi di Jerman.",
+      "content_en": "Map of PPI Aachen's working area — the regions where PPI Aachen operates in Germany.",
+      "content_de": "Karte des Arbeitsgebiets von PPI Aachen — die Regionen in Deutschland, in denen PPI Aachen tätig ist.",
       "backgroundColor": "white",
       "image": "/images/home/peta_wilayah.jpg",
       "imagePosition": "center"
