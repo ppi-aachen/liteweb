@@ -1,8 +1,6 @@
 backend:
   name: github
   repo: ppi-aachen/liteweb
-  branch: preview
-  base_url: https://liteweb-9sk.pages.dev
   auth_endpoint: api/auth
 
 local_backend: true

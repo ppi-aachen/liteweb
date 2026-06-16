@@ -20,6 +20,27 @@
   <!-- Decap CMS JavaScript -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
+    // Determine environment based on the hostname
+    const hostname = window.location.hostname;
+    let branch = 'main';
+    let baseUrl = 'https://ppiaachen.de'; // Main production domain
+    
+    // If we're on a Cloudflare Pages preview deployment
+    if (hostname.includes('pages.dev')) {
+      branch = 'preview';
+      baseUrl = window.location.origin; // e.g. https://liteweb-9sk.pages.dev
+    }
+
+    // Initialize Decap CMS, injecting the dynamic backend config
+    CMS.init({
+      config: {
+        backend: {
+          branch: branch,
+          base_url: baseUrl
+        }
+      }
+    });
+
     // Nonaktifkan template pratinjau untuk pages
     CMS.registerPreviewTemplate("pages", () => null);
   </script>
