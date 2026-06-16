@@ -375,10 +375,85 @@ const renderHeroHeader = (title, subtitle) => {
     `;
 };
 
-// Render HTML with break formatting helper
+// Render HTML with break formatting helper (legacy)
 const renderContentWithBreaks = (content) => {
     if (!content) return '';
     return content.replace(/\n\n/g, '<br/><br/>');
+};
+
+// Markdown-to-HTML renderer
+// Handles markdown output from Decap's markdown widget, and also passes through
+// existing raw HTML content unchanged (backward compatible).
+const renderMarkdown = (content) => {
+    if (!content) return '';
+
+    // If the content looks like it's already raw HTML (starts with an HTML tag),
+    // pass it through directly to preserve existing page content.
+    const trimmed = content.trim();
+    if (trimmed.startsWith('<')) {
+        return trimmed;
+    }
+
+    let html = trimmed;
+
+    // Fenced code blocks (```)
+    html = html.replace(/```[\w]*\n([\s\S]*?)```/g, (_, code) =>
+        `<pre><code>${code.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`);
+
+    // Inline code
+    html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+    // Headings (### h3, ## h2, # h1)
+    html = html.replace(/^### (.+)$/gm, '<h3 class="heading-3 mt-6 mb-2">$1</h3>');
+    html = html.replace(/^## (.+)$/gm, '<h2 class="heading-2 mt-8 mb-4">$1</h2>');
+    html = html.replace(/^# (.+)$/gm, '<h1 class="heading-1 mt-10 mb-4">$1</h1>');
+
+    // Horizontal rule
+    html = html.replace(/^---$/gm, '<hr class="my-6 border-gray-200" />');
+
+    // Bold and italic
+    html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+    html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
+    html = html.replace(/_(.+?)_/g, '<em>$1</em>');
+
+    // Links [text](url)
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g,
+        '<a href="$2" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">$1</a>');
+
+    // Images ![alt](url)
+    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g,
+        '<img src="$2" alt="$1" class="rounded-lg shadow-md max-w-full h-auto my-4" />');
+
+    // Unordered lists
+    html = html.replace(/((?:^[ \t]*[-*+] .+\n?)+)/gm, (block) => {
+        const items = block.trim().split('\n').map(line =>
+            `<li>${line.replace(/^[ \t]*[-*+] /, '')}</li>`);
+        return `<ul class="list-disc list-inside space-y-1 my-3">${items.join('')}</ul>`;
+    });
+
+    // Ordered lists
+    html = html.replace(/((?:^[ \t]*\d+\. .+\n?)+)/gm, (block) => {
+        const items = block.trim().split('\n').map(line =>
+            `<li>${line.replace(/^[ \t]*\d+\. /, '')}</li>`);
+        return `<ol class="list-decimal list-inside space-y-1 my-3">${items.join('')}</ol>`;
+    });
+
+    // Paragraphs: wrap consecutive non-empty, non-tag lines in <p> tags
+    // Split by double newline (paragraph breaks)
+    html = html.split(/\n{2,}/).map(block => {
+        block = block.trim();
+        if (!block) return '';
+        // Don't wrap if already a block-level HTML element or heading
+        if (/^<(h[1-6]|ul|ol|li|pre|blockquote|div|p|hr|img|table)/.test(block)) {
+            return block;
+        }
+        // Convert single newlines within a paragraph to <br>
+        return `<p>${block.replace(/\n/g, '<br />')}</p>`;
+    }).join('\n');
+
+    return html;
 };
 
 // --- Page Compilers ---
@@ -468,7 +543,7 @@ const compileHome = () => {
                 <section class="max-w-none">
                   <h2 class="heading-2-home text-center">${aboutSection.title}</h2>
                   <div class="body-text space-y-6 text-lg text-gray-700 leading-relaxed text-justify">
-                    ${renderContentWithBreaks(aboutSection.content)}
+                    ${renderMarkdown(aboutSection.content)}
                   </div>
                 </section>
               </div>
@@ -486,7 +561,7 @@ const compileHome = () => {
                     <div class="body-text space-y-6 text-lg leading-relaxed text-white flex-1 text-justify">
                       <h2 class="heading-2-home text-white text-center">${historySection.title}</h2>
                       <div>
-                        ${renderContentWithBreaks(historySection.content)}
+                        ${renderMarkdown(historySection.content)}
                       </div>
                     </div>
                     <div class="w-full md:w-1/3 flex-shrink-0">
@@ -520,7 +595,7 @@ const compileHome = () => {
                     <div class="body-text space-y-6 text-lg text-gray-700 leading-relaxed flex-1 text-justify">
                       <h2 class="heading-2-home text-center">${logoSection.title}</h2>
                       <div>
-                        ${renderContentWithBreaks(logoSection.content)}
+                        ${renderMarkdown(logoSection.content)}
                       </div>
                     </div>
                   </div>
@@ -594,7 +669,7 @@ const compileHome = () => {
                       />
                     </div>
                     <div class="body-text space-y-6 text-lg leading-relaxed text-gray-700 text-center">
-                      ${renderContentWithBreaks(petaSection.content)}
+                      ${renderMarkdown(petaSection.content)}
                     </div>
                   </div>
                 </section>
@@ -1088,7 +1163,7 @@ const compileSejarah = () => {
                     <div class="flex flex-col ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center">
                       <!-- Content Side -->
                       <div class="flex-1 space-y-6">
-                        ${(section.content || '').replace(/\n\n/g, '<br/><br/>').replace(/\n/g, '<br/>')}
+                        ${renderMarkdown(section.content)}
                       </div>
                       
                       <!-- Image Side -->
@@ -1181,7 +1256,7 @@ const compileAdArt = () => {
                   <div>
                     ${section.title ? `<h1 class="heading-2 mb-8">${section.title}</h1>` : ''}
                     <div>
-                      ${section.content || ''}
+                      ${renderMarkdown(section.content)}
                     </div>
 
                     <!-- Divider between sections -->
@@ -1294,7 +1369,7 @@ const compileSpa = () => {
             ${contentSection ? `
               <h2 class="heading-2 mb-8">Sidang Perwakilan Anggota PPI Aachen</h2>
               <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 prose prose-lg max-w-none text-gray-700">
-                <div>${contentSection.content}</div>
+                <div>${renderMarkdown(contentSection.content)}</div>
               </div>
             ` : ''}
           </div>
@@ -1711,7 +1786,7 @@ const compileImpressum = () => {
                 <section class="space-y-6 ${index > 0 ? 'pt-12 border-t border-gray-200' : ''}">
                   ${section.title ? `<h2 class="heading-2">${section.title}</h2>` : ''}
                   <div class="body-text">
-                    ${section.content || ''}
+                    ${renderMarkdown(section.content)}
                   </div>
                 </section>
               `).join('')}

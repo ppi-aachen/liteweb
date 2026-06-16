@@ -202,7 +202,7 @@ collections:
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
                   - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "text" }
+                  - { label: "Content", name: "content", widget: "markdown" }
                   - { label: "Background Color", name: "backgroundColor", widget: "select", options: ["white", "blue", "gray"], required: false }
                   - { label: "Image", name: "image", widget: "image", required: false }
                   - { label: "Image Caption", name: "imageCaption", widget: "string", required: false }
@@ -233,7 +233,7 @@ collections:
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
                   - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "text" }
+                  - { label: "Content", name: "content", widget: "markdown" }
                   - { label: "Image", name: "image", widget: "image", required: false }
                   - { label: "Image Caption", name: "imageCaption", widget: "string", required: false }
                   - { label: "Image Position", name: "imagePosition", widget: "select", options: ["left", "right", "center"], required: false }
@@ -325,7 +325,7 @@ collections:
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
                   - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "text" }
+                  - { label: "Content", name: "content", widget: "markdown" }
 
       - file: "content/pages/ad-art.json"
         label: "AD/ART Page"
@@ -352,7 +352,7 @@ collections:
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
                   - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "text" }
+                  - { label: "Content", name: "content", widget: "markdown" }
 
       - file: "content/pages/impressum.json"
         label: "Impressum Page"
@@ -379,7 +379,7 @@ collections:
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
                   - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "text" }
+                  - { label: "Content", name: "content", widget: "markdown" }
 
       - file: "content/pages/kontak-email.json"
         label: "Kontak Email Page"
@@ -486,7 +486,7 @@ collections:
                 fields:
                   - { label: "Type", name: "type", widget: "hidden", default: "Section" }
                   - { label: "Title", name: "title", widget: "string", required: false }
-                  - { label: "Content", name: "content", widget: "text" }
+                  - { label: "Content", name: "content", widget: "markdown" }
 
       - file: "content/pages/lapor-diri.json"
         label: "Lapor Diri Page"
