@@ -1,4 +1,47 @@
 // Events page specific functionality
+
+// Shared markdown-to-HTML renderer (mirrors build-static.js version)
+const renderMarkdown = (content) => {
+    if (!content) return '';
+    const trimmed = content.trim();
+    // Pass through raw HTML unchanged
+    if (trimmed.startsWith('<')) return trimmed;
+    let html = trimmed;
+    html = html.replace(/```[\w]*\n([\s\S]*?)```/g, (_, code) =>
+        `<pre><code>${code.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`);
+    html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+    html = html.replace(/^### (.+)$/gm, '<h3 class="font-bold text-lg mt-4 mb-1">$1</h3>');
+    html = html.replace(/^## (.+)$/gm, '<h2 class="font-bold text-xl mt-6 mb-2">$1</h2>');
+    html = html.replace(/^# (.+)$/gm, '<h1 class="font-bold text-2xl mt-8 mb-2">$1</h1>');
+    html = html.replace(/^---$/gm, '<hr class="my-4 border-gray-200" />');
+    html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+    html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
+    html = html.replace(/_(.+?)_/g, '<em>$1</em>');
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g,
+        '<a href="$2" class="text-[#0161bf] hover:underline" target="_blank" rel="noopener noreferrer">$1</a>');
+    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g,
+        '<img src="$2" alt="$1" class="rounded max-w-full h-auto my-2" />');
+    html = html.replace(/((?:^[ \t]*[-*+] .+\n?)+)/gm, (block) => {
+        const items = block.trim().split('\n').map(l =>
+            `<li>${l.replace(/^[ \t]*[-*+] /, '')}</li>`);
+        return `<ul class="list-disc list-inside space-y-1 my-2">${items.join('')}</ul>`;
+    });
+    html = html.replace(/((?:^[ \t]*\d+\. .+\n?)+)/gm, (block) => {
+        const items = block.trim().split('\n').map(l =>
+            `<li>${l.replace(/^[ \t]*\d+\. /, '')}</li>`);
+        return `<ol class="list-decimal list-inside space-y-1 my-2">${items.join('')}</ol>`;
+    });
+    html = html.split(/\n{2,}/).map(block => {
+        block = block.trim();
+        if (!block) return '';
+        if (/^<(h[1-6]|ul|ol|li|pre|blockquote|div|p|hr|img|table)/.test(block)) return block;
+        return `<p>${block.replace(/\n/g, '<br />')}</p>`;
+    }).join('\n');
+    return html;
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const makeRelativePath = (url) => {
         if (!url) return '';
@@ -128,9 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
                       </div>
                     </div>
 
-                    <p class="body-text text-sm text-gray-600 mb-6 flex-grow line-clamp-3">
-                      ${event.description}
-                    </p>
+                    <div class="body-text text-sm text-gray-600 mb-6 flex-grow line-clamp-3">
+                      ${renderMarkdown(event.description)}
+                    </div>
                   </div>
 
                   <!-- Card Footer Actions -->
@@ -227,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalTitle) modalTitle.textContent = title;
             if (modalDate) modalDate.textContent = date;
             if (modalLoc) modalLoc.textContent = location;
-            if (modalDesc) modalDesc.innerHTML = description ? description.replace(/\n/g, '<br/>') : '';
+            if (modalDesc) modalDesc.innerHTML = renderMarkdown(description);
 
             if (modalTag) {
                 if (tag) {
