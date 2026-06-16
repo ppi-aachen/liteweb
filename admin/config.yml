@@ -21,6 +21,8 @@ collections:
         label: "Events Page"
         name: "events"
         format: "json"
+        media_folder: "/images/events"
+        public_folder: "/images/events"
         fields:
           - { label: "Type", name: "type", widget: "hidden", default: "Page" }
           - { label: "Title", name: "title", widget: "string" }
@@ -133,6 +135,8 @@ collections:
         label: "Arsip Pengurus Page"
         name: "arsip-pengurus"
         format: "json"
+        media_folder: "/images/pengurus"
+        public_folder: "/images/pengurus"
         fields:
           - { label: "Type", name: "type", widget: "hidden", default: "Page" }
           - { label: "Title", name: "title", widget: "string" }
@@ -183,6 +187,8 @@ collections:
         label: "Home Page"
         name: "home"
         format: "json"
+        media_folder: "/images/home"
+        public_folder: "/images/home"
         fields:
           - { label: "Type", name: "type", widget: "hidden", default: "Page" }
           - { label: "Title", name: "title", widget: "string" }
@@ -214,6 +220,8 @@ collections:
         label: "Sejarah Page"
         name: "sejarah"
         format: "json"
+        media_folder: "/images/sejarah"
+        public_folder: "/images/sejarah"
         fields:
           - { label: "Type", name: "type", widget: "hidden", default: "Page" }
           - { label: "Title", name: "title", widget: "string" }
@@ -244,6 +252,8 @@ collections:
         label: "Communities Page"
         name: "communities"
         format: "json"
+        media_folder: "/images/communities"
+        public_folder: "/images/communities"
         fields:
           - { label: "Type", name: "type", widget: "hidden", default: "Page" }
           - { label: "Title", name: "title", widget: "string" }
@@ -387,6 +397,8 @@ collections:
         label: "Kontak Email Page"
         name: "kontak-email"
         format: "json"
+        media_folder: "/images/kontak-email"
+        public_folder: "/images/kontak-email"
         fields:
           - { label: "Type", name: "type", widget: "hidden", default: "Page" }
           - { label: "Title", name: "title", widget: "string" }
@@ -427,6 +439,8 @@ collections:
         label: "Press Kit Page"
         name: "press-kit"
         format: "json"
+        media_folder: "/images/press-kit"
+        public_folder: "/images/press-kit"
         fields:
           - { label: "Type", name: "type", widget: "hidden", default: "Page" }
           - { label: "Title", name: "title", widget: "string" }
