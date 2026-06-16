@@ -16,7 +16,6 @@
 8. [Infrastruktur Hosting & Deployment](#8-infrastruktur-hosting--deployment)
 9. [Panduan Menambahkan Halaman Baru](#9-panduan-menambahkan-halaman-baru)
 10. [Pemecahan Masalah (Troubleshooting)](#10-pemecahan-masalah-troubleshooting)
-11. [Checklist Akses & Akun untuk Serah Terima (Handover)](#11-checklist-akses--akun-untuk-serah-terima-handover)
 
 ---
 
@@ -272,18 +271,6 @@ Jika suatu saat PPI Aachen membutuhkan halaman baru (misalnya halaman khusus pem
 ### Tombol Login CMS Tidak Berfungsi / Error Auth
 *   Periksa apakah nilai `GITHUB_CLIENT_ID` dan `GITHUB_CLIENT_SECRET` sudah terpasang dengan benar di pengaturan Environment Variables pada dashboard Cloudflare Pages.
 *   Pastikan aplikasi OAuth di GitHub Developer Settings memiliki Callback URL yang tepat, yaitu: `https://cf.ppiaachen.de/api/callback`.
-
----
-
-## 11. Checklist Akses & Akun untuk Serah Terima (Handover)
-
-Saat masa jabatan Anda berakhir dan Anda harus menyerahkan tanggung jawab kepada IT Admin berikutnya, pastikan Anda menyerahkan akses ke akun-akun berikut:
-
-*   [ ] **Akses Repositori GitHub:** Masuk ke pengaturan repositori `ppi-aachen/liteweb` -> Collaborators, lalu undang akun GitHub admin baru sebagai kolaborator dengan akses Write/Admin.
-*   [ ] **Akun Cloudflare PPI Aachen:** Berikan kredensial login akun Cloudflare organisasi yang mengelola Pages, DNS Domain `ppiaachen.de`, dan OAuth Functions.
-*   [ ] **Akses Pengelola Domain (Domain Registrar):** Jika domain dibeli di luar Cloudflare (misalnya di Niagahoster, Domainesia, GoDaddy, dsb), berikan detail akun pengelola domain tersebut.
-*   [ ] **Email Utama Organisasi (`info@ppiaachen.de`):** Pastikan admin baru memiliki akses ke inbox email ini karena sering digunakan untuk verifikasi keamanan dan pemulihan password akun-akun di atas.
-*   [ ] **Akses Akun GitHub Developer / OAuth App:** Tunjukkan letak pengaturan aplikasi OAuth GitHub yang terdaftar di bawah organisasi PPI Aachen untuk keperluan integrasi CMS.
 
 ---
 *Dokumen ini diperbarui terakhir kali pada Juni 2026 oleh Darrell Octavianus.

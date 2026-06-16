@@ -478,6 +478,156 @@ const compileHome = () => {
     const logoSection = data.sections.find(s => s.title === 'Our Logo');
     const petaSection = data.sections.find(s => s.title === 'Peta Wilayah Kerja');
 
+    // Fetch and sort events for Latest/Upcoming Events section
+    const eventsData = getJsonData('events.json');
+    let latestEventsHtml = '';
+    if (eventsData) {
+        const eventGrid = eventsData.sections.find(s => s.type === 'EventGrid');
+        if (eventGrid && eventGrid.events) {
+            const parseDateLocal = (dateStr) => {
+                if (!dateStr) return new Date(0);
+                const cleanDateStr = dateStr.replace(/deadline:\s*/i, '');
+                const monthRangeMatch = cleanDateStr.match(/^([A-Za-z]+)\s*-\s*([A-Za-z]+)\s+(\d{4})$/);
+                if (monthRangeMatch) {
+                    const monthName = monthRangeMatch[1];
+                    const year = monthRangeMatch[3];
+                    return parseDateLocal(`1 ${monthName} ${year}`);
+                }
+
+                const parts = cleanDateStr.match(/(\d+)(?:-\d+)?\s+([A-Za-z]+)\s+(\d{4})/);
+                if (parts) {
+                    const day = parseInt(parts[1], 10);
+                    const monthName = parts[2].toLowerCase();
+                    const year = parseInt(parts[3], 10);
+
+                    const monthMap = {
+                        'januari': 0, 'january': 0, 'jan': 0,
+                        'februari': 1, 'february': 1, 'feb': 1,
+                        'maret': 2, 'march': 2, 'mar': 2,
+                        'april': 3, 'apr': 3,
+                        'mei': 4, 'may': 4,
+                        'juni': 5, 'june': 5, 'jun': 5,
+                        'juli': 6, 'july': 6, 'jul': 6,
+                        'agustus': 7, 'august': 7, 'aug': 7,
+                        'september': 8, 'sep': 8,
+                        'oktober': 9, 'october': 9, 'okt': 9, 'oct': 9,
+                        'desember': 11, 'december': 11, 'des': 11, 'dec': 11
+                    };
+
+                    if (monthMap.hasOwnProperty(monthName)) {
+                        return new Date(year, monthMap[monthName], day);
+                    }
+                }
+                return new Date(dateStr);
+            };
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // Filter for upcoming events
+            const upcomingEvents = eventGrid.events.filter(event => {
+                return parseDateLocal(event.date) >= today;
+            });
+
+            let displayEvents = [];
+            let sectionTitle = 'Kegiatan Mendatang';
+
+            if (upcomingEvents.length > 0) {
+                // Sort ascending (soonest first)
+                displayEvents = upcomingEvents.sort((a, b) => {
+                    return parseDateLocal(a.date).getTime() - parseDateLocal(b.date).getTime();
+                }).slice(0, 3);
+            } else {
+                // Fallback to most recent past events
+                displayEvents = [...eventGrid.events].sort((a, b) => {
+                    return parseDateLocal(b.date).getTime() - parseDateLocal(a.date).getTime();
+                }).slice(0, 3);
+                sectionTitle = 'Kegiatan Terbaru Kami';
+            }
+
+            latestEventsHtml = `
+            <!-- Section 2.5: Upcoming / Latest Events -->
+            <div class="bg-gray-50 border-t border-b border-gray-100">
+              <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="px-4 md:px-[48px] py-16">
+                  <section class="max-w-none">
+                    <h2 class="heading-2-home text-center mb-10">${sectionTitle}</h2>
+                    
+                    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-10">
+                      ${displayEvents.map(event => `
+                        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col group">
+                          <!-- Image Section -->
+                          ${event.image ? `
+                            <div class="h-48 w-full overflow-hidden relative">
+                              <img
+                                src="${makeRelativePath(event.image)}"
+                                alt="${event.title}"
+                                loading="lazy"
+                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                              />
+                            </div>
+                          ` : ''}
+
+                          <div class="p-6 flex flex-col flex-grow">
+                            <div class="mb-4">
+                              <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+                                ${event.date}
+                              </span>
+                              ${event.tag ? `
+                                <span class="inline-block bg-gray-500 text-white text-xs px-2.5 py-1 rounded-full font-semibold ml-2">
+                                  ${event.tag}
+                                </span>
+                              ` : ''}
+                              <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+                                ${event.title}
+                              </h3>
+                              
+                              <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+                                ${event.time ? `
+                                  <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>${event.time}</span>
+                                  </div>
+                                ` : ''}
+                                <div class="flex items-center gap-2">
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                  </svg>
+                                  <span class="truncate">${event.location}</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+                              ${event.description || ''}
+                            </p>
+                          </div>
+                        </div>
+                      `).join('')}
+                    </div>
+
+                    <div class="flex justify-center">
+                      <a
+                        href="events.html"
+                        class="bg-[#0161bf] hover:bg-[#004e9a] text-white font-bold py-3 px-8 rounded-lg shadow-md transition-all transform hover:scale-102 flex items-center gap-2"
+                      >
+                        <span>Lihat Semua Kegiatan</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </a>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+            `;
+        }
+    }
+
     const body = `
       <div>
         <!-- Hero Section -->
@@ -550,6 +700,8 @@ const compileHome = () => {
             </div>
           </div>
         ` : ''}
+
+        ${latestEventsHtml}
 
         <!-- Section 3: Short History -->
         ${historySection ? `
