@@ -35,14 +35,12 @@ export default {
       },
       spacing: {
         'sidebar': '250px',
+        'nav-height': '64px',
       },
       screens: {
         'mobile': '480px',
         'tablet': '768px',
         'desktop': '1280px',
-      },
-      spacing: {
-        'nav-height': '64px',
       },
     },
   },
