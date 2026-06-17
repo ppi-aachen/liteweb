@@ -12,7 +12,7 @@ const outputDir = __dirname; // Root directory
 // Navigation items configuration — labels are multilang objects { id, en, de }
 const navigationItems = [
     { label: { id: 'Beranda', en: 'Home', de: 'Startseite' }, path: 'index.html' },
-    { label: { id: 'Lapor Diri', en: 'Register', de: 'Anmeldung' }, path: 'lapor-diri.html' },
+    { label: { id: 'Lapor Diri', en: 'Lapor Diri', de: 'Lapor Diri' }, path: 'lapor-diri.html' },
     { label: { id: 'Kegiatan', en: 'Events', de: 'Veranstaltungen' }, path: 'events.html' },
     { label: { id: 'Komunitas', en: 'Communities', de: 'Gemeinschaften' }, path: 'communities.html' },
     { label: { id: 'Merchandise', en: 'Merchandise', de: 'Merchandise' }, path: 'merchandise.html' },
@@ -21,10 +21,10 @@ const navigationItems = [
         path: '#',
         children: [
             { label: { id: 'Sejarah', en: 'History', de: 'Geschichte' }, path: 'sejarah.html' },
-            { label: { id: 'Kepengurusan', en: 'Management', de: 'Vorstand' }, path: 'kepengurusan.html' },
+            { label: { id: 'Kepengurusan', en: 'Board', de: 'Vorstand' }, path: 'kepengurusan.html' },
             { label: { id: 'AD/ART PPI Aachen', en: 'Bylaws', de: 'Satzung' }, path: 'ad-art.html' },
-            { label: { id: 'SPA PPI Aachen', en: 'General Assembly', de: 'Generalversammlung' }, path: 'spa.html' },
-            { label: { id: 'Arsip LPJ', en: 'LPJ Archive', de: 'LPJ-Archiv' }, path: 'arsip-lpj.html' },
+            { label: { id: 'SPA PPI Aachen', en: 'General Assembly', de: 'Mitgliedsversammlung' }, path: 'spa.html' },
+            { label: { id: 'Arsip LPJ', en: 'Annual Report Archive', de: 'Jahresbericht Archiv' }, path: 'arsip-lpj.html' },
             { label: { id: 'Arsip Pengurus', en: 'Board Archive', de: 'Vorstandsarchiv' }, path: 'arsip-pengurus.html' },
             { label: { id: 'Kontak', en: 'Contact', de: 'Kontakt' }, path: 'kontak-email.html' },
         ],
@@ -35,7 +35,7 @@ const navigationItems = [
         children: [
             { label: { id: 'Linktree', en: 'Linktree', de: 'Linktree' }, path: 'linktree.html' },
             { label: { id: 'ACOP 2025', en: 'ACOP 2025', de: 'ACOP 2025' }, path: 'acop-2025.html' },
-            { label: { id: 'Wiki Aachen für Dummies', en: 'Wiki Aachen', de: 'Wiki Aachen' }, path: 'wiki-aachen.html' },
+            { label: { id: 'Wiki Aachen für Dummies', en: 'Wiki Aachen für Dummies', de: 'Wiki Aachen für Dummies' }, path: 'wiki-aachen.html' },
             { label: { id: 'Press Kit', en: 'Press Kit', de: 'Pressemappe' }, path: 'press-kit.html' },
         ],
     },
