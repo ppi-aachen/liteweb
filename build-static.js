@@ -848,7 +848,7 @@ const compileHome = () => {
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div class="px-4 md:px-[48px] pt-6 pb-12">
                 <section class="max-w-none">
-                  <div class="flex flex-col md:flex-row gap-8 items-center">
+                  <div class="flex flex-col-reverse md:flex-row gap-8 items-center">
                     <div class="body-text space-y-6 text-lg leading-relaxed text-white flex-1 text-justify">
                       <h2 class="heading-2-home text-white text-center" ${sectionTitleAttrs(historySection)}>${historySection.title_id || historySection.title}</h2>
                       <div>
