@@ -21,10 +21,10 @@ const navigationItems = [
         path: '#',
         children: [
             { label: { id: 'Sejarah', en: 'History', de: 'Geschichte' }, path: 'sejarah.html' },
-            { label: { id: 'Kepengurusan', en: 'Board', de: 'Vorstand' }, path: 'kepengurusan.html' },
+            { label: { id: 'Kepengurusan', en: 'Current Board', de: 'Vorstand' }, path: 'kepengurusan.html' },
             { label: { id: 'AD/ART PPI Aachen', en: 'Bylaws', de: 'Satzung' }, path: 'ad-art.html' },
             { label: { id: 'SPA PPI Aachen', en: 'General Assembly', de: 'Mitgliedsversammlung' }, path: 'spa.html' },
-            { label: { id: 'Arsip LPJ', en: 'Annual Report Archive', de: 'Jahresbericht Archiv' }, path: 'arsip-lpj.html' },
+            { label: { id: 'Arsip LPJ', en: 'Annual Report Archive', de: 'Jahresberichtarchiv' }, path: 'arsip-lpj.html' },
             { label: { id: 'Arsip Pengurus', en: 'Board Archive', de: 'Vorstandsarchiv' }, path: 'arsip-pengurus.html' },
             { label: { id: 'Kontak', en: 'Contact', de: 'Kontakt' }, path: 'kontak-email.html' },
         ],
