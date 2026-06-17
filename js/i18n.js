@@ -53,17 +53,22 @@
             block.style.display = (blockLang === lang) ? '' : 'none';
         }
 
-        /* 3. Update desktop lang-btn active states */
+        /* 3. Update desktop lang-btn active states and main label */
+        var currentLabels = document.querySelectorAll('.current-lang-label');
+        for (var l = 0; l < currentLabels.length; l++) {
+            currentLabels[l].textContent = lang.toUpperCase();
+        }
+
         var desktopBtns = document.querySelectorAll('[data-lang-switcher="desktop"] .lang-btn');
         for (var k = 0; k < desktopBtns.length; k++) {
             var dbtn = desktopBtns[k];
             var isActive = dbtn.getAttribute('data-lang') === lang;
             if (isActive) {
-                dbtn.classList.add('text-[#0161bf]', 'font-bold');
-                dbtn.classList.remove('text-gray-400', 'font-light');
+                dbtn.classList.add('text-black', 'font-bold', 'bg-primary/10');
+                dbtn.classList.remove('text-gray-600', 'font-light');
             } else {
-                dbtn.classList.remove('text-[#0161bf]', 'font-bold');
-                dbtn.classList.add('text-gray-400', 'font-light');
+                dbtn.classList.remove('text-black', 'font-bold', 'bg-primary/10');
+                dbtn.classList.add('text-gray-600', 'font-light');
             }
         }
 

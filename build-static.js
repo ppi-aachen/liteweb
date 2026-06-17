@@ -167,12 +167,24 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
             </div>
 
             <!-- Language Switcher (Desktop) -->
-            <div data-lang-switcher="desktop" class="flex items-center gap-1 ml-3 pl-3 border-l border-gray-200 flex-shrink-0">
-              <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-[#0161bf] font-bold" data-lang="id" title="Bahasa Indonesia">ID</button>
-              <span class="text-gray-300 select-none text-xs">|</span>
-              <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-gray-400 font-light" data-lang="en" title="English">EN</button>
-              <span class="text-gray-300 select-none text-xs">|</span>
-              <button class="lang-btn px-2 py-0.5 text-[10pt] rounded transition-all text-gray-400 font-light" data-lang="de" title="Deutsch">DE</button>
+            <div data-lang-switcher="desktop" class="relative group ml-3 pl-3 border-l border-gray-200 flex-shrink-0">
+              <button class="px-2 py-2 text-dark text-[11pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 font-bold">
+                <span class="current-lang-label uppercase">ID</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute hidden group-hover:block top-full right-0 bg-white shadow-lg min-w-[120px] py-2 z-50 border border-gray-100">
+                <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="id">🇮🇩 ID</button>
+                <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="en">🇬🇧 EN</button>
+                <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="de">🇩🇪 DE</button>
+              </div>
             </div>
           </div>
         </div>
