@@ -486,7 +486,7 @@ const renderMarkdown = (content) => {
             return block;
         }
         // Convert single newlines within a paragraph to <br>
-        return `<p>${block.replace(/\n/g, '<br />')}</p>`;
+        return `<p class="mb-4 last:mb-0">${block.replace(/\n/g, '<br />')}</p>`;
     }).join('\n');
 
     return html;

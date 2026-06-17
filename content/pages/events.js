@@ -321,16 +321,16 @@ window.eventsData = {
                     "description": "Suaramu menentukan masa depan PPI Aachen! Mari hadir ke forum tertinggi PPI Aachen untuk mengevaluasi dan menentukan arah masa depan PPI Aachen."
                 },
                 {
-                    "longDescription": "WOW TEST **BOLD** \n\n## **BIG**\n\n> **quote**\n>\n> * **dot1**\n>\n> 1. **number1**\n> 2. **~~wrong~~**\n> 3. ***~~italic~~***",
+                    "longDescription": "WOW mengada-ngada **BOLD** \n\n## **BIG**\n\n* **dot1**\n\n1. **number1**\n2. **~~wrong~~**\n3. ***~~italic~~***",
                     "linkText": "websitez",
-                    "time": "10:27",
+                    "time": "10:31",
                     "date": "18 Juni 2026",
                     "location": "Schönforst",
-                    "title": "test",
+                    "title": "Mengada-ngada",
                     "type": "Event",
                     "link": "ppiaachen.de",
                     "image": "/images/events/istockphoto-816752606-612x612.jpg",
-                    "description": "Test"
+                    "description": "Acara mengadakan ngada"
                 }
             ]
         }
