@@ -2,7 +2,7 @@ backend:
   name: github
   repo: ppi-aachen/liteweb
   branch: main
-  base_url: https://cf.ppiaachen.de
+  base_url: https://ppiaachen.pages.dev
   auth_endpoint: api/auth
 
 local_backend: true
