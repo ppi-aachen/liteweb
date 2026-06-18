@@ -323,7 +323,7 @@ window.eventsData = {
                 {
                     "longDescription": "WOW mengada-ngada **BOLD** \n\n## **BIG**\n\n* **dot1**\n\n1. **number1**\n2. **~~wrong~~**\n3. ***~~italic~~***",
                     "linkText": "websitez",
-                    "time": "10:31",
+                    "time": "10:45",
                     "date": "18 Juni 2026",
                     "location": "Schönforst",
                     "title": "Mengada-ngada",
