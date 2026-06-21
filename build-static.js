@@ -168,7 +168,7 @@ const saveJsData = (filename, varName, data) => {
 
 // Global Layout template compiler
 const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataScript = null) => {
-    const baseUrl = 'https://cf.ppiaachen.de';
+    const baseUrl = 'https://ppiaachen.de';
     const isLinktree = currentPath === 'linktree.html';
 
     // Render Side Navigation
