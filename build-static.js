@@ -477,7 +477,7 @@ const compileHome = () => {
                         }
                         return renderEventCard(event, responsiveClass);
                       }).join('')}
-                    </div>      </div>
+                    </div>
 
                     <div class="flex justify-center">
                       <a
