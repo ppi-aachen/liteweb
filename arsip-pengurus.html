@@ -28,417 +28,434 @@
 </head>
 <body class="font-sans text-dark bg-white">
   <div class="flex flex-col min-h-screen">
-    
-      <!-- Mobile Menu Button -->
-      <button
-        id="mobile-menu-btn"
-        class="fixed top-4 left-4 z-50 desktop:hidden bg-dark text-white p-2 rounded"
-        aria-label="Toggle menu"
-      >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+    <!-- Mobile Menu Button -->
+<button
+  id="mobile-menu-btn"
+  class="fixed top-4 left-4 z-50 desktop:hidden bg-dark text-white p-2 rounded"
+  aria-label="Toggle menu"
+>
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
 
-      <!-- Top Navigation Bar (Desktop) -->
-      <nav
-        class="hidden desktop:flex desktop:fixed desktop:top-0 desktop:left-0 desktop:right-0 desktop:bg-white desktop:z-40 desktop:shadow-md h-12"
-        role="navigation"
-      >
-        <div class="w-full flex items-center justify-between px-8">
-          <!-- Logo (Left) -->
-          <div class="flex items-center flex-shrink-0">
-            <a href="index.html" class="flex items-center h-full py-2">
-              <img
-                src="logo.png"
-                alt="PPI Aachen"
-                class="h-10 object-contain"
-                onerror="this.style.display='none'; const text=document.createElement('span'); text.className='logo-text text-dark text-xl font-light'; text.textContent='PPI Aachen'; this.parentElement.appendChild(text);"
-              />
+<!-- Top Navigation Bar (Desktop) -->
+<nav
+  class="hidden desktop:flex desktop:fixed desktop:top-0 desktop:left-0 desktop:right-0 desktop:bg-white desktop:z-40 desktop:shadow-md h-12"
+  role="navigation"
+>
+  <div class="w-full flex items-center justify-between px-8">
+    <!-- Logo (Left) -->
+    <div class="flex items-center flex-shrink-0">
+      <a href="index.html" class="flex items-center h-full py-2">
+        <img
+          src="logo.png"
+          alt="PPI Aachen"
+          class="h-10 object-contain"
+          onerror="this.style.display='none'; const text=document.createElement('span'); text.className='logo-text text-dark text-xl font-light'; text.textContent='PPI Aachen'; this.parentElement.appendChild(text);"
+        />
+      </a>
+    </div>
+
+    <!-- Nav items + Language Switcher (Right) -->
+    <div class="flex items-center flex-shrink-0">
+      <div class="flex items-center space-x-1 flex-shrink-0">
+        <!-- Beranda -->
+        <a
+          href="index.html"
+          class="nav-link px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
+          data-path="index.html"
+        >
+          <span data-lang-id="Beranda" data-lang-en="Home" data-lang-de="Startseite">Beranda</span>
+        </a>
+        <!-- Lapor Diri -->
+        <a
+          href="lapor-diri.html"
+          class="nav-link px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
+          data-path="lapor-diri.html"
+        >
+          <span data-lang-id="Lapor Diri" data-lang-en="Lapor Diri" data-lang-de="Lapor Diri">Lapor Diri</span>
+        </a>
+        <!-- Kegiatan -->
+        <a
+          href="events.html"
+          class="nav-link px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
+          data-path="events.html"
+        >
+          <span data-lang-id="Kegiatan" data-lang-en="Events" data-lang-de="Veranstaltungen">Kegiatan</span>
+        </a>
+        <!-- Komunitas -->
+        <a
+          href="communities.html"
+          class="nav-link px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
+          data-path="communities.html"
+        >
+          <span data-lang-id="Komunitas" data-lang-en="Communities" data-lang-de="Gemeinschaften">Komunitas</span>
+        </a>
+        <!-- Merchandise -->
+        <a
+          href="merchandise.html"
+          class="nav-link px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
+          data-path="merchandise.html"
+        >
+          <span data-lang-id="Merchandise" data-lang-en="Merchandise" data-lang-de="Merchandise">Merchandise</span>
+        </a>
+
+        <!-- Dropdown Organisasi -->
+        <div class="relative group dropdown-container">
+          <button
+            class="dropdown-btn px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 font-light"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span data-lang-id="Organisasi" data-lang-en="Organization" data-lang-de="Organisation">Organisasi</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            class="dropdown-menu absolute hidden group-hover:block top-full left-0 bg-white shadow-lg min-w-[200px] py-2 z-50 border border-gray-100"
+          >
+            <a
+              href="sejarah.html"
+              class="nav-link block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+              data-path="sejarah.html"
+            >
+              <span data-lang-id="Sejarah" data-lang-en="History" data-lang-de="Geschichte">Sejarah</span>
+            </a>
+            <a
+              href="kepengurusan.html"
+              class="nav-link block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+              data-path="kepengurusan.html"
+            >
+              <span data-lang-id="Kepengurusan" data-lang-en="Current Board" data-lang-de="Vorstand">Kepengurusan</span>
+            </a>
+            <a
+              href="ad-art.html"
+              class="nav-link block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+              data-path="ad-art.html"
+            >
+              <span data-lang-id="AD/ART PPI Aachen" data-lang-en="Bylaws" data-lang-de="Satzung">AD/ART PPI Aachen</span>
+            </a>
+            <a
+              href="spa.html"
+              class="nav-link block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+              data-path="spa.html"
+            >
+              <span data-lang-id="SPA PPI Aachen" data-lang-en="General Assembly" data-lang-de="Mitgliedsversammlung">SPA PPI Aachen</span>
+            </a>
+            <a
+              href="arsip-lpj.html"
+              class="nav-link block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+              data-path="arsip-lpj.html"
+            >
+              <span data-lang-id="Arsip LPJ" data-lang-en="Annual Report Archive" data-lang-de="Jahresberichtarchiv">Arsip LPJ</span>
+            </a>
+            <a
+              href="arsip-pengurus.html"
+              class="nav-link block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+              data-path="arsip-pengurus.html"
+            >
+              <span data-lang-id="Arsip Pengurus" data-lang-en="Board Archive" data-lang-de="Vorstandsarchiv">Arsip Pengurus</span>
+            </a>
+            <a
+              href="kontak-email.html"
+              class="nav-link block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+              data-path="kontak-email.html"
+            >
+              <span data-lang-id="Kontak" data-lang-en="Contact" data-lang-de="Kontakt">Kontak</span>
             </a>
           </div>
+        </div>
 
-          <!-- Nav items + Language Switcher (Right) -->
-          <div class="flex items-center flex-shrink-0">
-            <div class="flex items-center space-x-1 flex-shrink-0">
-              
-                      <a
-                        href="index.html"
-                        class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
-                      >
-                        <span data-lang-id="Beranda" data-lang-en="Home" data-lang-de="Startseite">Beranda</span>
-                      </a>
-                      
-                      <a
-                        href="lapor-diri.html"
-                        class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
-                      >
-                        <span data-lang-id="Lapor Diri" data-lang-en="Lapor Diri" data-lang-de="Lapor Diri">Lapor Diri</span>
-                      </a>
-                      
-                      <a
-                        href="events.html"
-                        class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
-                      >
-                        <span data-lang-id="Kegiatan" data-lang-en="Events" data-lang-de="Veranstaltungen">Kegiatan</span>
-                      </a>
-                      
-                      <a
-                        href="communities.html"
-                        class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
-                      >
-                        <span data-lang-id="Komunitas" data-lang-en="Communities" data-lang-de="Gemeinschaften">Komunitas</span>
-                      </a>
-                      
-                      <a
-                        href="merchandise.html"
-                        class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light font-light"
-                      >
-                        <span data-lang-id="Merchandise" data-lang-en="Merchandise" data-lang-de="Merchandise">Merchandise</span>
-                      </a>
-                      
-                      <div class="relative group">
-                        <button
-                          class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 text-black font-bold"
-                        >
-                          <span data-lang-id="Organisasi" data-lang-en="Organization" data-lang-de="Organisation">Organisasi</span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </button>
-                        <div
-                          class="absolute hidden group-hover:block top-full left-0 bg-white shadow-lg min-w-[200px] py-2 z-50 border border-gray-100"
-                        >
-                          
-                            <a
-                              href="sejarah.html"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
-                            >
-                              <span data-lang-id="Sejarah" data-lang-en="History" data-lang-de="Geschichte">Sejarah</span>
-                            </a>
-                          
-                            <a
-                              href="kepengurusan.html"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
-                            >
-                              <span data-lang-id="Kepengurusan" data-lang-en="Current Board" data-lang-de="Vorstand">Kepengurusan</span>
-                            </a>
-                          
-                            <a
-                              href="ad-art.html"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
-                            >
-                              <span data-lang-id="AD/ART PPI Aachen" data-lang-en="Bylaws" data-lang-de="Satzung">AD/ART PPI Aachen</span>
-                            </a>
-                          
-                            <a
-                              href="spa.html"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
-                            >
-                              <span data-lang-id="SPA PPI Aachen" data-lang-en="General Assembly" data-lang-de="Mitgliedsversammlung">SPA PPI Aachen</span>
-                            </a>
-                          
-                            <a
-                              href="arsip-lpj.html"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
-                            >
-                              <span data-lang-id="Arsip LPJ" data-lang-en="Annual Report Archive" data-lang-de="Jahresberichtarchiv">Arsip LPJ</span>
-                            </a>
-                          
-                            <a
-                              href="arsip-pengurus.html"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light text-black font-bold bg-primary/10"
-                            >
-                              <span data-lang-id="Arsip Pengurus" data-lang-en="Board Archive" data-lang-de="Vorstandsarchiv">Arsip Pengurus</span>
-                            </a>
-                          
-                            <a
-                              href="kontak-email.html"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
-                            >
-                              <span data-lang-id="Kontak" data-lang-en="Contact" data-lang-de="Kontakt">Kontak</span>
-                            </a>
-                          
-                        </div>
-                      </div>
-                      
-                      <div class="relative group">
-                        <button
-                          class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 font-light"
-                        >
-                          <span data-lang-id="Lainnya" data-lang-en="Others" data-lang-de="Sonstiges">Lainnya</span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </button>
-                        <div
-                          class="absolute hidden group-hover:block top-full left-0 bg-white shadow-lg min-w-[200px] py-2 z-50 border border-gray-100"
-                        >
-                          
-                            <a
-                              href="linktree.html"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
-                            >
-                              <span data-lang-id="Linktree" data-lang-en="Linktree" data-lang-de="Linktree">Linktree</span>
-                            </a>
-                          
-                            <a
-                              href="acop-2025.html"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
-                            >
-                              <span data-lang-id="ACOP 2025" data-lang-en="ACOP 2025" data-lang-de="ACOP 2025">ACOP 2025</span>
-                            </a>
-                          
-                            <a
-                              href="wiki-aachen.html"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
-                            >
-                              <span data-lang-id="Wiki Aachen für Dummies" data-lang-en="Wiki Aachen für Dummies" data-lang-de="Wiki Aachen für Dummies">Wiki Aachen für Dummies</span>
-                            </a>
-                          
-                            <a
-                              href="press-kit.html"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
-                            >
-                              <span data-lang-id="Press Kit" data-lang-en="Press Kit" data-lang-de="Pressemappe">Press Kit</span>
-                            </a>
-                          
-                        </div>
-                      </div>
-                      
-            </div>
-
-            <!-- Language Switcher (Desktop) -->
-            <div data-lang-switcher="desktop" class="relative group ml-3 pl-3 border-l border-gray-200 flex-shrink-0">
-              <button class="px-2 py-2 text-dark text-[11pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 font-bold">
-                <span class="current-lang-label uppercase">ID</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div class="absolute hidden group-hover:block top-full right-0 bg-white shadow-lg min-w-[120px] py-2 z-50 border border-gray-100">
-                <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="id">ID</button>
-                <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="en">EN</button>
-                <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="de">DE</button>
-              </div>
-            </div>
+        <!-- Dropdown Lainnya -->
+        <div class="relative group dropdown-container">
+          <button
+            class="dropdown-btn px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 font-light"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span data-lang-id="Lainnya" data-lang-en="Others" data-lang-de="Sonstiges">Lainnya</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            class="dropdown-menu absolute hidden group-hover:block top-full left-0 bg-white shadow-lg min-w-[200px] py-2 z-50 border border-gray-100"
+          >
+            <a
+              href="linktree.html"
+              class="nav-link block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+              data-path="linktree.html"
+            >
+              <span data-lang-id="Linktree" data-lang-en="Linktree" data-lang-de="Linktree">Linktree</span>
+            </a>
+            <a
+              href="acop-2025.html"
+              class="nav-link block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+              data-path="acop-2025.html"
+            >
+              <span data-lang-id="ACOP 2025" data-lang-en="ACOP 2025" data-lang-de="ACOP 2025">ACOP 2025</span>
+            </a>
+            <a
+              href="wiki-aachen.html"
+              class="nav-link block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+              data-path="wiki-aachen.html"
+            >
+              <span data-lang-id="Wiki Aachen für Dummies" data-lang-en="Wiki Aachen für Dummies" data-lang-de="Wiki Aachen für Dummies">Wiki Aachen für Dummies</span>
+            </a>
+            <a
+              href="press-kit.html"
+              class="nav-link block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light font-light"
+              data-path="press-kit.html"
+            >
+              <span data-lang-id="Press Kit" data-lang-en="Press Kit" data-lang-de="Pressemappe">Press Kit</span>
+            </a>
           </div>
         </div>
-      </nav>
+      </div>
 
-      <!-- Side Navigation (Mobile Drawer) -->
-      <nav
-        id="mobile-nav"
-        class="fixed desktop:hidden w-sidebar bg-dark font-sans pt-12 h-screen z-40 transition-transform duration-300 ease-in-out overflow-y-auto overflow-x-hidden -translate-x-full"
-        role="navigation"
+      <!-- Language Switcher (Desktop) -->
+      <div data-lang-switcher="desktop" class="relative group ml-3 pl-3 border-l border-gray-200 flex-shrink-0 dropdown-container">
+        <button
+          class="dropdown-btn px-2 py-2 text-dark text-[11pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 font-bold"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          <span class="current-lang-label uppercase">ID</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="dropdown-menu absolute hidden group-hover:block top-full right-0 bg-white shadow-lg min-w-[120px] py-2 z-50 border border-gray-100">
+          <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="id">ID</button>
+          <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="en">EN</button>
+          <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="de">DE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Side Navigation (Mobile Drawer) -->
+<nav
+  id="mobile-nav"
+  class="fixed desktop:hidden w-sidebar bg-dark font-sans pt-12 h-screen z-40 transition-transform duration-300 ease-in-out overflow-y-auto overflow-x-hidden -translate-x-full"
+  role="navigation"
+>
+  <div class="px-2 pb-20">
+    <!-- Beranda -->
+    <a
+      href="index.html"
+      class="nav-link block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white"
+      data-path="index.html"
+    >
+      <span data-lang-id="Beranda" data-lang-en="Home" data-lang-de="Startseite">Beranda</span>
+    </a>
+    <!-- Lapor Diri -->
+    <a
+      href="lapor-diri.html"
+      class="nav-link block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white"
+      data-path="lapor-diri.html"
+    >
+      <span data-lang-id="Lapor Diri" data-lang-en="Lapor Diri" data-lang-de="Lapor Diri">Lapor Diri</span>
+    </a>
+    <!-- Kegiatan -->
+    <a
+      href="events.html"
+      class="nav-link block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white"
+      data-path="events.html"
+    >
+      <span data-lang-id="Kegiatan" data-lang-en="Events" data-lang-de="Veranstaltungen">Kegiatan</span>
+    </a>
+    <!-- Komunitas -->
+    <a
+      href="communities.html"
+      class="nav-link block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white"
+      data-path="communities.html"
+    >
+      <span data-lang-id="Komunitas" data-lang-en="Communities" data-lang-de="Gemeinschaften">Komunitas</span>
+    </a>
+    <!-- Merchandise -->
+    <a
+      href="merchandise.html"
+      class="nav-link block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white"
+      data-path="merchandise.html"
+    >
+      <span data-lang-id="Merchandise" data-lang-en="Merchandise" data-lang-de="Merchandise">Merchandise</span>
+    </a>
+
+    <!-- Mobile Dropdown Organisasi -->
+    <div class="dropdown-container">
+      <button
+        data-target="mobile-group-organisasi"
+        class="mobile-group-toggle dropdown-btn w-full text-left py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white flex items-center justify-between"
+        aria-expanded="false"
       >
-        <div class="px-2 pb-20">
-          
-                  <a
-                    href="index.html"
-                    class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white "
-                  >
-                    <span data-lang-id="Beranda" data-lang-en="Home" data-lang-de="Startseite">Beranda</span>
-                  </a>
-                  
-                  <a
-                    href="lapor-diri.html"
-                    class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white "
-                  >
-                    <span data-lang-id="Lapor Diri" data-lang-en="Lapor Diri" data-lang-de="Lapor Diri">Lapor Diri</span>
-                  </a>
-                  
-                  <a
-                    href="events.html"
-                    class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white "
-                  >
-                    <span data-lang-id="Kegiatan" data-lang-en="Events" data-lang-de="Veranstaltungen">Kegiatan</span>
-                  </a>
-                  
-                  <a
-                    href="communities.html"
-                    class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white "
-                  >
-                    <span data-lang-id="Komunitas" data-lang-en="Communities" data-lang-de="Gemeinschaften">Komunitas</span>
-                  </a>
-                  
-                  <a
-                    href="merchandise.html"
-                    class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white "
-                  >
-                    <span data-lang-id="Merchandise" data-lang-en="Merchandise" data-lang-de="Merchandise">Merchandise</span>
-                  </a>
-                  
-                  <div>
-                    <button
-                      data-target="mobile-group-5"
-                      class="mobile-group-toggle w-full text-left py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white flex items-center justify-between text-primary-light"
-                    >
-                      <span data-lang-id="Organisasi" data-lang-en="Organization" data-lang-de="Organisation">Organisasi</span>
-                      <span class="flex-shrink-0 ml-2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="chevron-icon w-5 h-5 transition-transform duration-300"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </span>
-                    </button>
-                    <div
-                      id="mobile-group-5"
-                      class="overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
-                    >
-                      <div class="pl-4">
-                        
-                          <a
-                            href="sejarah.html"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
-                          >
-                            <span data-lang-id="Sejarah" data-lang-en="History" data-lang-de="Geschichte">Sejarah</span>
-                          </a>
-                        
-                          <a
-                            href="kepengurusan.html"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
-                          >
-                            <span data-lang-id="Kepengurusan" data-lang-en="Current Board" data-lang-de="Vorstand">Kepengurusan</span>
-                          </a>
-                        
-                          <a
-                            href="ad-art.html"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
-                          >
-                            <span data-lang-id="AD/ART PPI Aachen" data-lang-en="Bylaws" data-lang-de="Satzung">AD/ART PPI Aachen</span>
-                          </a>
-                        
-                          <a
-                            href="spa.html"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
-                          >
-                            <span data-lang-id="SPA PPI Aachen" data-lang-en="General Assembly" data-lang-de="Mitgliedsversammlung">SPA PPI Aachen</span>
-                          </a>
-                        
-                          <a
-                            href="arsip-lpj.html"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
-                          >
-                            <span data-lang-id="Arsip LPJ" data-lang-en="Annual Report Archive" data-lang-de="Jahresberichtarchiv">Arsip LPJ</span>
-                          </a>
-                        
-                          <a
-                            href="arsip-pengurus.html"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white text-primary-light font-normal"
-                          >
-                            <span data-lang-id="Arsip Pengurus" data-lang-en="Board Archive" data-lang-de="Vorstandsarchiv">Arsip Pengurus</span>
-                          </a>
-                        
-                          <a
-                            href="kontak-email.html"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
-                          >
-                            <span data-lang-id="Kontak" data-lang-en="Contact" data-lang-de="Kontakt">Kontak</span>
-                          </a>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <button
-                      data-target="mobile-group-6"
-                      class="mobile-group-toggle w-full text-left py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white flex items-center justify-between "
-                    >
-                      <span data-lang-id="Lainnya" data-lang-en="Others" data-lang-de="Sonstiges">Lainnya</span>
-                      <span class="flex-shrink-0 ml-2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="chevron-icon w-5 h-5 transition-transform duration-300"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </span>
-                    </button>
-                    <div
-                      id="mobile-group-6"
-                      class="overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
-                    >
-                      <div class="pl-4">
-                        
-                          <a
-                            href="linktree.html"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
-                          >
-                            <span data-lang-id="Linktree" data-lang-en="Linktree" data-lang-de="Linktree">Linktree</span>
-                          </a>
-                        
-                          <a
-                            href="acop-2025.html"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
-                          >
-                            <span data-lang-id="ACOP 2025" data-lang-en="ACOP 2025" data-lang-de="ACOP 2025">ACOP 2025</span>
-                          </a>
-                        
-                          <a
-                            href="wiki-aachen.html"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
-                          >
-                            <span data-lang-id="Wiki Aachen für Dummies" data-lang-en="Wiki Aachen für Dummies" data-lang-de="Wiki Aachen für Dummies">Wiki Aachen für Dummies</span>
-                          </a>
-                        
-                          <a
-                            href="press-kit.html"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white "
-                          >
-                            <span data-lang-id="Press Kit" data-lang-en="Press Kit" data-lang-de="Pressemappe">Press Kit</span>
-                          </a>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  
-
-          <!-- Language Switcher (Mobile) -->
-          <div class="mt-6 px-2 pt-4 border-t border-white/20">
-            <p class="text-white/60 text-xs uppercase tracking-wider mb-3" data-lang-id="Bahasa" data-lang-en="Language" data-lang-de="Sprache">Bahasa</p>
-            <div data-lang-switcher="mobile" class="flex gap-2">
-              <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all bg-white text-[#002f6c] font-bold" data-lang="id">ID</button>
-              <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all text-white bg-white/10 font-light" data-lang="en">EN</button>
-              <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all text-white bg-white/10 font-light" data-lang="de">DE</button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <!-- Mobile Overlay -->
+        <span data-lang-id="Organisasi" data-lang-en="Organization" data-lang-de="Organisation">Organisasi</span>
+        <span class="flex-shrink-0 ml-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="chevron-icon w-5 h-5 transition-transform duration-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </span>
+      </button>
       <div
-        id="mobile-overlay"
-        class="fixed inset-0 bg-black/50 z-30 desktop:hidden hidden"
-      ></div>
-    
+        id="mobile-group-organisasi"
+        class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
+      >
+        <div class="pl-4">
+          <a
+            href="sejarah.html"
+            class="nav-link block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white"
+            data-path="sejarah.html"
+          >
+            <span data-lang-id="Sejarah" data-lang-en="History" data-lang-de="Geschichte">Sejarah</span>
+          </a>
+          <a
+            href="kepengurusan.html"
+            class="nav-link block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white"
+            data-path="kepengurusan.html"
+          >
+            <span data-lang-id="Kepengurusan" data-lang-en="Current Board" data-lang-de="Vorstand">Kepengurusan</span>
+          </a>
+          <a
+            href="ad-art.html"
+            class="nav-link block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white"
+            data-path="ad-art.html"
+          >
+            <span data-lang-id="AD/ART PPI Aachen" data-lang-en="Bylaws" data-lang-de="Satzung">AD/ART PPI Aachen</span>
+          </a>
+          <a
+            href="spa.html"
+            class="nav-link block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white"
+            data-path="spa.html"
+          >
+            <span data-lang-id="SPA PPI Aachen" data-lang-en="General Assembly" data-lang-de="Mitgliedsversammlung">SPA PPI Aachen</span>
+          </a>
+          <a
+            href="arsip-lpj.html"
+            class="nav-link block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white"
+            data-path="arsip-lpj.html"
+          >
+            <span data-lang-id="Arsip LPJ" data-lang-en="Annual Report Archive" data-lang-de="Jahresberichtarchiv">Arsip LPJ</span>
+          </a>
+          <a
+            href="arsip-pengurus.html"
+            class="nav-link block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white"
+            data-path="arsip-pengurus.html"
+          >
+            <span data-lang-id="Arsip Pengurus" data-lang-en="Board Archive" data-lang-de="Vorstandsarchiv">Arsip Pengurus</span>
+          </a>
+          <a
+            href="kontak-email.html"
+            class="nav-link block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white"
+            data-path="kontak-email.html"
+          >
+            <span data-lang-id="Kontak" data-lang-en="Contact" data-lang-de="Kontakt">Kontak</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Lainnya -->
+    <div class="dropdown-container">
+      <button
+        data-target="mobile-group-lainnya"
+        class="mobile-group-toggle dropdown-btn w-full text-left py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white flex items-center justify-between"
+        aria-expanded="false"
+      >
+        <span data-lang-id="Lainnya" data-lang-en="Others" data-lang-de="Sonstiges">Lainnya</span>
+        <span class="flex-shrink-0 ml-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="chevron-icon w-5 h-5 transition-transform duration-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </span>
+      </button>
+      <div
+        id="mobile-group-lainnya"
+        class="dropdown-menu overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
+      >
+        <div class="pl-4">
+          <a
+            href="linktree.html"
+            class="nav-link block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white"
+            data-path="linktree.html"
+          >
+            <span data-lang-id="Linktree" data-lang-en="Linktree" data-lang-de="Linktree">Linktree</span>
+          </a>
+          <a
+            href="acop-2025.html"
+            class="nav-link block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white"
+            data-path="acop-2025.html"
+          >
+            <span data-lang-id="ACOP 2025" data-lang-en="ACOP 2025" data-lang-de="ACOP 2025">ACOP 2025</span>
+          </a>
+          <a
+            href="wiki-aachen.html"
+            class="nav-link block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white"
+            data-path="wiki-aachen.html"
+          >
+            <span data-lang-id="Wiki Aachen für Dummies" data-lang-en="Wiki Aachen für Dummies" data-lang-de="Wiki Aachen für Dummies">Wiki Aachen für Dummies</span>
+          </a>
+          <a
+            href="press-kit.html"
+            class="nav-link block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white"
+            data-path="press-kit.html"
+          >
+            <span data-lang-id="Press Kit" data-lang-en="Press Kit" data-lang-de="Pressemappe">Press Kit</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Language Switcher (Mobile) -->
+    <div class="mt-6 px-2 pt-4 border-t border-white/20">
+      <p class="text-white/60 text-xs uppercase tracking-wider mb-3" data-lang-id="Bahasa" data-lang-en="Language" data-lang-de="Sprache">Bahasa</p>
+      <div data-lang-switcher="mobile" class="flex gap-2">
+        <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all bg-white text-[#002f6c] font-bold" data-lang="id">ID</button>
+        <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all text-white bg-white/10 font-light" data-lang="en">EN</button>
+        <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all text-white bg-white/10 font-light" data-lang="de">DE</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Overlay -->
+<div
+  id="mobile-overlay"
+  class="fixed inset-0 bg-black/50 z-30 desktop:hidden hidden"
+></div>
+
     
     <main class="flex-1 w-full min-w-0 desktop:mt-[48px]">
       

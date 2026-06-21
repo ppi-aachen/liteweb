@@ -88,7 +88,9 @@ liteweb/
 │   └── styles.css              # ⚠️ DIBUAT OTOMATIS — Jangan diedit manual!
 │
 ├── src/
-│   └── index.css               # Desain utama Tailwind CSS (Edit di sini jika ingin mengubah style)
+│   ├── index.css               # Desain utama Tailwind CSS (Edit di sini jika ingin mengubah style)
+│   └── partials/
+│       └── nav.html            # ⭐ TEMPLATE NAVIGASI BERSAMA (Edit di sini untuk tambah/ubah link menu)
 │
 ├── build-static.js             # ⭐ Mesin kompilator — mengubah JSON menjadi HTML
 ├── package.json                # Daftar dependensi & perintah build
@@ -251,7 +253,7 @@ Jika suatu saat PPI Aachen membutuhkan halaman baru (misalnya halaman khusus pem
 2.  **Daftarkan di Skrip Build (`build-static.js`):**
     Buka `build-static.js`. Di bagian bawah file, buat fungsi compiler baru untuk halaman Anda (contoh menggunakan fungsi `compileIframePage` jika hanya menampilkan iframe, atau buat fungsi kustom). Panggil fungsi tersebut di bagian paling akhir skrip tempat halaman lain dikompilasi.
 3.  **Tambahkan ke Menu Navigasi:**
-    Buka `build-static.js`, temukan array `navigationItems` di bagian paling atas. Tambahkan link halaman baru Anda di sana agar muncul di menu navigasi atas dan menu mobile.
+    Buka `src/partials/nav.html`. Tambahkan link halaman baru Anda di menu navigasi desktop dan mobile di file HTML tersebut.
 4.  **Daftarkan ke Decap CMS:**
     Buka `admin/config.yml`. Tambahkan konfigurasi halaman baru Anda di bawah bagian `collections` agar halaman tersebut bisa diedit secara visual oleh admin non-teknis.
 5.  **Uji dan Publikasikan:**

@@ -9,37 +9,136 @@ const __dirname = path.dirname(__filename);
 const contentDir = path.join(__dirname, 'content', 'pages');
 const outputDir = __dirname; // Root directory
 
-// Navigation items configuration — labels are multilang objects { id, en, de }
-const navigationItems = [
-    { label: { id: 'Beranda', en: 'Home', de: 'Startseite' }, path: 'index.html' },
-    { label: { id: 'Lapor Diri', en: 'Lapor Diri', de: 'Lapor Diri' }, path: 'lapor-diri.html' },
-    { label: { id: 'Kegiatan', en: 'Events', de: 'Veranstaltungen' }, path: 'events.html' },
-    { label: { id: 'Komunitas', en: 'Communities', de: 'Gemeinschaften' }, path: 'communities.html' },
-    { label: { id: 'Merchandise', en: 'Merchandise', de: 'Merchandise' }, path: 'merchandise.html' },
-    {
-        label: { id: 'Organisasi', en: 'Organization', de: 'Organisation' },
-        path: '#',
-        children: [
-            { label: { id: 'Sejarah', en: 'History', de: 'Geschichte' }, path: 'sejarah.html' },
-            { label: { id: 'Kepengurusan', en: 'Current Board', de: 'Vorstand' }, path: 'kepengurusan.html' },
-            { label: { id: 'AD/ART PPI Aachen', en: 'Bylaws', de: 'Satzung' }, path: 'ad-art.html' },
-            { label: { id: 'SPA PPI Aachen', en: 'General Assembly', de: 'Mitgliedsversammlung' }, path: 'spa.html' },
-            { label: { id: 'Arsip LPJ', en: 'Annual Report Archive', de: 'Jahresberichtarchiv' }, path: 'arsip-lpj.html' },
-            { label: { id: 'Arsip Pengurus', en: 'Board Archive', de: 'Vorstandsarchiv' }, path: 'arsip-pengurus.html' },
-            { label: { id: 'Kontak', en: 'Contact', de: 'Kontakt' }, path: 'kontak-email.html' },
-        ],
-    },
-    {
-        label: { id: 'Lainnya', en: 'Others', de: 'Sonstiges' },
-        path: '#',
-        children: [
-            { label: { id: 'Linktree', en: 'Linktree', de: 'Linktree' }, path: 'linktree.html' },
-            { label: { id: 'ACOP 2025', en: 'ACOP 2025', de: 'ACOP 2025' }, path: 'acop-2025.html' },
-            { label: { id: 'Wiki Aachen für Dummies', en: 'Wiki Aachen für Dummies', de: 'Wiki Aachen für Dummies' }, path: 'wiki-aachen.html' },
-            { label: { id: 'Press Kit', en: 'Press Kit', de: 'Pressemappe' }, path: 'press-kit.html' },
-        ],
-    },
-];
+// Helper to parse date strings for event sorting
+const parseDateLocal = (dateStr) => {
+    if (!dateStr) return new Date(0);
+    const cleanDateStr = dateStr.replace(/deadline:\s*/i, '');
+    const monthRangeMatch = cleanDateStr.match(/^([A-Za-z]+)\s*-\s*([A-Za-z]+)\s+(\d{4})$/);
+    if (monthRangeMatch) {
+        const monthName = monthRangeMatch[1];
+        const year = monthRangeMatch[3];
+        return parseDateLocal(`1 ${monthName} ${year}`);
+    }
+
+    const parts = cleanDateStr.match(/(\d+)(?:-\d+)?\s+([A-Za-z]+)\s+(\d{4})/);
+    if (parts) {
+        const day = parseInt(parts[1], 10);
+        const monthName = parts[2].toLowerCase();
+        const year = parseInt(parts[3], 10);
+
+        const monthMap = {
+            'januari': 0, 'january': 0, 'jan': 0,
+            'februari': 1, 'february': 1, 'feb': 1,
+            'maret': 2, 'march': 2, 'mar': 2,
+            'april': 3, 'apr': 3,
+            'mei': 4, 'may': 4,
+            'juni': 5, 'june': 5, 'jun': 5,
+            'juli': 6, 'july': 6, 'jul': 6,
+            'agustus': 7, 'august': 7, 'aug': 7,
+            'september': 8, 'sep': 8,
+            'oktober': 9, 'october': 9, 'okt': 9, 'oct': 9,
+            'november': 10, 'nov': 10,
+            'desember': 11, 'december': 11, 'des': 11, 'dec': 11
+        };
+
+        if (monthMap.hasOwnProperty(monthName)) {
+            return new Date(year, monthMap[monthName], day);
+        }
+    }
+    return new Date(dateStr);
+};
+
+// Global Event Card Renderer helper
+const renderEventCard = (event, responsiveClass = '') => {
+    const makeRelativePath = (url) => {
+        if (!url) return '';
+        if (typeof url === 'string' && url.startsWith('/')) {
+            return url.substring(1);
+        }
+        return url;
+    };
+    
+    return `
+    <div
+      class="${responsiveClass} event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="${event.title || ''}"
+    >
+      <!-- Image Section -->
+      ${event.image ? `
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="${makeRelativePath(event.image)}"
+            alt="${event.title}"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      ` : ''}
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            ${event.date}
+          </span>
+          ${event.tag ? `
+            <span class="inline-block bg-gray-500 text-white text-xs px-2.5 py-1 rounded-full font-semibold ml-2">
+              ${event.tag}
+            </span>
+          ` : ''}
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            ${event.title}
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            ${event.time ? `
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>${event.time}</span>
+              </div>
+            ` : ''}
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">${event.location}</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          ${event.description || ''}
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        ${event.link ? `
+          <a
+            href="${event.link}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>${event.linkText || 'Open Link'}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        ` : ''}
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    `;
+};
 
 // Helper to strip leading slash from paths to make them relative (useful for direct file opening)
 const makeRelativePath = (url) => {
@@ -72,201 +171,8 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
     const baseUrl = 'https://cf.ppiaachen.de';
     const isLinktree = currentPath === 'linktree.html';
 
-    // Helper to check if a navigation item is active
-    const isActive = (navItem) => {
-        if (navItem.path === currentPath) return true;
-        if (navItem.children) {
-            return navItem.children.some(child => child.path === currentPath);
-        }
-        if (navItem.path === 'index.html' && currentPath === '') return true;
-        return false;
-    };
-
-    const isChildActive = (childPath) => {
-        return childPath === currentPath;
-    };
-
     // Render Side Navigation
-    const sideNavigationHtml = `
-      <!-- Mobile Menu Button -->
-      <button
-        id="mobile-menu-btn"
-        class="fixed top-4 left-4 z-50 desktop:hidden bg-dark text-white p-2 rounded"
-        aria-label="Toggle menu"
-      >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-
-      <!-- Top Navigation Bar (Desktop) -->
-      <nav
-        class="hidden desktop:flex desktop:fixed desktop:top-0 desktop:left-0 desktop:right-0 desktop:bg-white desktop:z-40 desktop:shadow-md h-12"
-        role="navigation"
-      >
-        <div class="w-full flex items-center justify-between px-8">
-          <!-- Logo (Left) -->
-          <div class="flex items-center flex-shrink-0">
-            <a href="index.html" class="flex items-center h-full py-2">
-              <img
-                src="logo.png"
-                alt="PPI Aachen"
-                class="h-10 object-contain"
-                onerror="this.style.display='none'; const text=document.createElement('span'); text.className='logo-text text-dark text-xl font-light'; text.textContent='PPI Aachen'; this.parentElement.appendChild(text);"
-              />
-            </a>
-          </div>
-
-          <!-- Nav items + Language Switcher (Right) -->
-          <div class="flex items-center flex-shrink-0">
-            <div class="flex items-center space-x-1 flex-shrink-0">
-              ${navigationItems.map(item => {
-                  const itemActive = isActive(item);
-                  if (item.children) {
-                      return `
-                      <div class="relative group">
-                        <button
-                          class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 ${itemActive ? 'text-black font-bold' : 'font-light'}"
-                        >
-                          <span data-lang-id="${item.label.id}" data-lang-en="${item.label.en}" data-lang-de="${item.label.de}">${item.label.id}</span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </button>
-                        <div
-                          class="absolute hidden group-hover:block top-full left-0 bg-white shadow-lg min-w-[200px] py-2 z-50 border border-gray-100"
-                        >
-                          ${item.children.map(child => `
-                            <a
-                              href="${child.path}"
-                              class="block px-4 py-2 text-dark text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light ${isChildActive(child.path) ? 'text-black font-bold bg-primary/10' : 'font-light'}"
-                            >
-                              <span data-lang-id="${child.label.id}" data-lang-en="${child.label.en}" data-lang-de="${child.label.de}">${child.label.id}</span>
-                            </a>
-                          `).join('')}
-                        </div>
-                      </div>
-                      `;
-                  } else {
-                      return `
-                      <a
-                        href="${item.path}"
-                        class="px-2 py-2 text-dark text-[12pt] transition-colors duration-200 hover:text-primary-light ${itemActive ? 'text-black font-bold' : 'font-light'}"
-                      >
-                        <span data-lang-id="${item.label.id}" data-lang-en="${item.label.en}" data-lang-de="${item.label.de}">${item.label.id}</span>
-                      </a>
-                      `;
-                  }
-              }).join('')}
-            </div>
-
-            <!-- Language Switcher (Desktop) -->
-            <div data-lang-switcher="desktop" class="relative group ml-3 pl-3 border-l border-gray-200 flex-shrink-0">
-              <button class="px-2 py-2 text-dark text-[11pt] transition-colors duration-200 hover:text-primary-light flex items-center gap-1 font-bold">
-                <span class="current-lang-label uppercase">ID</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div class="absolute hidden group-hover:block top-full right-0 bg-white shadow-lg min-w-[120px] py-2 z-50 border border-gray-100">
-                <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="id">ID</button>
-                <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="en">EN</button>
-                <button class="lang-btn w-full text-left px-4 py-2 text-[11pt] transition-colors duration-200 hover:bg-primary/20 hover:text-primary-light" data-lang="de">DE</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <!-- Side Navigation (Mobile Drawer) -->
-      <nav
-        id="mobile-nav"
-        class="fixed desktop:hidden w-sidebar bg-dark font-sans pt-12 h-screen z-40 transition-transform duration-300 ease-in-out overflow-y-auto overflow-x-hidden -translate-x-full"
-        role="navigation"
-      >
-        <div class="px-2 pb-20">
-          ${navigationItems.map((item, idx) => {
-              const itemActive = isActive(item);
-              if (item.children) {
-                  const groupId = `mobile-group-${idx}`;
-                  return `
-                  <div>
-                    <button
-                      data-target="${groupId}"
-                      class="mobile-group-toggle w-full text-left py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white flex items-center justify-between ${itemActive ? 'text-primary-light' : ''}"
-                    >
-                      <span data-lang-id="${item.label.id}" data-lang-en="${item.label.en}" data-lang-de="${item.label.de}">${item.label.id}</span>
-                      <span class="flex-shrink-0 ml-2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="chevron-icon w-5 h-5 transition-transform duration-300"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </span>
-                    </button>
-                    <div
-                      id="${groupId}"
-                      class="overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
-                    >
-                      <div class="pl-4">
-                        ${item.children.map(child => `
-                          <a
-                            href="${child.path}"
-                            class="block py-[11.5px] px-2 text-white text-[12pt] font-light transition-colors duration-200 hover:text-white ${isChildActive(child.path) ? 'text-primary-light font-normal' : ''}"
-                          >
-                            <span data-lang-id="${child.label.id}" data-lang-en="${child.label.en}" data-lang-de="${child.label.de}">${child.label.id}</span>
-                          </a>
-                        `).join('')}
-                      </div>
-                    </div>
-                  </div>
-                  `;
-              } else {
-                  return `
-                  <a
-                    href="${item.path}"
-                    class="block py-[11.5px] px-2 text-white text-[15pt] font-light transition-colors duration-200 hover:text-white ${itemActive ? 'text-primary-light' : ''}"
-                  >
-                    <span data-lang-id="${item.label.id}" data-lang-en="${item.label.en}" data-lang-de="${item.label.de}">${item.label.id}</span>
-                  </a>
-                  `;
-              }
-          }).join('')}
-
-          <!-- Language Switcher (Mobile) -->
-          <div class="mt-6 px-2 pt-4 border-t border-white/20">
-            <p class="text-white/60 text-xs uppercase tracking-wider mb-3" data-lang-id="Bahasa" data-lang-en="Language" data-lang-de="Sprache">Bahasa</p>
-            <div data-lang-switcher="mobile" class="flex gap-2">
-              <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all bg-white text-[#002f6c] font-bold" data-lang="id">ID</button>
-              <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all text-white bg-white/10 font-light" data-lang="en">EN</button>
-              <button class="lang-btn flex-1 py-2 text-sm rounded text-center transition-all text-white bg-white/10 font-light" data-lang="de">DE</button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <!-- Mobile Overlay -->
-      <div
-        id="mobile-overlay"
-        class="fixed inset-0 bg-black/50 z-30 desktop:hidden hidden"
-      ></div>
-    `;
+    const sideNavigationHtml = fs.readFileSync(path.join(__dirname, 'src', 'partials', 'nav.html'), 'utf-8');
 
     // Render Footer
     const footerHtml = `
@@ -401,7 +307,6 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
 </html>`;
 };
 
-// Render HeroHeader component
 const renderHeroHeader = (title, subtitle) => {
     return `
     <div class="hero-header relative overflow-hidden text-white flex flex-col justify-center items-center text-center">
@@ -547,43 +452,6 @@ const compileHome = () => {
     if (eventsData) {
         const eventGrid = eventsData.sections.find(s => s.type === 'EventGrid');
         if (eventGrid && eventGrid.events) {
-            const parseDateLocal = (dateStr) => {
-                if (!dateStr) return new Date(0);
-                const cleanDateStr = dateStr.replace(/deadline:\s*/i, '');
-                const monthRangeMatch = cleanDateStr.match(/^([A-Za-z]+)\s*-\s*([A-Za-z]+)\s+(\d{4})$/);
-                if (monthRangeMatch) {
-                    const monthName = monthRangeMatch[1];
-                    const year = monthRangeMatch[3];
-                    return parseDateLocal(`1 ${monthName} ${year}`);
-                }
-
-                const parts = cleanDateStr.match(/(\d+)(?:-\d+)?\s+([A-Za-z]+)\s+(\d{4})/);
-                if (parts) {
-                    const day = parseInt(parts[1], 10);
-                    const monthName = parts[2].toLowerCase();
-                    const year = parseInt(parts[3], 10);
-
-                    const monthMap = {
-                        'januari': 0, 'january': 0, 'jan': 0,
-                        'februari': 1, 'february': 1, 'feb': 1,
-                        'maret': 2, 'march': 2, 'mar': 2,
-                        'april': 3, 'apr': 3,
-                        'mei': 4, 'may': 4,
-                        'juni': 5, 'june': 5, 'jun': 5,
-                        'juli': 6, 'july': 6, 'jul': 6,
-                        'agustus': 7, 'august': 7, 'aug': 7,
-                        'september': 8, 'sep': 8,
-                        'oktober': 9, 'october': 9, 'okt': 9, 'oct': 9,
-                        'desember': 11, 'december': 11, 'des': 11, 'dec': 11
-                    };
-
-                    if (monthMap.hasOwnProperty(monthName)) {
-                        return new Date(year, monthMap[monthName], day);
-                    }
-                }
-                return new Date(dateStr);
-            };
-
             // Always show the 3 most recent events sorted by date descending
             const displayEvents = [...eventGrid.events].sort((a, b) => {
                 return parseDateLocal(b.date).getTime() - parseDateLocal(a.date).getTime();
@@ -607,75 +475,9 @@ const compileHome = () => {
                         } else {
                             responsiveClass = 'flex';
                         }
-                        const longDescEscaped = (event.longDescription || event.description || '').replace(/"/g, '&quot;');
-                        const descEscaped = (event.description || '').replace(/"/g, '&quot;');
-                        return `
-                        <div
-                          class="${responsiveClass} event-card bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 flex-col group text-dark cursor-pointer"
-                          data-title="${event.title || ''}"
-                          data-date="${event.date || ''}"
-                          data-tag="${event.tag || ''}"
-                          data-location="${event.location || ''}"
-                          data-time="${event.time || ''}"
-                          data-description="${descEscaped}"
-                          data-long-description="${longDescEscaped}"
-                          data-image="${makeRelativePath(event.image)}"
-                          data-link="${event.link || ''}"
-                          data-link-text="${event.linkText || ''}"
-                        >
-                          <!-- Image Section -->
-                          ${event.image ? `
-                            <div class="h-48 w-full overflow-hidden relative">
-                              <img
-                                src="${makeRelativePath(event.image)}"
-                                alt="${event.title}"
-                                loading="lazy"
-                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                              />
-                            </div>
-                          ` : ''}
-
-                          <div class="p-6 flex flex-col flex-grow text-left">
-                            <div class="mb-4">
-                              <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
-                                ${event.date}
-                              </span>
-                              ${event.tag ? `
-                                <span class="inline-block bg-gray-500 text-white text-xs px-2.5 py-1 rounded-full font-semibold ml-2">
-                                  ${event.tag}
-                                </span>
-                              ` : ''}
-                              <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
-                                ${event.title}
-                              </h3>
-                              
-                              <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
-                                ${event.time ? `
-                                  <div class="flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <span>${event.time}</span>
-                                  </div>
-                                ` : ''}
-                                <div class="flex items-center gap-2">
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                  </svg>
-                                  <span class="truncate">${event.location}</span>
-                                </div>
-                              </div>
-                            </div>
-
-                            <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
-                              ${event.description || ''}
-                            </p>
-                          </div>
-                        </div>
-                        `;
+                        return renderEventCard(event, responsiveClass);
                       }).join('')}
-                    </div>
+                    </div>      </div>
 
                     <div class="flex justify-center">
                       <a
@@ -1018,7 +820,7 @@ const compileHome = () => {
       </div>
     `;
 
-    const html = renderLayout(body, 'Home', 'index.html', 'home.js');
+    const html = renderLayout(body, 'Home', 'index.html', 'home.js', 'content/pages/events.js');
     fs.writeFileSync(path.join(outputDir, 'index.html'), html);
     console.log('index.html compiled.');
 };
@@ -1271,6 +1073,10 @@ const compileEvents = () => {
 
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Events', subtitle: 'Kegiatan PPI Aachen' };
     const eventGrid = data.sections.find(s => s.type === 'EventGrid');
+    const events = eventGrid ? eventGrid.events : [];
+    
+    // Sort events initially newest first
+    const sortedEvents = [...events].sort((a, b) => parseDateLocal(b.date).getTime() - parseDateLocal(a.date).getTime());
 
     const body = `
       <div>
@@ -1319,7 +1125,7 @@ const compileEvents = () => {
               </div>
 
               <div id="events-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <!-- Dynamically populated by js/events.js -->
+                ${sortedEvents.map(event => renderEventCard(event)).join('')}
               </div>
             </section>
 

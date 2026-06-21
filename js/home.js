@@ -160,15 +160,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (eventModal && closeEventBtn) {
         const openModal = (card) => {
-            const title = card.getAttribute('data-title');
-            const date = card.getAttribute('data-date');
-            const tag = card.getAttribute('data-tag');
-            const location = card.getAttribute('data-location');
-            const time = card.getAttribute('data-time');
-            const description = card.getAttribute('data-long-description') || card.getAttribute('data-description');
-            const image = card.getAttribute('data-image');
-            const link = card.getAttribute('data-link');
-            const linkText = card.getAttribute('data-link-text') || 'Learn More';
+            const eventTitle = card.getAttribute('data-event-title');
+            const eventGridData = window.eventsData ? window.eventsData.sections.find(s => s.type === 'EventGrid') : null;
+            const event = eventGridData ? eventGridData.events.find(e => e.title === eventTitle) : null;
+            if (!event) return;
+
+            const makeRelativePath = (url) => {
+                if (!url) return '';
+                if (typeof url === 'string' && url.startsWith('/')) {
+                    return url.substring(1);
+                }
+                return url;
+            };
+
+            const title = event.title || '';
+            const date = event.date || '';
+            const tag = event.tag || '';
+            const location = event.location || '';
+            const time = event.time || '';
+            const description = event.longDescription || event.description || '';
+            const image = makeRelativePath(event.image);
+            const link = event.link || '';
+            const linkText = event.linkText || 'Learn More';
 
             if (modalTitle) modalTitle.textContent = title;
             if (modalDate) modalDate.textContent = date;

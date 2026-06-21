@@ -114,20 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             eventsGrid.innerHTML = list.map((event) => {
-                const longDescEscaped = (event.longDescription || event.description || '').replace(/"/g, '&quot;');
                 return `
                 <div
                   class="event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
-                  data-title="${event.title || ''}"
-                  data-date="${event.date || ''}"
-                  data-tag="${event.tag || ''}"
-                  data-location="${event.location || ''}"
-                  data-time="${event.time || ''}"
-                  data-description="${event.description || ''}"
-                  data-long-description="${longDescEscaped}"
-                  data-image="${makeRelativePath(event.image)}"
-                  data-link="${event.link || ''}"
-                  data-link-text="${event.linkText || ''}"
+                  data-event-title="${event.title || ''}"
                 >
                   <!-- Image Section -->
                   ${event.image ? `
@@ -141,17 +131,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                   ` : ''}
 
-                  <div class="p-6 flex flex-col flex-grow">
+                  <div class="p-6 flex flex-col flex-grow text-left">
                     <div class="mb-4">
-                      <span class="inline-block bg-[#0161bf] text-white text-xs px-2 py-1 rounded-full mb-2">
+                      <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
                         ${event.date}
                       </span>
                       ${event.tag ? `
-                        <span class="inline-block bg-gray-500 text-white text-xs px-2 py-1 rounded-full mb-2 ml-2">
+                        <span class="inline-block bg-gray-500 text-white text-xs px-2.5 py-1 rounded-full font-semibold ml-2">
                           ${event.tag}
                         </span>
                       ` : ''}
-                      <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c]">${event.title}</h3>
+                      <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">${event.title}</h3>
                       <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
                         ${event.time ? `
                           <div class="flex items-center gap-2">
@@ -166,18 +156,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>
-                          <span>${event.location}</span>
+                          <span class="truncate">${event.location}</span>
                         </div>
                       </div>
                     </div>
 
-                    <div class="body-text text-sm text-gray-600 mb-6 flex-grow line-clamp-3">
-                      ${renderMarkdown(event.description)}
-                    </div>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+                      ${event.description || ''}
+                    </p>
                   </div>
 
                   <!-- Card Footer Actions -->
-                  <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50">
+                  <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
                     ${event.link ? `
                       <a
                         href="${event.link}"
@@ -257,15 +247,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (eventModal && closeEventBtn) {
         const openModal = (card) => {
-            const title = card.getAttribute('data-title');
-            const date = card.getAttribute('data-date');
-            const tag = card.getAttribute('data-tag');
-            const location = card.getAttribute('data-location');
-            const time = card.getAttribute('data-time');
-            const description = card.getAttribute('data-long-description') || card.getAttribute('data-description');
-            const image = card.getAttribute('data-image');
-            const link = card.getAttribute('data-link');
-            const linkText = card.getAttribute('data-link-text') || 'Learn More';
+            const eventTitle = card.getAttribute('data-event-title');
+            const eventGridData = window.eventsData ? window.eventsData.sections.find(s => s.type === 'EventGrid') : null;
+            const event = eventGridData ? eventGridData.events.find(e => e.title === eventTitle) : null;
+            if (!event) return;
+
+            const title = event.title || '';
+            const date = event.date || '';
+            const tag = event.tag || '';
+            const location = event.location || '';
+            const time = event.time || '';
+            const description = event.longDescription || event.description || '';
+            const image = makeRelativePath(event.image);
+            const link = event.link || '';
+            const linkText = event.linkText || 'Learn More';
 
             if (modalTitle) modalTitle.textContent = title;
             if (modalDate) modalDate.textContent = date;

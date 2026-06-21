@@ -177,5 +177,9 @@
     background-repeat: no-repeat;
   }
 
+  /* Accessibility support for dropdowns */
+  .dropdown-container.open .dropdown-menu {
+    display: block !important;
+  }
 
 }
