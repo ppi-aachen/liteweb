@@ -64,6 +64,27 @@ const linkMap = {
     'impressum.html': 'impressum.html'
 };
 
+// Map of paths to their unique meta descriptions
+const metaDescriptions = {
+    'index.html': 'Selamat datang di situs resmi PPI Aachen. Temukan informasi terbaru seputar kehidupan, kegiatan, dan komunitas pelajar Indonesia di Aachen, Jerman.',
+    'lapor-diri.html': 'Panduan resmi dan sistem lapor diri untuk mahasiswa serta warga Indonesia yang tinggal di wilayah Aachen, Düren, dan Heinsberg.',
+    'events.html': 'Ikuti berbagai kegiatan seru, diskusi ilmiah, acara olahraga, dan festival budaya menarik yang diselenggarakan oleh PPI Aachen.',
+    'communities.html': 'Jelajahi berbagai komunitas minat bakat, olahraga (bulutangkis, basket, futsal), dan keagamaan pelajar Indonesia di Aachen.',
+    'merchandise.html': 'Dapatkan merchandise resmi PPI Aachen, mulai dari jaket, kaos, hingga aksesoris menarik khas komunitas kami.',
+    'organization/sejarah.html': 'Pelajari sejarah berdirinya PPI Aachen sejak tahun 1956, yang diawali oleh tokoh nasional seperti Peter Manusama hingga B.J. Habibie.',
+    'organization/kepengurusan.html': 'Kenali jajaran badan pengurus harian dan divisi yang menjalankan roda organisasi PPI Aachen untuk periode aktif saat ini.',
+    'organization/ad-art.html': 'Anggaran Dasar dan Anggaran Rumah Tangga (AD/ART) resmi Perhimpunan Pelajar Indonesia di Aachen sebagai landasan hukum organisasi.',
+    'organization/spa.html': 'Informasi tentang Sidang Perwakilan Anggota (SPA) PPI Aachen, forum pengambilan keputusan tertinggi bagi seluruh anggota.',
+    'organization/arsip-lpj.html': 'Arsip Laporan Pertanggungjawaban (LPJ) tahunan dari setiap kepengurusan PPI Aachen sebagai bentuk transparansi organisasi.',
+    'organization/arsip-pengurus.html': 'Daftar nama dan dokumentasi sejarah badan pengurus PPI Aachen dari periode-periode kepengurusan sebelumnya.',
+    'organization/kontak-email.html': 'Hubungi PPI Aachen melalui email resmi atau media sosial untuk kolaborasi, pertanyaan seputar studi, atau kemitraan.',
+    'others/linktree.html': 'Kumpulan tautan penting PPI Aachen, termasuk pendaftaran kegiatan, sosial media, grup komunikasi, dan lainnya.',
+    'others/acop-2025.html': 'Halaman resmi turnamen olahraga Aachen Open (ACOP) 2025. Tunjukkan bakatmu dan jalin sportivitas antar mahasiswa.',
+    'others/wiki-aachen.html': 'Panduan lengkap "Wiki Aachen für Dummies" untuk mahasiswa baru Indonesia. Berisi info akomodasi, studi, transportasi, dan birokrasi di Aachen.',
+    'others/press-kit.html': 'Press kit resmi PPI Aachen berisi logo, panduan identitas visual, dan materi promosi untuk media dan mitra kerja sama.',
+    'impressum.html': 'Informasi hukum (Impressum) dan kebijakan privasi (Datenschutzerklärung) situs web resmi Perhimpunan Pelajar Indonesia di Aachen.'
+};
+
 // Resolve all internal links in the rendered navigation and footer HTML
 const resolvePathsInHtml = (htmlContent, prefix) => {
     let resolved = htmlContent;
@@ -243,6 +264,8 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
     const baseUrl = 'https://ppiaachen.de';
     const isLinktree = currentPath === 'others/linktree.html';
     const prefix = getRootPrefix(currentPath);
+    const defaultDesc = 'Perhimpunan Pelajar Indonesia di Aachen - Indonesian Students Association in Aachen';
+    const metaDesc = metaDescriptions[currentPath] || defaultDesc;
 
     // Render Side Navigation
     let sideNavigationHtml = fs.readFileSync(path.join(__dirname, 'src', 'partials', 'nav.html'), 'utf-8');
@@ -339,20 +362,20 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="${prefix}favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Perhimpunan Pelajar Indonesia di Aachen - Indonesian Students Association in Aachen" />
+  <meta name="description" content="${metaDesc}" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="${baseUrl}/${currentPath}" />
   <meta property="og:title" content="PPI Aachen - ${title}" />
-  <meta property="og:description" content="Perhimpunan Pelajar Indonesia di Aachen - Indonesian Students Association in Aachen" />
+  <meta property="og:description" content="${metaDesc}" />
   <meta property="og:image" content="${baseUrl}/og-image.png" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="${baseUrl}/${currentPath}" />
   <meta property="twitter:title" content="PPI Aachen - ${title}" />
-  <meta property="twitter:description" content="Perhimpunan Pelajar Indonesia di Aachen - Indonesian Students Association in Aachen" />
+  <meta property="twitter:description" content="${metaDesc}" />
   <meta property="twitter:image" content="${baseUrl}/og-image.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">

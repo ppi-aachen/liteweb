@@ -17,7 +17,7 @@ window.eventsData = {
                     "linkText": "Linktree",
                     "date": "13-14 January 2026",
                     "location": "Online",
-                    "title": "Charlemagne Cup 2025",
+                    "title": "Charlemagne Cup 2026",
                     "type": "Event",
                     "link": "https://linktr.ee/CharlemagneCup",
                     "image": "/images/charlemagnecup.jpg",
@@ -319,18 +319,6 @@ window.eventsData = {
                     "link": "https://ppiaachen.de/spa",
                     "image": "/images/events/spa26.jpg",
                     "description": "Suaramu menentukan masa depan PPI Aachen! Mari hadir ke forum tertinggi PPI Aachen untuk mengevaluasi dan menentukan arah masa depan PPI Aachen."
-                },
-                {
-                    "longDescription": "WOW mengada-ngada **BOLD** \n\n## **BIG**\n\n* **dot1**\n\n1. **number1**\n2. **~~wrong~~**\n3. ***~~italic~~***",
-                    "linkText": "websitez",
-                    "time": "10:45",
-                    "date": "18 Juni 2026",
-                    "location": "Schönforst",
-                    "title": "Mengada-ngada",
-                    "type": "Event",
-                    "link": "ppiaachen.de",
-                    "image": "/images/events/istockphoto-816752606-612x612.jpg",
-                    "description": "Acara mengadakan ngada"
                 }
             ]
         }
