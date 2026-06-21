@@ -71,11 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Active Navigation Link Highlighting
     const normalizePath = (p) => {
-        let normalized = p.replace(/\/index\.html$/, '/');
-        if (!normalized.endsWith('/')) {
-            normalized += '/';
+        let normalized = p;
+        if (normalized.endsWith('/')) {
+            normalized = normalized.slice(0, -1);
         }
-        return normalized;
+        normalized = normalized.replace(/\.html$/, '');
+        normalized = normalized.replace(/\/index$/, '');
+        if (!normalized.startsWith('/')) {
+            normalized = '/' + normalized;
+        }
+        return normalized || '/';
     };
     const currentUrl = new URL(window.location.href);
     const normalizedCurrentPath = normalizePath(currentUrl.pathname);
