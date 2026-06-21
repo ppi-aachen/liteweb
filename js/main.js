@@ -70,45 +70,58 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Active Navigation Link Highlighting
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const normalizePath = (p) => {
+        let normalized = p.replace(/\/index\.html$/, '/');
+        if (!normalized.endsWith('/')) {
+            normalized += '/';
+        }
+        return normalized;
+    };
+    const currentUrl = new URL(window.location.href);
+    const normalizedCurrentPath = normalizePath(currentUrl.pathname);
+
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-        const linkPath = link.getAttribute('data-path') || link.getAttribute('href');
-        if (linkPath === currentPath) {
-            // Desktop active state
-            if (link.closest('nav:not(#mobile-nav)')) {
-                link.classList.add('text-black', 'font-bold');
-                link.classList.remove('font-light');
-                
-                // Highlight parent dropdown button if inside one
-                const dropdownContainer = link.closest('.dropdown-container');
-                if (dropdownContainer) {
-                    const parentBtn = dropdownContainer.querySelector('.dropdown-btn');
-                    if (parentBtn) {
-                        parentBtn.classList.add('text-black', 'font-bold');
-                        parentBtn.classList.remove('font-light');
+        try {
+            const linkUrl = new URL(link.href);
+            if (normalizePath(linkUrl.pathname) === normalizedCurrentPath) {
+                // Desktop active state
+                if (link.closest('nav:not(#mobile-nav)')) {
+                    link.classList.add('text-black', 'font-bold');
+                    link.classList.remove('font-light');
+                    
+                    // Highlight parent dropdown button if inside one
+                    const dropdownContainer = link.closest('.dropdown-container');
+                    if (dropdownContainer) {
+                        const parentBtn = dropdownContainer.querySelector('.dropdown-btn');
+                        if (parentBtn) {
+                            parentBtn.classList.add('text-black', 'font-bold');
+                            parentBtn.classList.remove('font-light');
+                        }
+                    }
+                }
+                // Mobile active state
+                if (link.closest('#mobile-nav')) {
+                    link.classList.add('text-primary-light');
+                    link.classList.remove('font-light');
+                    
+                    // Open and highlight mobile group
+                    const dropdownContainer = link.closest('.dropdown-container');
+                    if (dropdownContainer) {
+                        const parentBtn = dropdownContainer.querySelector('.mobile-group-toggle');
+                        const menu = dropdownContainer.querySelector('.dropdown-menu');
+                        if (parentBtn && menu) {
+                            parentBtn.classList.add('text-primary-light');
+                            menu.classList.remove('max-h-0', 'opacity-0');
+                            menu.classList.add('max-h-[500px]', 'opacity-100');
+                            const chevron = parentBtn.querySelector('.chevron-icon');
+                            if (chevron) chevron.classList.add('rotate-180');
+                        }
                     }
                 }
             }
-            // Mobile active state
-            if (link.closest('#mobile-nav')) {
-                link.classList.add('text-primary-light');
-                link.classList.remove('font-light');
-                
-                // Open and highlight mobile group
-                const dropdownContainer = link.closest('.dropdown-container');
-                if (dropdownContainer) {
-                    const parentBtn = dropdownContainer.querySelector('.mobile-group-toggle');
-                    const menu = dropdownContainer.querySelector('.dropdown-menu');
-                    if (parentBtn && menu) {
-                        parentBtn.classList.add('text-primary-light');
-                        menu.classList.remove('max-h-0', 'opacity-0');
-                        menu.classList.add('max-h-[500px]', 'opacity-100');
-                        const chevron = parentBtn.querySelector('.chevron-icon');
-                        if (chevron) chevron.classList.add('rotate-180');
-                    }
-                }
-            }
+        } catch (e) {
+            console.error('Failed to parse URL for link:', link, e);
         }
     });
 

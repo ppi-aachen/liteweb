@@ -37,6 +37,46 @@ const ensureAbsoluteUrl = (url) => {
     return trimmed;
 };
 
+// Helper to calculate relative prefix for nested directories
+const getRootPrefix = (filePath) => {
+    const depth = filePath.split('/').length - 1;
+    return depth > 0 ? '../'.repeat(depth) : '';
+};
+
+// Map of old flat paths to new nested/flat paths
+const linkMap = {
+    'index.html': 'index.html',
+    'lapor-diri.html': 'lapor-diri.html',
+    'events.html': 'events.html',
+    'communities.html': 'communities.html',
+    'merchandise.html': 'merchandise.html',
+    'sejarah.html': 'organization/sejarah.html',
+    'kepengurusan.html': 'organization/kepengurusan.html',
+    'ad-art.html': 'organization/ad-art.html',
+    'spa.html': 'organization/spa.html',
+    'arsip-lpj.html': 'organization/arsip-lpj.html',
+    'arsip-pengurus.html': 'organization/arsip-pengurus.html',
+    'kontak-email.html': 'organization/kontak-email.html',
+    'linktree.html': 'others/linktree.html',
+    'acop-2025.html': 'others/acop-2025.html',
+    'wiki-aachen.html': 'others/wiki-aachen.html',
+    'press-kit.html': 'others/press-kit.html',
+    'impressum.html': 'impressum.html'
+};
+
+// Resolve all internal links in the rendered navigation and footer HTML
+const resolvePathsInHtml = (htmlContent, prefix) => {
+    let resolved = htmlContent;
+    for (const [oldLink, newPath] of Object.entries(linkMap)) {
+        const regex = new RegExp(`href=["']${oldLink}["']`, 'g');
+        resolved = resolved.replace(regex, `href="${prefix}${newPath}"`);
+        const dpRegex = new RegExp(`data-path=["']${oldLink}["']`, 'g');
+        resolved = resolved.replace(dpRegex, `data-path="${prefix}${newPath}"`);
+    }
+    resolved = resolved.replace(/src=["']logo\.png["']/g, `src="${prefix}logo.png"`);
+    return resolved;
+};
+
 // Helper to resolve workspace paths
 const contentDir = path.join(__dirname, 'content', 'pages');
 const outputDir = __dirname; // Root directory
@@ -173,12 +213,12 @@ const renderEventCard = (event, responsiveClass = '') => {
 };
 
 // Helper to strip leading slash from paths to make them relative (useful for direct file opening)
-const makeRelativePath = (url) => {
+const makeRelativePath = (url, prefix = '') => {
     if (!url) return '';
     if (typeof url === 'string' && url.startsWith('/')) {
-        return url.substring(1);
+        return prefix + url.substring(1);
     }
-    return url;
+    return prefix + url;
 };
 
 // Read JSON data helpers
@@ -201,13 +241,14 @@ const saveJsData = (filename, varName, data) => {
 // Global Layout template compiler
 const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataScript = null) => {
     const baseUrl = 'https://ppiaachen.de';
-    const isLinktree = currentPath === 'linktree.html';
+    const isLinktree = currentPath === 'others/linktree.html';
+    const prefix = getRootPrefix(currentPath);
 
     // Render Side Navigation
-    const sideNavigationHtml = fs.readFileSync(path.join(__dirname, 'src', 'partials', 'nav.html'), 'utf-8');
+    let sideNavigationHtml = fs.readFileSync(path.join(__dirname, 'src', 'partials', 'nav.html'), 'utf-8');
 
     // Render Footer
-    const footerHtml = `
+    let footerHtml = `
       <footer class="bg-dark text-white py-8">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="px-12 md:px-[48px]">
@@ -292,11 +333,11 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
       </footer>
     `;
 
-    return `<!doctype html>
+    const layoutHtml = `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/png" href="${prefix}favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Perhimpunan Pelajar Indonesia di Aachen - Indonesian Students Association in Aachen" />
 
@@ -317,7 +358,7 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="${prefix}css/styles.css" />
   <title>PPI Aachen - ${title}</title>
 </head>
 <body class="font-sans text-dark bg-white">
@@ -331,19 +372,21 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
     ${footerHtml}
   </div>
 
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
-  ${dataScript ? `<script src="${dataScript}"></script>` : ''}
-  ${pageScript ? `<script src="js/${pageScript}"></script>` : ''}
+  <script src="${prefix}js/i18n.js"></script>
+  <script src="${prefix}js/main.js"></script>
+  ${dataScript ? `<script src="${prefix}${dataScript}"></script>` : ''}
+  ${pageScript ? `<script src="${prefix}js/${pageScript}"></script>` : ''}
 </body>
 </html>`;
+
+    return resolvePathsInHtml(layoutHtml, prefix);
 };
 
-const renderHeroHeader = (title, subtitle) => {
+const renderHeroHeader = (title, subtitle, prefix = '') => {
     return `
     <div class="hero-header relative overflow-hidden text-white flex flex-col justify-center items-center text-center">
       <!-- Parallax Background Layer -->
-      <div class="hero-header-bg absolute inset-0 w-full" style="background-image: url('hero-bright.png'); height: 120%; top: -10%; z-index: 0;"></div>
+      <div class="hero-header-bg absolute inset-0 w-full" style="background-image: url('${prefix}hero-bright.png'); height: 120%; top: -10%; z-index: 0;"></div>
     </div>
     `;
 };
@@ -872,6 +915,9 @@ const compileIframePage = (jsonFilename, outputFilename, pageTitle) => {
     const iframeSection = data.sections.find(s => s.type === 'IframeSection');
     if (!iframeSection) return;
 
+    const currentPath = linkMap[outputFilename] || outputFilename;
+    const prefix = getRootPrefix(currentPath);
+
     const body = `
       <div class="w-full h-[calc(100vh-64px)] desktop:mt-[0px] flex flex-col overflow-hidden">
         <!-- Banner bantuan akses untuk perangkat seluler -->
@@ -896,9 +942,11 @@ const compileIframePage = (jsonFilename, outputFilename, pageTitle) => {
       </div>
     `;
 
-    const html = renderLayout(body, pageTitle, outputFilename);
-    fs.writeFileSync(path.join(outputDir, outputFilename), html);
-    console.log(`${outputFilename} compiled.`);
+    const html = renderLayout(body, pageTitle, currentPath);
+    const destPath = path.join(outputDir, currentPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, html);
+    console.log(`${currentPath} compiled.`);
 };
 
 // 3. Communities Compiler
@@ -1273,12 +1321,15 @@ const compileSejarah = () => {
     const data = getJsonData('sejarah.json');
     if (!data) return;
 
+    const currentPath = 'organization/sejarah.html';
+    const prefix = getRootPrefix(currentPath);
+
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Sejarah', subtitle: 'History of PPI Aachen' };
     const contentSections = data.sections.filter(s => s.type === 'Section');
 
     const body = `
       <div>
-        ${renderHeroHeader(heroSection.title, heroSection.subtitle)}
+        ${renderHeroHeader(heroSection.title, heroSection.subtitle, prefix)}
 
         ${contentSections.map((section, index) => {
             const isAlternate = index % 2 !== 0;
@@ -1301,7 +1352,7 @@ const compileSejarah = () => {
                       ${section.image ? `
                         <div class="w-full md:w-1/3 flex-shrink-0">
                           <img
-                            src="${makeRelativePath(section.image)}"
+                            src="${makeRelativePath(section.image, prefix)}"
                             alt="${section.imageCaption || 'Sejarah Image'}"
                             class="rounded-lg shadow-lg w-full h-auto object-cover"
                           />
@@ -1325,9 +1376,11 @@ const compileSejarah = () => {
       </div>
     `;
 
-    const html = renderLayout(body, 'Sejarah', 'sejarah.html');
-    fs.writeFileSync(path.join(outputDir, 'sejarah.html'), html);
-    console.log('sejarah.html compiled.');
+    const html = renderLayout(body, 'Sejarah', currentPath);
+    const destPath = path.join(outputDir, currentPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, html);
+    console.log('organization/sejarah.html compiled.');
 };
 
 // 6. Kepengurusan Page Compiler
@@ -1338,22 +1391,69 @@ const compileKepengurusan = () => {
     // Generate kepengurusan.js dynamically
     saveJsData('kepengurusan.js', 'kepengurusanData', data);
 
+    const currentPath = 'organization/kepengurusan.html';
+    const prefix = getRootPrefix(currentPath);
+
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Kepengurusan', subtitle: 'Susunan Kepengurusan PPI Aachen 2025/2026' };
+
+    const execData = data.sections.find(s => s.type === 'ExecutiveBoard');
+    let executiveBoardHtml = '';
+    if (execData) {
+        executiveBoardHtml = `
+            <h2 class="heading-2 mb-8">${execData.title || 'Executive Board'}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                <h3 class="heading-3 mb-2 text-[#002f6c]">Ketua</h3>
+                <p class="text-xl font-medium">${execData.chair}</p>
+              </div>
+              <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                <h3 class="heading-3 mb-2 text-[#002f6c]">Wakil Ketua</h3>
+                <p class="text-xl font-medium">${execData.vice || '-'}</p>
+              </div>
+            </div>
+        `;
+    }
+
+    const deptsData = data.sections.find(s => s.type === 'DepartmentList');
+    const departments = deptsData ? deptsData.departments : [];
+    let departmentsHtml = departments.map(dept => `
+        <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="bg-gray-50 p-6 border-b border-gray-100">
+            <h3 class="text-2xl font-bold text-gray-900">${dept.name}</h3>
+          </div>
+          <div class="p-6">
+            <div class="body-text text-gray-600 mb-6 italic border-l-4 border-[#0161bf] pl-4">
+              ${renderMarkdown(dept.description)}
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3 uppercase text-sm tracking-wider">Members</h4>
+              <ul class="space-y-2">
+                ${(dept.members || []).map(member => `
+                  <li class="flex items-center gap-2 text-gray-700">
+                    <span class="w-2 h-2 bg-[#0161bf] rounded-full"></span>
+                    <span>${member}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+    `).join('');
 
     const body = `
       <div>
-        ${renderHeroHeader(heroSection.title, heroSection.subtitle)}
+        ${renderHeroHeader(heroSection.title, heroSection.subtitle, prefix)}
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="px-4 md:px-[48px] py-12">
 
             <!-- Core Leadership -->
             <section id="executive-board-section" class="mb-16 text-center">
-              <!-- Dynamically populated -->
+              ${executiveBoardHtml}
             </section>
 
             <!-- Departments -->
             <div id="departments-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <!-- Dynamically populated -->
+              ${departmentsHtml}
             </div>
 
           </div>
@@ -1361,9 +1461,11 @@ const compileKepengurusan = () => {
       </div>
     `;
 
-    const html = renderLayout(body, 'Kepengurusan', 'kepengurusan.html', 'kepengurusan.js', 'content/pages/kepengurusan.js');
-    fs.writeFileSync(path.join(outputDir, 'kepengurusan.html'), html);
-    console.log('kepengurusan.html compiled.');
+    const html = renderLayout(body, 'Kepengurusan', currentPath);
+    const destPath = path.join(outputDir, currentPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, html);
+    console.log('organization/kepengurusan.html compiled.');
 };
 
 // 7. AD/ART Page Compiler
@@ -1371,12 +1473,15 @@ const compileAdArt = () => {
     const data = getJsonData('ad-art.json');
     if (!data) return;
 
+    const currentPath = 'organization/ad-art.html';
+    const prefix = getRootPrefix(currentPath);
+
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'AD/ART PPI Aachen', subtitle: 'Anggaran Dasar & Anggaran Rumah Tangga' };
     const contentSections = data.sections.filter(s => s.type === 'Section');
 
     const body = `
       <div>
-        ${renderHeroHeader(heroSection.title, heroSection.subtitle)}
+        ${renderHeroHeader(heroSection.title, heroSection.subtitle, prefix)}
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="px-4 md:px-[48px] py-12">
             
@@ -1469,9 +1574,11 @@ const compileAdArt = () => {
       </div>
     `;
 
-    const html = renderLayout(body, 'AD/ART', 'ad-art.html', 'ad-art.js');
-    fs.writeFileSync(path.join(outputDir, 'ad-art.html'), html);
-    console.log('ad-art.html compiled.');
+    const html = renderLayout(body, 'AD/ART', currentPath, 'ad-art.js');
+    const destPath = path.join(outputDir, currentPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, html);
+    console.log('organization/ad-art.html compiled.');
 };
 
 // 8. SPA Page Compiler
@@ -1479,12 +1586,15 @@ const compileSpa = () => {
     const data = getJsonData('spa.json');
     if (!data) return;
 
+    const currentPath = 'organization/spa.html';
+    const prefix = getRootPrefix(currentPath);
+
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'SPA', subtitle: 'Sidang Perwakilan Anggota PPI Aachen' };
     const contentSection = data.sections.find(s => s.type === 'Section');
 
     const body = `
       <div>
-        ${renderHeroHeader(heroSection.title, heroSection.subtitle)}
+        ${renderHeroHeader(heroSection.title, heroSection.subtitle, prefix)}
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="px-4 md:px-[48px] py-12">
             ${contentSection ? `
@@ -1498,9 +1608,11 @@ const compileSpa = () => {
       </div>
     `;
 
-    const html = renderLayout(body, 'SPA', 'spa.html');
-    fs.writeFileSync(path.join(outputDir, 'spa.html'), html);
-    console.log('spa.html compiled.');
+    const html = renderLayout(body, 'SPA', currentPath);
+    const destPath = path.join(outputDir, currentPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, html);
+    console.log('organization/spa.html compiled.');
 };
 
 // 9. Arsip LPJ Compiler
@@ -1511,16 +1623,39 @@ const compileArsipLpj = () => {
     // Generate arsip-lpj.js dynamically
     saveJsData('arsip-lpj.js', 'lpjData', data);
 
+    const currentPath = 'organization/arsip-lpj.html';
+    const prefix = getRootPrefix(currentPath);
+
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Arsip LPJ', subtitle: 'Laporan Pertanggungjawaban' };
+
+    const lpjListSection = data.sections.find(s => s.type === 'LpjList');
+    const lpjList = lpjListSection ? [...lpjListSection.items] : [];
+    lpjList.sort((a, b) => b.year.localeCompare(a.year, undefined, { numeric: true }));
+
+    const lpjCardsHtml = lpjList.map((lpj) => `
+        <div
+          class="lpj-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-[#0161bf] transition-all group flex items-center justify-between cursor-pointer"
+          data-year="${lpj.year}"
+          data-url="${lpj.url}"
+        >
+          <div>
+            <h3 class="heading-3 mt-0 mb-1 group-hover:text-[#0161bf] transition-colors">LPJ ${lpj.year}</h3>
+            <p class="body-text text-sm text-gray-500 mt-0">View Document</p>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 group-hover:text-[#0161bf]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </div>
+    `).join('');
 
     const body = `
       <div class="mb-24">
-        ${renderHeroHeader(heroSection.title, heroSection.subtitle)}
+        ${renderHeroHeader(heroSection.title, heroSection.subtitle, prefix)}
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="px-4 md:px-[48px] py-12">
             <h2 class="heading-2 mb-8">Arsip LPJ</h2>
             <div id="lpj-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <!-- Dynamically populated by js/arsip-lpj.js -->
+              ${lpjCardsHtml}
             </div>
           </div>
         </div>
@@ -1535,6 +1670,16 @@ const compileArsipLpj = () => {
             <div class="flex items-center justify-between p-4 border-b border-gray-100">
               <h3 id="modal-lpj-title" class="font-bold text-gray-900 text-lg"></h3>
               <div class="flex items-center gap-2">
+                <!-- Mobile Directly Open Button (helpful for phone layout scrolling issues) -->
+                <a
+                  id="modal-lpj-mobile-btn"
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="desktop:hidden px-3 py-1.5 bg-[#0161bf] hover:bg-[#004a9e] text-white text-xs font-semibold rounded-lg shadow transition-colors flex items-center gap-1"
+                >
+                  Buka Dokumen Langsung ↗
+                </a>
                 <a
                   id="modal-lpj-newtab"
                   href=""
@@ -1575,9 +1720,11 @@ const compileArsipLpj = () => {
       </div>
     `;
 
-    const html = renderLayout(body, 'Arsip LPJ', 'arsip-lpj.html', 'arsip-lpj.js', 'content/pages/arsip-lpj.js');
-    fs.writeFileSync(path.join(outputDir, 'arsip-lpj.html'), html);
-    console.log('arsip-lpj.html compiled.');
+    const html = renderLayout(body, 'Arsip LPJ', currentPath, 'arsip-lpj.js');
+    const destPath = path.join(outputDir, currentPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, html);
+    console.log('organization/arsip-lpj.html compiled.');
 };
 
 // 10. Arsip Pengurus Compiler
@@ -1588,12 +1735,98 @@ const compileArsipPengurus = () => {
     // Generate arsip-pengurus.js dynamically
     saveJsData('arsip-pengurus.js', 'cabinetData', data);
 
+    const currentPath = 'organization/arsip-pengurus.html';
+    const prefix = getRootPrefix(currentPath);
+
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Arsip Pengurus', subtitle: 'Past Cabinet Archive' };
     const cabinetArchive = data.sections.find(s => s.type === 'CabinetArchive');
 
+    const pastChairs = cabinetArchive ? cabinetArchive.pastChairs || [] : [];
+    const cabinets = cabinetArchive ? cabinetArchive.cabinets || [] : [];
+
+    const pastChairsHtml = pastChairs.map(item => `
+        <div class="break-inside-avoid flex justify-between items-center h-14 px-2 border-b border-gray-100 hover:bg-gray-50 transition-colors group">
+            <span class="font-medium text-gray-900 border-r border-gray-200 pr-4 flex-1 truncate group-hover:border-[#002f6c]/30 transition-colors" title="${item.name}">${item.name}</span>
+            <span class="text-sm text-gray-500 font-mono pl-4 text-right min-w-[100px]">${item.period}</span>
+        </div>
+    `).join('');
+
+    const cabinetsHtml = cabinets.map((cab, idx) => {
+        const hasDeps = cab.departments && cab.departments.length > 0;
+        const isCaretaker = cab.vice === "Caretaker (Ketua, Sekretaris, Bendahara)";
+        return `
+            <div
+                id="cabinet-card-${idx}"
+                class="cabinet-card bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer"
+            >
+                <!-- Header (Clickable) -->
+                <div class="cabinet-header bg-[#002F6C] text-white p-6 flex flex-col sm:flex-row justify-between items-center relative group">
+                    <div class="z-10 text-center sm:text-left">
+                        <h3 class="text-2xl font-bold mb-2 sm:mb-0 group-hover:underline decoration-white/50 underline-offset-4 transition-all">
+                            ${cab.period}
+                        </h3>
+                    </div>
+                    <div class="z-10 text-center sm:text-right flex flex-col items-center sm:items-end">
+                        <p class="text-lg font-semibold">${cab.chair}</p>
+                        ${cab.vice && cab.vice !== "-" ? `<p class="text-sm opacity-90">Vice: <span>${cab.vice}</span></p>` : ''}
+                    </div>
+
+                    <!-- Expand/Collapse Indicator -->
+                    <div class="sm:hidden mt-3 text-white/70 text-xs">
+                        Tap to expand/collapse
+                    </div>
+                </div>
+
+                <!-- Body (Collapsible) -->
+                ${(hasDeps || cab.image) ? `
+                    <div
+                        id="cabinet-body-${idx}"
+                        class="cabinet-body bg-gray-50 transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 p-0"
+                    >
+                        <div class="p-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                ${(cab.departments || []).map(dept => `
+                                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                                        <h4 class="font-bold text-[#002F6C] mb-2 text-sm uppercase tracking-wide border-b pb-1 border-gray-100">${dept.name}</h4>
+                                        <ul class="text-sm text-gray-700 space-y-1">
+                                            ${(dept.members || []).map(member => `
+                                                <li>${member}</li>
+                                            `).join('')}
+                                        </ul>
+                                    </div>
+                                `).join('')}
+
+                                <!-- Cabinet Image if available -->
+                                ${cab.image ? `
+                                    <div class="md:col-span-2 lg:col-span-3 mt-4">
+                                        <img
+                                            src="${makeRelativePath(cab.image, prefix)}"
+                                            alt="Kabinet ${cab.period}"
+                                            class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                                        />
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                ` : ''}
+
+                <!-- Caretaker Note (Collapsible) -->
+                ${(!hasDeps && isCaretaker) ? `
+                    <div
+                        id="cabinet-note-${idx}"
+                        class="cabinet-note bg-gray-50 text-center text-gray-500 italic transition-all duration-300 max-h-0 p-0 overflow-hidden"
+                    >
+                        Bertindak sebagai pelaksana tugas untuk memastikan keberlanjutannya PPI Aachen.
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    }).join('');
+
     const body = `
       <div>
-        ${renderHeroHeader(heroSection.title, heroSection.subtitle)}
+        ${renderHeroHeader(heroSection.title, heroSection.subtitle, prefix)}
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="px-4 md:px-[48px] py-12">
             
@@ -1601,7 +1834,7 @@ const compileArsipPengurus = () => {
             <section class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 mb-12">
               <h2 class="heading-2 mb-8 text-center">Daftar Ketua PPI Aachen</h2>
               <div id="past-chairs-list" class="columns-1 md:columns-2 lg:columns-3 gap-5 space-y-1 [column-rule:1px_solid_#e5e7eb]">
-                <!-- Dynamically populated by js/arsip-pengurus.js -->
+                ${pastChairsHtml}
               </div>
             </section>
 
@@ -1610,7 +1843,7 @@ const compileArsipPengurus = () => {
               <h2 class="heading-2 mb-12 text-center">${cabinetArchive?.title || 'Arsip Pengurus Kabinet'}</h2>
 
               <div id="cabinets-list" class="grid grid-cols-1 gap-6">
-                <!-- Dynamically populated by js/arsip-pengurus.js -->
+                ${cabinetsHtml}
               </div>
             </section>
 
@@ -1619,9 +1852,11 @@ const compileArsipPengurus = () => {
       </div>
     `;
 
-    const html = renderLayout(body, 'Arsip Pengurus', 'arsip-pengurus.html', 'arsip-pengurus.js', 'content/pages/arsip-pengurus.js');
-    fs.writeFileSync(path.join(outputDir, 'arsip-pengurus.html'), html);
-    console.log('arsip-pengurus.html compiled.');
+    const html = renderLayout(body, 'Arsip Pengurus', currentPath, 'arsip-pengurus.js');
+    const destPath = path.join(outputDir, currentPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, html);
+    console.log('organization/arsip-pengurus.html compiled.');
 };
 
 // 11. Kontak Email Page Compiler
@@ -1629,13 +1864,16 @@ const compileKontakEmail = () => {
     const data = getJsonData('kontak-email.json');
     if (!data) return;
 
+    const currentPath = 'organization/kontak-email.html';
+    const prefix = getRootPrefix(currentPath);
+
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Kontak Email', subtitle: 'Get in Touch' };
     const contactListSection = data.sections.find(s => s.type === 'ContactList');
     const contacts = contactListSection?.contacts || [];
 
     const body = `
       <div class="mb-24">
-        ${renderHeroHeader(heroSection.title, heroSection.subtitle)}
+        ${renderHeroHeader(heroSection.title, heroSection.subtitle, prefix)}
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="px-4 md:px-[48px] py-12">
             <section class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
@@ -1648,7 +1886,7 @@ const compileKontakEmail = () => {
                       ${contact.image ? `
                         <div class="flex-shrink-0 p-2">
                           <img
-                            src="${makeRelativePath(contact.image)}"
+                            src="${makeRelativePath(contact.image, prefix)}"
                             alt="${contact.role}"
                             class="w-64 h-auto object-contain"
                           />
@@ -1701,9 +1939,11 @@ const compileKontakEmail = () => {
       </div>
     `;
 
-    const html = renderLayout(body, 'Kontak Email', 'kontak-email.html');
-    fs.writeFileSync(path.join(outputDir, 'kontak-email.html'), html);
-    console.log('kontak-email.html compiled.');
+    const html = renderLayout(body, 'Kontak Email', currentPath);
+    const destPath = path.join(outputDir, currentPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, html);
+    console.log('organization/kontak-email.html compiled.');
 };
 
 // 12. Linktree Page Compiler
@@ -1711,12 +1951,15 @@ const compileLinktree = () => {
     const data = getJsonData('linktree.json');
     if (!data) return;
 
+    const currentPath = 'others/linktree.html';
+    const prefix = getRootPrefix(currentPath);
+
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Linktree', subtitle: 'PPI Aachen Links' };
     const contentSection = data.sections.find(s => s.type === 'Section');
 
     const body = `
       <div>
-        ${renderHeroHeader(heroSection.title, heroSection.subtitle)}
+        ${renderHeroHeader(heroSection.title, heroSection.subtitle, prefix)}
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="px-4 md:px-[48px] py-12">
             ${contentSection ? `
@@ -1728,15 +1971,20 @@ const compileLinktree = () => {
       </div>
     `;
 
-    const html = renderLayout(body, 'Linktree', 'linktree.html');
-    fs.writeFileSync(path.join(outputDir, 'linktree.html'), html);
-    console.log('linktree.html compiled.');
+    const html = renderLayout(body, 'Linktree', currentPath);
+    const destPath = path.join(outputDir, currentPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, html);
+    console.log('others/linktree.html compiled.');
 };
 
 // 13. Press Kit Page Compiler
 const compilePressKit = () => {
     const data = getJsonData('press-kit.json');
     if (!data) return;
+
+    const currentPath = 'others/press-kit.html';
+    const prefix = getRootPrefix(currentPath);
 
     const heroSection = data.sections.find(s => s.type === 'Hero') || { title: 'Press Kit', subtitle: 'Resources & Assets' };
     const headerSection = data.sections.find(s => s.type === 'PressKitHeader');
@@ -1745,7 +1993,7 @@ const compilePressKit = () => {
 
     const body = `
       <div class="mb-24">
-        ${renderHeroHeader(heroSection.title, heroSection.subtitle)}
+        ${renderHeroHeader(heroSection.title, heroSection.subtitle, prefix)}
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="px-4 md:px-[48px] py-12">
             <h2 class="heading-2 mb-8">Press Kit</h2>
@@ -1781,12 +2029,12 @@ const compilePressKit = () => {
                 <div
                   class="logo-card group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all cursor-pointer"
                   data-name="${logo.name}"
-                  data-image="${makeRelativePath(logo.image)}"
+                  data-image="${makeRelativePath(logo.image, prefix)}"
                 >
                   <div class="aspect-square bg-gray-300 flex items-center justify-center p-8 border-b border-gray-100 relative">
                     <div class="w-full h-full flex items-center justify-center text-gray-300 relative z-10">
                       <img
-                        src="${makeRelativePath(logo.image)}"
+                        src="${makeRelativePath(logo.image, prefix)}"
                         alt="${logo.name}"
                         class="max-w-full max-h-full object-contain"
                         onerror="this.src='https://placehold.co/400x400/f3f4f6/a1a1aa?text=Logo+Placeholder';"
@@ -1802,7 +2050,7 @@ const compilePressKit = () => {
                       ${logo.name}
                     </h3>
                     <a
-                      href="${makeRelativePath(logo.image)}"
+                      href="${makeRelativePath(logo.image, prefix)}"
                       download
                       target="_blank"
                       rel="noopener noreferrer"
@@ -1874,9 +2122,11 @@ const compilePressKit = () => {
       </div>
     `;
 
-    const html = renderLayout(body, 'Press Kit', 'press-kit.html', 'press-kit.js');
-    fs.writeFileSync(path.join(outputDir, 'press-kit.html'), html);
-    console.log('press-kit.html compiled.');
+    const html = renderLayout(body, 'Press Kit', currentPath, 'press-kit.js');
+    const destPath = path.join(outputDir, currentPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, html);
+    console.log('others/press-kit.html compiled.');
 };
 
 // 14. Impressum Page Compiler
