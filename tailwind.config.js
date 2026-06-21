@@ -2,6 +2,8 @@
 export default {
   content: [
     "./*.html",
+    "./organization/**/*.html",
+    "./others/**/*.html",
     "./js/**/*.js",
   ],
   theme: {
