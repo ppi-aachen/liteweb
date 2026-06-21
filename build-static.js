@@ -5,6 +5,38 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Helper to ensure links without protocol are treated as absolute/external if they look like domain names
+const ensureAbsoluteUrl = (url) => {
+    if (!url) return '';
+    if (typeof url !== 'string') return url;
+    
+    const trimmed = url.trim();
+    // Exclude protocols, relative paths, hashes
+    if (/^(https?|ftp|mailto|tel):/i.test(trimmed) || 
+        trimmed.startsWith('/') || 
+        trimmed.startsWith('#') || 
+        trimmed.startsWith('./') || 
+        trimmed.startsWith('../')) {
+        return trimmed;
+    }
+    
+    // Split by first slash to get the potential host name
+    const slashIndex = trimmed.indexOf('/');
+    const host = slashIndex === -1 ? trimmed : trimmed.substring(0, slashIndex);
+    
+    // Check if the host looks like a domain name
+    if (/^[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}$/i.test(host)) {
+        // Ensure the TLD is not 'html' (which indicates a local page link)
+        const parts = host.split('.');
+        const tld = parts[parts.length - 1].toLowerCase();
+        if (tld !== 'html') {
+            return `https://${trimmed}`;
+        }
+    }
+    
+    return trimmed;
+};
+
 // Helper to resolve workspace paths
 const contentDir = path.join(__dirname, 'content', 'pages');
 const outputDir = __dirname; // Root directory
@@ -117,7 +149,7 @@ const renderEventCard = (event, responsiveClass = '') => {
       <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
         ${event.link ? `
           <a
-            href="${event.link}"
+            href="${ensureAbsoluteUrl(event.link)}"
             target="_blank"
             rel="noopener noreferrer"
             class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
@@ -360,8 +392,8 @@ const renderMarkdown = (content) => {
     html = html.replace(/_(.+?)_/g, '<em>$1</em>');
 
     // Links [text](url)
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g,
-        '<a href="$2" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">$1</a>');
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, url) =>
+        `<a href="${ensureAbsoluteUrl(url)}" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">${text}</a>`);
 
     // Images ![alt](url)
     html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g,
@@ -917,7 +949,7 @@ const compileCommunities = () => {
                       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-3">
                         ${(spotlightCommunity.links || []).map(link => `
                           <a
-                            href="${link.url}"
+                            href="${ensureAbsoluteUrl(link.url)}"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="flex items-center justify-center gap-2 px-4 py-3 bg-[#0161bf] text-white rounded-lg hover:bg-[#004a9e] transition-all shadow-md hover:shadow-lg text-sm font-medium w-full h-full text-center"
@@ -1727,7 +1759,7 @@ const compilePressKit = () => {
                 </div>
                 ${headerSection.downloadLink ? `
                   <a
-                    href="${headerSection.downloadLink}"
+                    href="${ensureAbsoluteUrl(headerSection.downloadLink)}"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 px-6 py-3 bg-[#0161bf] text-white font-bold rounded-lg hover:bg-[#004e9a] transition-colors shadow-md hover:shadow-lg whitespace-nowrap"

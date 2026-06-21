@@ -18,8 +18,8 @@ const renderMarkdown = (content) => {
     html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
     html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
     html = html.replace(/_(.+?)_/g, '<em>$1</em>');
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g,
-        '<a href="$2" class="text-[#0161bf] hover:underline" target="_blank" rel="noopener noreferrer">$1</a>');
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, url) =>
+        `<a href="${window.ensureAbsoluteUrl ? window.ensureAbsoluteUrl(url) : url}" class="text-[#0161bf] hover:underline" target="_blank" rel="noopener noreferrer">${text}</a>`);
     html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g,
         '<img src="$2" alt="$1" class="rounded max-w-full h-auto my-2" />');
     html = html.replace(/((?:^[ \t]*[-*+] .+\n?)+)/gm, (block) => {
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             modalLinksSection.classList.remove('hidden');
                             links.forEach(link => {
                                 const a = document.createElement('a');
-                                a.href = link.url;
+                                a.href = window.ensureAbsoluteUrl ? window.ensureAbsoluteUrl(link.url) : link.url;
                                 a.target = '_blank';
                                 a.rel = 'noopener noreferrer';
                                 a.className = 'inline-flex items-center gap-2 px-5 py-2.5 bg-gray-50 text-[#0161bf] font-semibold rounded-lg hover:bg-[#0161bf] hover:text-white transition-all border border-gray-200 hover:border-[#0161bf]';

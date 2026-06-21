@@ -1,3 +1,35 @@
+// Helper to ensure links without protocol are treated as absolute/external if they look like domain names
+window.ensureAbsoluteUrl = (url) => {
+    if (!url) return '';
+    if (typeof url !== 'string') return url;
+    
+    const trimmed = url.trim();
+    // Exclude protocols, relative paths, hashes
+    if (/^(https?|ftp|mailto|tel):/i.test(trimmed) || 
+        trimmed.startsWith('/') || 
+        trimmed.startsWith('#') || 
+        trimmed.startsWith('./') || 
+        trimmed.startsWith('../')) {
+        return trimmed;
+    }
+    
+    // Split by first slash to get the potential host name
+    const slashIndex = trimmed.indexOf('/');
+    const host = slashIndex === -1 ? trimmed : trimmed.substring(0, slashIndex);
+    
+    // Check if the host looks like a domain name
+    if (/^[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}$/i.test(host)) {
+        // Ensure the TLD is not 'html' (which indicates a local page link)
+        const parts = host.split('.');
+        const tld = parts[parts.length - 1].toLowerCase();
+        if (tld !== 'html') {
+            return `https://${trimmed}`;
+        }
+    }
+    
+    return trimmed;
+};
+
 // Global navigation drawer & UI interaction
 document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');

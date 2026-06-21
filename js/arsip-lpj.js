@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lpjModal && closeLpjBtn) {
         const openModal = (card) => {
             const year = card.getAttribute('data-year');
-            const url = card.getAttribute('data-url');
+            const rawUrl = card.getAttribute('data-url');
+            const url = window.ensureAbsoluteUrl ? window.ensureAbsoluteUrl(rawUrl) : rawUrl;
             
             const previewUrl = url.replace('/view', '/preview');
 

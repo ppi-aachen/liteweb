@@ -19,8 +19,8 @@ const renderMarkdown = (content) => {
     html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
     html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
     html = html.replace(/_(.+?)_/g, '<em>$1</em>');
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g,
-        '<a href="$2" class="text-[#0161bf] hover:underline" target="_blank" rel="noopener noreferrer">$1</a>');
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, url) =>
+        `<a href="${window.ensureAbsoluteUrl ? window.ensureAbsoluteUrl(url) : url}" class="text-[#0161bf] hover:underline" target="_blank" rel="noopener noreferrer">${text}</a>`);
     html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g,
         '<img src="$2" alt="$1" class="rounded max-w-full h-auto my-2" />');
     html = html.replace(/((?:^[ \t]*[-*+] .+\n?)+)/gm, (block) => {
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
                     ${event.link ? `
                       <a
-                        href="${event.link}"
+                        href="${window.ensureAbsoluteUrl ? window.ensureAbsoluteUrl(event.link) : event.link}"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (modalLinkSection && modalLink) {
                 if (link) {
-                    modalLink.href = link;
+                    modalLink.href = window.ensureAbsoluteUrl ? window.ensureAbsoluteUrl(link) : link;
                     modalLink.innerHTML = `
                         ${linkText}
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
