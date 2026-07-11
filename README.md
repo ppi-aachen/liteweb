@@ -67,7 +67,7 @@ liteweb/
 │   └── config.yml              # Konfigurasi kolom input CMS
 │
 ├── assets/
-│   └── carousel/               # Gambar slideshow halaman utama (Harus format .png)
+│   └── carousel/               # Gambar slideshow halaman utama (.webp, .png, .jpg)
 │
 ├── content/
 │   └── pages/                  # ⭐ TEMPAT DATA TEKS & KONTEN WEBSITE
@@ -199,11 +199,12 @@ Jika Anda ingin menguji panel admin CMS di komputer lokal tanpa harus terhubung 
 ### Mengelola Slideshow / Carousel di Halaman Utama
 Slideshow besar di halaman utama bekerja secara otomatis dengan membaca folder `assets/carousel/`.
 
-*   **Format File:** Semua foto slideshow **wajib** menggunakan format `.png`. File dengan format lain (seperti `.jpg` atau `.webp`) akan diabaikan oleh sistem.
+*   **Format File:** Foto slideshow mendukung format `.webp`, `.png`, dan `.jpg` / `.jpeg`.
+*   **Prioritas Format:** Jika terdapat beberapa file dengan nama dasar yang sama tetapi format berbeda (misalnya `1.webp`, `1.png`, dan `1.jpg`), sistem akan otomatis memilih satu file berdasarkan urutan prioritas: **`.webp` → `.png` → `.jpg`**. File dengan prioritas lebih rendah akan diabaikan. Ini memungkinkan Anda menambahkan versi `.webp` yang lebih ringan tanpa perlu menghapus file `.png` yang sudah ada.
 *   **Urutan Gambar:** Slideshow menampilkan gambar berdasarkan urutan nama file (alfabet/angka). Contoh penamaan terbaik:
-    *   `1.png` (Slide pertama)
-    *   `2.png` (Slide kedua)
-    *   `3.png` (Slide ketiga)
+    *   `1.webp` atau `1.png` (Slide pertama)
+    *   `2.webp` atau `2.png` (Slide kedua)
+    *   `3.webp` atau `3.png` (Slide ketiga)
 *   **Cara Memperbarui:** Cukup hapus atau tambah file baru di folder `assets/carousel/`, lalu jalankan `npm run build` dan push perubahan ke GitHub.
 
 ### Folder Penyimpanan Gambar Konten

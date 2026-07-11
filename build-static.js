@@ -530,11 +530,30 @@ const compileHome = () => {
     if (!data) return;
 
     // Scan carousel assets directory
+    // Supports .webp, .png, and .jpg/.jpeg images.
+    // When multiple files share the same base name (e.g. 1.webp, 1.png, 1.jpg),
+    // only the highest-priority format is kept: webp > png > jpg/jpeg.
     const carouselDir = path.join(__dirname, 'assets', 'carousel');
     let slides = [];
     if (fs.existsSync(carouselDir)) {
-        slides = fs.readdirSync(carouselDir)
-            .filter(f => f.toLowerCase().endsWith('.png'))
+        const supportedExts = ['.webp', '.png', '.jpg', '.jpeg'];
+        const extPriority = { '.webp': 0, '.png': 1, '.jpg': 2, '.jpeg': 2 };
+        const allFiles = fs.readdirSync(carouselDir)
+            .filter(f => supportedExts.includes(path.extname(f).toLowerCase()));
+
+        // Deduplicate: keep only the highest-priority format per base name
+        const bestByBase = new Map();
+        for (const file of allFiles) {
+            const ext = path.extname(file).toLowerCase();
+            const base = path.basename(file, path.extname(file));
+            const priority = extPriority[ext];
+            if (!bestByBase.has(base) || priority < bestByBase.get(base).priority) {
+                bestByBase.set(base, { file, priority });
+            }
+        }
+
+        slides = Array.from(bestByBase.values())
+            .map(v => v.file)
             .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
     }
 
