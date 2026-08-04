@@ -37,6 +37,10 @@
           {
             "label": "Subreddit",
             "url": "https://reddit.com/r/indoaachener"
+          },
+          {
+            "label": "Indo-Aachener Website",
+            "url": "https://hub.indoaachener.de"
           }
         ]
       }
@@ -210,6 +214,23 @@
             {
               "label": "Instagram",
               "url": "https://www.instagram.com/arbeitskreis.id"
+            }
+          ]
+        },
+        {
+          "name": "Indo-Aachener Sportverein e.V",
+          "category": "Olahraga",
+          "longDescription": "Indo-Aachener Sportverein e.V. didirikan untuk memaksimalkan penggunaan sumber daya bersama dan mempererat solidaritas di antara seluruh komunitas Indonesia di Aachen, Jerman.\n\nMelalui olahraga, klub ini menyatukan warga Indonesia yang tinggal dan belajar di Aachen. Menciptakan rumah kedua yang dibangun atas dasar kerja sama tim, persahabatan, dan kebudayaan bersama.\n\nKegiatan meliputi sesi latihan rutin, turnamen, acara pemuda, serta partisipasi dalam kompetisi olahraga yang lebih luas.",
+          "description": "Menyatukan komunitas Indonesia di Aachen melalui olahraga, sumber daya bersama, dan solidaritas.",
+          "image": "/images/communities/indo-aachener.png",
+          "links": [
+            {
+              "label": "Website",
+              "url": "https://indoaachener.de/"
+            },
+            {
+              "label": "Instagram",
+              "url": "https://www.instagram.com/indoaachener"
             }
           ]
         }
