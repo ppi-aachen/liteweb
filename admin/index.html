@@ -24,14 +24,28 @@
       return lines.map((line, idx) => h('p', { key: idx, className: 'mb-4 text-gray-700 leading-relaxed' }, line));
     }
 
-    // Helper to resolve asset URL
+    // Helper to resolve asset URL (handles published images and freshly uploaded Blob objects)
     function getImageUrl(getAsset, image) {
       if (!image) return null;
       try {
-        const asset = getAsset(image);
-        return asset ? asset.toString() : image;
+        let target = image;
+        if (typeof image === 'object' && image !== null) {
+          if (typeof image.get === 'function') {
+            target = image.get('url') || image.get('path') || image.get('file') || image;
+          } else if (image.url || image.path || image.file) {
+            target = image.url || image.path || image.file;
+          }
+        }
+        if (typeof target === 'string' && target.startsWith('blob:')) {
+          return target;
+        }
+        const asset = getAsset(target) || getAsset(image);
+        if (asset) {
+          return asset.toString() || asset.url || asset.path || '';
+        }
+        return typeof target === 'string' ? target : '';
       } catch (e) {
-        return image;
+        return typeof image === 'string' ? image : '';
       }
     }
 
