@@ -1,0 +1,17 @@
+{
+    "type": "Page",
+    "title": "Linktree",
+    "slug": "linktree",
+    "sections": [
+        {
+            "type": "Hero",
+            "title": "Linktree",
+            "subtitle": "PPI Aachen Links"
+        },
+        {
+            "type": "Section",
+            "title": "PPI Aachen | Linktree",
+            "content": "<p class=\"body-text mb-6\">Access all PPI Aachen links and resources in one place.</p>\n<div class=\"space-y-4\">\n  <a href=\"https://linktr.ee/aachenppi\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn-primary inline-block\">\n    Visit Linktree\n  </a>\n</div>"
+        }
+    ]
+}

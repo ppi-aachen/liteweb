@@ -1,0 +1,619 @@
+backend:
+  name: github
+  repo: ppi-aachen/liteweb
+  branch: main
+  base_url: https://ppiaachen.pages.dev
+  auth_endpoint: api/auth
+
+local_backend: true
+
+show_preview_links: false
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "active-pages"
+    label: "Active Pages"
+    delete: false
+    files:
+      - file: "content/pages/events.json"
+        label: "Events Page"
+        name: "events"
+        format: "json"
+        media_folder: "/images/events"
+        public_folder: "/images/events"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "EventGrid"
+                label: "Events Grid Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "EventGrid" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - name: "events"
+                    label: "Events List"
+                    widget: "list"
+                    fields:
+                      - { label: "Type", name: "type", widget: "hidden", default: "Event" }
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Date", name: "date", widget: "string" }
+                      - { label: "Time", name: "time", widget: "string", required: false }
+                      - { label: "Location", name: "location", widget: "string" }
+                      - { label: "Description", name: "description", widget: "markdown" }
+                      - { label: "Long Description", name: "longDescription", widget: "markdown", required: false }
+                      - { label: "Image", name: "image", widget: "image" }
+                      - { label: "Link URL", name: "link", widget: "string", required: false }
+                      - { label: "Link Text", name: "linkText", widget: "string", required: false }
+                      - { label: "Tag", name: "tag", widget: "string", required: false }
+
+      - file: "content/pages/kepengurusan.json"
+        label: "Kepengurusan Page"
+        name: "kepengurusan"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "ExecutiveBoard"
+                label: "Executive Board"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "ExecutiveBoard" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Chair", name: "chair", widget: "string" }
+                  - { label: "Vice Chair", name: "vice", widget: "string" }
+              - name: "DepartmentList"
+                label: "Department List Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "DepartmentList" }
+                  - name: "departments"
+                    label: "Departments"
+                    widget: "list"
+                    fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "Description", name: "description", widget: "markdown" }
+                      - { label: "Members", name: "members", widget: "list", field: { label: "Member Name", name: "name", widget: "string" } }
+
+      - file: "content/pages/arsip-lpj.json"
+        label: "Arsip LPJ Page"
+        name: "arsip-lpj"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "LpjList"
+                label: "LPJ List Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "LpjList" }
+                  - name: "items"
+                    label: "LPJ Items"
+                    widget: "list"
+                    fields:
+                      - { label: "Year", name: "year", widget: "string" }
+                      - { label: "Document URL (Google Drive)", name: "url", widget: "string" }
+
+      - file: "content/pages/arsip-pengurus.json"
+        label: "Arsip Pengurus Page"
+        name: "arsip-pengurus"
+        format: "json"
+        media_folder: "/images/pengurus"
+        public_folder: "/images/pengurus"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "CabinetArchive"
+                label: "Cabinet Archive Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "CabinetArchive" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - name: "pastChairs"
+                    label: "Past Chairs List"
+                    widget: "list"
+                    fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "Period", name: "period", widget: "string" }
+                  - name: "cabinets"
+                    label: "Cabinets Details"
+                    widget: "list"
+                    fields:
+                      - { label: "Period", name: "period", widget: "string" }
+                      - { label: "Chair", name: "chair", widget: "string" }
+                      - { label: "Vice Chair(s)", name: "vice", widget: "string", required: false }
+                      - { label: "Cabinet Image", name: "image", widget: "image", required: false }
+                      - name: "departments"
+                        label: "Departments"
+                        widget: "list"
+                        fields:
+                          - { label: "Department Name", name: "name", widget: "string" }
+                          - { label: "Members", name: "members", widget: "list", field: { label: "Member Name", name: "name", widget: "string" } }
+
+  - name: "passive-pages"
+    label: "Passive Pages"
+    delete: false
+    files:
+      - file: "content/pages/home.json"
+        label: "Home Page"
+        name: "home"
+        format: "json"
+        media_folder: "/images/home"
+        public_folder: "/images/home"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "Section"
+                label: "Content Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Section" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
+                  - { label: "Background Color", name: "backgroundColor", widget: "select", options: ["white", "blue", "gray"], required: false }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Image Caption", name: "imageCaption", widget: "string", required: false }
+                  - { label: "Image Position", name: "imagePosition", widget: "select", options: ["left", "right", "center"], required: false }
+
+      - file: "content/pages/sejarah.json"
+        label: "Sejarah Page"
+        name: "sejarah"
+        format: "json"
+        media_folder: "/images/sejarah"
+        public_folder: "/images/sejarah"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "Section"
+                label: "Content Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Section" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Image Caption", name: "imageCaption", widget: "string", required: false }
+                  - { label: "Image Position", name: "imagePosition", widget: "select", options: ["left", "right", "center"], required: false }
+
+      - file: "content/pages/communities.json"
+        label: "Communities Page"
+        name: "communities"
+        format: "json"
+        media_folder: "/images/communities"
+        public_folder: "/images/communities"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "CommunitySpotlight"
+                label: "Community Spotlight"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "CommunitySpotlight" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - name: "community"
+                    label: "Featured Community"
+                    widget: "object"
+                    fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "Description", name: "description", widget: "markdown" }
+                      - { label: "Long Description", name: "longDescription", widget: "markdown", required: false }
+                      - { label: "Category", name: "category", widget: "string" }
+                      - { label: "Image", name: "image", widget: "image" }
+                      - name: "links"
+                        label: "Links"
+                        widget: "list"
+                        fields:
+                          - { label: "Label", name: "label", widget: "string" }
+                          - { label: "URL", name: "url", widget: "string" }
+              - name: "CommunityGrid"
+                label: "Community Grid"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "CommunityGrid" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - name: "communities"
+                    label: "Communities"
+                    widget: "list"
+                    fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "Category", name: "category", widget: "string" }
+                      - { label: "Description", name: "description", widget: "markdown" }
+                      - { label: "Long Description", name: "longDescription", widget: "markdown", required: false }
+                      - { label: "Image", name: "image", widget: "image" }
+                      - name: "links"
+                        label: "Links"
+                        widget: "list"
+                        fields:
+                          - { label: "Label", name: "label", widget: "string" }
+                          - { label: "URL", name: "url", widget: "string" }
+
+      - file: "content/pages/spa.json"
+        label: "SPA Page"
+        name: "spa"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "Section"
+                label: "Content Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Section" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
+
+      - file: "content/pages/ad-art.json"
+        label: "AD/ART Page"
+        name: "ad-art"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "Section"
+                label: "Content Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Section" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
+
+      - file: "content/pages/impressum.json"
+        label: "Impressum Page"
+        name: "impressum"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "Section"
+                label: "Content Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Section" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
+
+      - file: "content/pages/kontak-email.json"
+        label: "Kontak Email Page"
+        name: "kontak-email"
+        format: "json"
+        media_folder: "/images/kontak-email"
+        public_folder: "/images/kontak-email"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "ContactList"
+                label: "Contact List Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "ContactList" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Office Name", name: "officeName", widget: "string", required: false }
+                  - { label: "Office Address", name: "officeAddress", widget: "string", required: false }
+                  - { label: "WhatsApp Number", name: "whatsappNumber", widget: "string", required: false }
+                  - name: "contacts"
+                    label: "Contacts"
+                    widget: "list"
+                    fields:
+                      - { label: "Role", name: "role", widget: "string" }
+                      - { label: "Email", name: "email", widget: "string" }
+                      - { label: "Image", name: "image", widget: "image", required: false }
+                      - { label: "WhatsApp", name: "whatsapp", widget: "string", required: false }
+                      - { label: "WhatsApp Link", name: "whatsappLink", widget: "string", required: false }
+                      - { label: "Address", name: "address", widget: "string", required: false }
+                      - { label: "Address Link", name: "addressLink", widget: "string", required: false }
+
+      - file: "content/pages/press-kit.json"
+        label: "Press Kit Page"
+        name: "press-kit"
+        format: "json"
+        media_folder: "/images/press-kit"
+        public_folder: "/images/press-kit"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "PressKitHeader"
+                label: "Press Kit Header"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "PressKitHeader" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+                  - { label: "Download Link", name: "downloadLink", widget: "string", required: false }
+                  - { label: "Download Text", name: "downloadText", widget: "string", required: false }
+              - name: "LogoGrid"
+                label: "Logo Grid"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "LogoGrid" }
+                  - name: "logos"
+                    label: "Logos"
+                    widget: "list"
+                    fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "Image", name: "image", widget: "image" }
+
+      - file: "content/pages/linktree.json"
+        label: "Linktree Page"
+        name: "linktree"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "Hero"
+                label: "Hero Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Hero" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - name: "Section"
+                label: "Content Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "Section" }
+                  - { label: "Title (Indonesian/Default)", name: "title", widget: "string", required: false }
+                  - { label: "Title (Indonesian)", name: "title_id", widget: "string", required: false }
+                  - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+                  - { label: "Title (German)", name: "title_de", widget: "string", required: false }
+                  - { label: "Content (Indonesian/Default)", name: "content", widget: "markdown" }
+                  - { label: "Content (English)", name: "content_en", widget: "markdown", required: false }
+                  - { label: "Content (German)", name: "content_de", widget: "markdown", required: false }
+
+      - file: "content/pages/lapor-diri.json"
+        label: "Lapor Diri Page"
+        name: "lapor-diri"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "IframeSection"
+                label: "Iframe Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "IframeSection" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Source URL", name: "src", widget: "string" }
+                  - { label: "Height", name: "height", widget: "string", required: false }
+
+      - file: "content/pages/wiki-aachen.json"
+        label: "Wiki Aachen Page"
+        name: "wiki-aachen"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "IframeSection"
+                label: "Iframe Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "IframeSection" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Source URL", name: "src", widget: "string" }
+                  - { label: "Height", name: "height", widget: "string", required: false }
+
+      - file: "content/pages/merchandise.json"
+        label: "Merchandise Page"
+        name: "merchandise"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "IframeSection"
+                label: "Iframe Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "IframeSection" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Source URL", name: "src", widget: "string" }
+                  - { label: "Height", name: "height", widget: "string", required: false }
+
+      - file: "content/pages/acop2025.json"
+        label: "Aachen Open 2025 Page"
+        name: "acop2025"
+        format: "json"
+        fields:
+          - { label: "Type", name: "type", widget: "hidden", default: "Page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Slug", name: "slug", widget: "string" }
+          - name: "sections"
+            label: "Sections"
+            widget: "list"
+            types:
+              - name: "IframeSection"
+                label: "Iframe Section"
+                widget: "object"
+                fields:
+                  - { label: "Type", name: "type", widget: "hidden", default: "IframeSection" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Source URL", name: "src", widget: "string" }
+                  - { label: "Height", name: "height", widget: "string", required: false }

@@ -1,20 +1,22 @@
 {
   "name": "ppi-aachen-static",
   "version": "1.0.0",
-  "description": "Static HTML website for PPI Aachen",
+  "description": "Website for PPI Aachen",
   "type": "module",
   "scripts": {
-    "build:html": "node build-static.js",
-    "build:css": "npx tailwindcss -i src/index.css -o css/styles.css --minify",
-    "build": "npm run build:html && npm run build:css",
-    "dev:css": "npx tailwindcss -i src/index.css -o css/styles.css --watch",
-    "dev:server": "npx -y http-server -p 8080 -c-1",
-    "dev": "npm run build && npx -y concurrently \"npm run dev:css\" \"npm run dev:server\""
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "build:legacy": "node build-static.js && npx tailwindcss -i src/index.css -o css/styles.css --minify"
   },
   "devDependencies": {
+    "@astrojs/tailwind": "^5.1.5",
     "@stackbit/cms-git": "^1.0.38",
     "@stackbit/types": "^2.1.15",
+    "astro": "^4.16.18",
     "concurrently": "^8.2.2",
+    "cookie": "^0.6.0",
     "tailwindcss": "^3.3.6"
   }
 }

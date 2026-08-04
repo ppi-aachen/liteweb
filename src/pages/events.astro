@@ -1,0 +1,2361 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="PPI Aachen - Events" prefix="/">
+  <main class="flex-1 w-full min-w-0 desktop:mt-[48px]">
+
+      
+      <div>
+        
+    <div class="hero-header relative overflow-hidden text-white flex flex-col justify-center items-center text-center">
+      <!-- Parallax Background Layer -->
+      <div class="hero-header-bg absolute inset-0 w-full" style="background-image: url('hero-bright.png'); height: 120%; top: -10%; z-index: 0;"></div>
+    </div>
+    
+
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="px-4 md:px-[48px] py-12">
+
+            <section class="mb-12">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8 border-b border-gray-100 pb-6">
+                <h2 class="heading-2 !mt-0 !mb-0">Events</h2>
+                
+                <!-- Search and Filter Controls -->
+                <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                  <!-- Search Input -->
+                  <div class="relative flex-grow sm:flex-grow-0 sm:w-80">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </span>
+                    <input
+                      type="text"
+                      id="search-input"
+                      placeholder="Search events by title..."
+                      class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm bg-[#fcfcfc] transition-all"
+                    />
+                  </div>
+                  
+                  <!-- Sort Selector -->
+                  <div class="relative shrink-0">
+                    <select
+                      id="sort-select"
+                      class="w-full sm:w-48 pl-3 pr-8 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm bg-[#fcfcfc] appearance-none cursor-pointer transition-all"
+                    >
+                      <option value="newest">Newest First</option>
+                      <option value="oldest">Oldest First</option>
+                    </select>
+                    <span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div id="events-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Sidang Perwakilan Anggota PPI Aachen 2026"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/spa26.jpg"
+            alt="Sidang Perwakilan Anggota PPI Aachen 2026"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            27 Februari 2026
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Sidang Perwakilan Anggota PPI Aachen 2026
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>16:30</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Super C, Templergraben 57, 52062 Aachen</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Suaramu menentukan masa depan PPI Aachen! Mari hadir ke forum tertinggi PPI Aachen untuk mengevaluasi dan menentukan arah masa depan PPI Aachen.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://ppiaachen.de/spa"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Detail SPA</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Charlemagne Cup 2026"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/charlemagnecup.jpg"
+            alt="Charlemagne Cup 2026"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            13-14 January 2026
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Charlemagne Cup 2026
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Online</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Lomba E-Sport bersama teman-teman. Yuk daftar!
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://linktr.ee/CharlemagneCup"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Linktree</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Aachen Open 2025"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/aachen-open-2025.jpg"
+            alt="Aachen Open 2025"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            6-7 Desember 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Aachen Open 2025
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">BERUFSKOLLEG NORD, Herzogenrath</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          WALK THE TALK, NOT ONLY TALK THE TALK. Tri-Nation League (Malaysia, Indonesia, China). Compete in Futsal, Basketball, Badminton, and Volleyball.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://linktr.ee/aachen.open"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Linktree</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="RAIA: Research Assembly Indonesia-Aachen"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/raia.jpg"
+            alt="RAIA: Research Assembly Indonesia-Aachen"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            5 Desember 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            RAIA: Research Assembly Indonesia-Aachen
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>17:30</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldt-Haus, Aachen</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Tempat kita yang lagi S1, S2, atau doktoral bisa ketemu, ngobrol santai soal riset, dan saling belajar dari perjalanan akademik masing-masing.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://tally.so/r/81oEpl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Daftar Sekarang</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Aachen Book Club Ep. 3"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/book-club-3.jpg"
+            alt="Aachen Book Club Ep. 3"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            21 November 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Aachen Book Club Ep. 3
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>18:00 – 20:00</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldt Haus, Lantai 2 (2. OG)</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Membahas dengan mendalam mengenai Madilog, sebuah buku karya Tan Malaka.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="The Last Lullaby (Halloween Party)"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/last-lullaby.jpg"
+            alt="The Last Lullaby (Halloween Party)"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            1 November 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            The Last Lullaby (Halloween Party)
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>16:00 – 03:00 CEST</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">KHG Aachen, Pontstraße 72</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Join the ritual. Face the song. And find out what really happened. A haunted house and party experience.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Academy Kick-Off: Welcoming Party"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/welcoming-party-kickoff.jpg"
+            alt="Academy Kick-Off: Welcoming Party"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            11 Oktober 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Academy Kick-Off: Welcoming Party
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>14:00 - 21:00</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldt Haus, Pontstraße 41</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Welcoming Party Ersti PPI Aachen 2025. Ice breaking, games, city tour, snack gratis, dan makan bersama.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Nobar Indonesia vs Iraq"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/nobar-indo-iraq.jpg"
+            alt="Nobar Indonesia vs Iraq"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            11 Oktober 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Nobar Indonesia vs Iraq
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>21:00-Selesai</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldt Haus, Pontstr. 41</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Nonton bareng timnas Indonesia vs Iraq bersama teman-teman.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Gema Merdeka - 80th Indonesia"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/gema-merdeka.jpg"
+            alt="Gema Merdeka - 80th Indonesia"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            22 Agustus 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Gema Merdeka - 80th Indonesia
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>15:00 – 20:00</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Aula 1 Hauptgebäude RWTH Aachen</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Agustusan bareng yuk! Games seru, performance band, fashion show, quiz berhadiah, karaoke, dan aneka ragam makanan Indonesia.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://linktr.ee/ppiaachen17an"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Linktree 17an</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Warung Nusantara"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/warung-nusantara.jpg"
+            alt="Warung Nusantara"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            5 Juli 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Warung Nusantara
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>13:00 - 19:00</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Kennedypark</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Buat kalian yang kangen makanan khas Indonesia, wajib banget dateng dan mampir ke Warung Nusantara!
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Sommergrillen 2025"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/sommergrillen-2025.jpg"
+            alt="Sommergrillen 2025"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            14 Juni 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Sommergrillen 2025
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>14:00 - 19:30</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Westpark, Aachen</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          PPI Aachen is back again with Sommergrillen! Paketan grill murah meriah, games, dan keseruan bareng teman-teman.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://bit.ly/SommerGrillen2025"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Daftar Sommergrillen</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Aachen Book Club Ep. 2"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/book-club-2.jpg"
+            alt="Aachen Book Club Ep. 2"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            30 Mei 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Aachen Book Club Ep. 2
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>18:00 – 20:00</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldt Haus, Lantai 2 (2. OG)</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Diskusi buku dengan twist satu genre spesifik. Bawa bukumu sendiri dan mari berdiskusi!
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://bit.ly/AachenBookClubEps2"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Daftar Book Club</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Aachen Book Club Ep. 1"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/book-club-1.jpg"
+            alt="Aachen Book Club Ep. 1"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            9 Mei 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Aachen Book Club Ep. 1
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>18:00 – 20:00</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldthaus Aachen (2. OG)</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Sharing buku, diskusi santai, ngobrol asik, dan snack gratis. Bawa buku kesayanganmu atau cukup bawa rasa penasaranmu.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="http://bit.ly/aachenbookclub"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Daftar Book Club</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Lerncafe"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/lerncafe.jpg"
+            alt="Lerncafe"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            5 Januari - 23 Februari 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Lerncafe
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>11:00-16:00 CET</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">AWO Aachen Nord</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Fasilitas belajar nyaman dengan coffee break, internet, dan pemanas ruangan. Gratis setiap minggu!
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Sidang Perwakilan Anggota (SPA) 2025"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/spa-2025.jpg"
+            alt="Sidang Perwakilan Anggota (SPA) 2025"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            14 Februari 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Sidang Perwakilan Anggota (SPA) 2025
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>17:00 CET</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Super C, Templergraben 57</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Forum tertinggi PPI Aachen untuk evaluasi kepengurusan, menyusun rencana, dan memilih Ketua PPI Aachen yang baru.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://www.ppiaachen.de/organization/spa"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Info SPA</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Open Registration Ketua PPIA 25/26"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/open-registration-chair.jpg"
+            alt="Open Registration Ketua PPIA 25/26"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            10 Februari 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Open Registration Ketua PPIA 25/26
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Online</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Periode pendaftaran ketua PPI Aachen 2025/2026.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="CESPI: Beasiswa & Riset"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/cespi.jpg"
+            alt="CESPI: Beasiswa & Riset"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            23 Januari 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            CESPI: Beasiswa & Riset
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>14:00 CET</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Instagram Live @ppiaachen</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Info beasiswa CESP untuk S3 dari Kemendikbud dan beasiswa lainnya di RWTH Aachen bersama narasumber inspiratif.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://www.instagram.com/reel/DFK8Tcsty46/?igsh=MmQxd2xmem8xbnJk"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Tonton Rekaman</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Funmatch Esport"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/funmatch-esport.jpg"
+            alt="Funmatch Esport"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            11 Januari 2025
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Funmatch Esport
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>13:00 (MLBB), 17:30 (Valorant)</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Online (Streamed on YouTube)</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Fun match Mobile Legends dan Valorant. Pendaftaran gratis dan ada hadiah menarik!
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Blind Date"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/blind-date.jpg"
+            alt="Blind Date"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            24 November 2024
+          </span>
+          
+            <span class="inline-block bg-gray-500 text-white text-xs px-2.5 py-1 rounded-full font-semibold ml-2">
+              Past Event
+            </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Blind Date
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>15:00 - selesai</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Zoom Meeting</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Virtual Blind Date bareng PPI Munich buat kamu yang lagi nyari The One!
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Study Tour: Neanderthal Museum"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/neanderthal-museum.jpg"
+            alt="Study Tour: Neanderthal Museum"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            16 November 2024
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Study Tour: Neanderthal Museum
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>10:00 - selesai</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Neanderthal Museum</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Kunjungan edukatif ke museum Neanderthal bersama PPI Aachen
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="CarnEVIL of Shadows"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/carnevil.jpg"
+            alt="CarnEVIL of Shadows"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            3 November 2024
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            CarnEVIL of Shadows
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>17:00 - 22:00</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldt-Haus and Lessie Fair</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Halloween Party event.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Pesta SAPA"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/pesta-sapa.jpg"
+            alt="Pesta SAPA"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            19 Oktober 2024
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Pesta SAPA
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>15:00 - selesai</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldt-Haus</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Pesta menyapa pelajar baru di Aachen
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Eksil Movie Screening"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/eksil-screening.jpg"
+            alt="Eksil Movie Screening"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            8 September 2024
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Eksil Movie Screening
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>15:00 - 20:00</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldt-Haus</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Screening of the movie Eksil.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Malam 17an 2024"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/17an.jpg"
+            alt="Malam 17an 2024"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            18 Agustus 2024
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Malam 17an 2024
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>11:00-19:00</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Welthaus Aachen</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Perayaan Hari Kemerdekaan Indonesia. Penampilan menarik, bazar makanan, dan games seru.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://bit.ly/Foto17an2024"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Lihat Dokumentasi</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Indonesian Evening x INCAS"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/indonesian-evening.jpg"
+            alt="Indonesian Evening x INCAS"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            30 Juli 2024
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Indonesian Evening x INCAS
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>20:00-22:00</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldt-Haus, Aachen</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Culture and celebrations. Free Indonesian food for the first 50 people.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="MultiKulti Fest"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/multikulti.jpg"
+            alt="MultiKulti Fest"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            16 Juni 2024
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            MultiKulti Fest
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>12:00-19:00</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Kennedypark</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          PPI Aachen hadir di MultiKulti Fest dengan performance dan makanan khas Indonesia.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Sommergrillen 2024"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/sommergrillen-2024.jpg"
+            alt="Sommergrillen 2024"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            8 Juni 2024
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Sommergrillen 2024
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>14:00 - Selesai</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Westpark, Aachen</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Grilling, games, dan makan-makan bersama warga Aachen.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://bit.ly/sommergrillen2024"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Info</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Ngabuburit Kuy!!!"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/ngabuburit-2024.jpg"
+            alt="Ngabuburit Kuy!!!"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            7 April 2024
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Ngabuburit Kuy!!!
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>17:00 - Selesai</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldt-Haus, Aachen</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Buka puasa bersama dan ngabuburit seru bareng PPI Aachen.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Sidang Perwakilan Anggota 2024"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/spa-2024.jpg"
+            alt="Sidang Perwakilan Anggota 2024"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            9 Maret 2024
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Sidang Perwakilan Anggota 2024
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>17:00 CET</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">KHG Aachen, Pontstr 72</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Sidang perwakilan anggota dan pemilihan ketua PPI Aachen 24/25.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Photo Hunting: Aachen Cekrek Club"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/photo-hunting.jpg"
+            alt="Photo Hunting: Aachen Cekrek Club"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            16 Desember 2023
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Photo Hunting: Aachen Cekrek Club
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>16:00 CET</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Eiscafe Elisenbrunen</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Photohunting keliling zentrum Aachen bersama komunitas fotografi baru.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Blind Date"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/blind-date-2023.jpg"
+            alt="Blind Date"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            15 Desember 2023
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Blind Date
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>19:00 CET</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Online</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Blind Date Online buat cari teman baru atau pasangan.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Study Tour: Museum LWL Münster"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/study-tour-muenster.jpg"
+            alt="Study Tour: Museum LWL Münster"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            18 November 2023
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Study Tour: Museum LWL Münster
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>08:00 (Meeting Point)</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Aachen HBF -> Münster</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Kunjungan ke LWL Museum of Natural History dan Planetarium.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+          <a
+            href="https://bit.ly/3udc9cP"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors"
+            onclick="event.stopPropagation();"
+          >
+            <span>Info</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class=" event-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 bg-[#fdfdfd] flex flex-col cursor-pointer group"
+      data-event-title="Aachener 101: Welcoming Party 2023"
+    >
+      <!-- Image Section -->
+      
+        <div class="h-48 w-full overflow-hidden relative">
+          <img
+            src="images/events/aachener-101.jpg"
+            alt="Aachener 101: Welcoming Party 2023"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      
+
+      <div class="p-6 flex flex-col flex-grow text-left">
+        <div class="mb-4">
+          <span class="inline-block bg-[#0161bf] text-white text-xs px-2.5 py-1 rounded-full font-semibold">
+            21 Oktober 2023
+          </span>
+          
+          <h3 class="heading-3 mb-1 group-hover:text-primary transition-colors text-[#002f6c] !mt-3 font-bold">
+            Aachener 101: Welcoming Party 2023
+          </h3>
+          
+          <div class="text-sm text-gray-500 flex flex-col gap-1 mt-2">
+            
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>16:30 CEST</span>
+              </div>
+            
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="truncate">Humboldt-Haus, Aachen</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+          Welcoming party untuk Ersti. Games, snack gratis, dan info seputar Aachen.
+        </p>
+      </div>
+
+      <!-- Card Footer Actions -->
+      <div class="border-t border-gray-100 flex divide-x divide-gray-100 bg-gray-50/50 mt-auto">
+        
+        <div class="flex-1 py-3 flex items-center justify-center gap-2 text-[#0161bf] font-semibold text-sm hover:bg-white transition-colors">
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+              </div>
+            </section>
+
+            <!-- Instagram CTA -->
+            <section class="bg-light-gray p-8 rounded-lg text-center">
+              <h3 class="heading-3 mb-4">Want to see more?</h3>
+              <p class="body-text mb-6">
+                Follow our Instagram to get the latest updates on our upcoming events and activities!
+              </p>
+              <a
+                href="https://www.instagram.com/ppiaachen"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary inline-flex items-center gap-2"
+              >
+                <span>@ppiaachen</span>
+              </a>
+            </section>
+
+          </div>
+        </div>
+
+        <!-- Event Details Modal -->
+        <div
+          id="event-modal"
+          class="fixed inset-0 z-50 items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity hidden"
+        >
+          <div
+            class="bg-white rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden relative flex flex-col md:flex-row"
+          >
+            <!-- Close Button -->
+            <button
+              id="close-event-btn"
+              class="absolute top-4 right-4 p-2 bg-white/80 rounded-full hover:bg-gray-100 transition-colors z-10 text-gray-800 shadow-sm"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <!-- Modal Image - Left Side -->
+            <div id="modal-event-image-container" class="w-full md:w-1/2 h-64 md:h-auto relative shrink-0">
+              <img
+                id="modal-event-image"
+                src=""
+                alt=""
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- Modal Content - Right Side -->
+            <div class="w-full md:w-1/2 p-6 sm:p-8 overflow-y-auto max-h-[60vh] md:max-h-[90vh] bg-white">
+              <div class="mb-6">
+                <div class="flex flex-wrap items-center gap-3 mb-3 pr-8">
+                  <span id="modal-event-date" class="bg-[#0161bf] text-white px-3 py-1 rounded-full text-sm font-medium"></span>
+                  <span id="modal-event-tag" class="bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-medium"></span>
+                </div>
+
+                <h2 id="modal-event-title" class="heading-2 mb-4 pr-8 text-2xl font-bold text-gray-900"></h2>
+
+                <div class="flex flex-col gap-2 text-gray-600 mb-6 bg-gray-50 p-4 rounded-lg">
+                  <div id="modal-event-time-container" class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#0161bf]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span id="modal-event-time" class="font-medium"></span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#0161bf]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span id="modal-event-location" class="font-medium"></span>
+                  </div>
+                </div>
+
+                <div class="prose max-w-none text-gray-700 leading-relaxed body-text text-lg">
+                  <p id="modal-event-desc" class="whitespace-pre-line"></p>
+                </div>
+              </div>
+
+              <div id="modal-event-link-section" class="pt-6 border-t border-gray-100 flex justify-end mt-auto">
+                <a
+                  id="modal-event-link"
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-primary inline-flex items-center gap-2"
+                >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    
+    
+  </main>
+
+  <script is:inline src="content/pages/events.js"></script>
+  <script is:inline src="js/events.js"></script>
+</Layout>
