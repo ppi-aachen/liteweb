@@ -364,12 +364,17 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="${metaDesc}" />
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:site_name" content="PPI Aachen" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="${baseUrl}/${currentPath}" />
   <meta property="og:title" content="PPI Aachen - ${title}" />
   <meta property="og:description" content="${metaDesc}" />
   <meta property="og:image" content="${baseUrl}/og-image.png" />
+  <meta property="og:image:secure_url" content="${baseUrl}/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="748" />
+  <meta property="og:image:height" content="1024" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
