@@ -14,7 +14,8 @@
     CMS.registerPreviewStyle("/css/styles.css");
     CMS.registerPreviewStyle("https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css");
 
-    const h = React.createElement;
+    const h = window.h || React.createElement;
+    const createClass = window.createClass || React.createClass;
 
     // Helper to format text with line breaks
     function renderText(text) {
@@ -36,12 +37,12 @@
 
     function renderSection(section, index, getAsset) {
       const key = index;
-      const type = section.type;
+      const type = section ? section.type : '';
 
       switch (type) {
         case 'Hero':
           return h('div', { key, className: 'bg-gradient-to-r from-blue-900 to-indigo-900 text-white p-8 md:p-12 rounded-2xl shadow-lg text-center mb-6' },
-            h('h2', { className: 'text-3xl md:text-4xl font-extrabold mb-3 tracking-tight' }, section.title),
+            h('h2', { className: 'text-3xl md:text-4xl font-extrabold mb-3 tracking-tight' }, section.title || ''),
             section.subtitle && h('p', { className: 'text-blue-100 text-lg md:text-xl font-light max-w-2xl mx-auto' }, section.subtitle)
           );
 
@@ -281,56 +282,65 @@
       }
     }
 
-    function PagePreview(props) {
-      const { entry, getAsset } = props;
-      const data = entry.getIn(['data']) ? entry.getIn(['data']).toJS() : {};
-      
-      let sections = [];
-      if (Array.isArray(data.sections)) {
-        sections = data.sections;
-      } else if (data.sections && typeof data.sections === 'object') {
-        sections = Object.values(data.sections);
+    const PagePreview = createClass({
+      render: function() {
+        try {
+          const entry = this.props.entry;
+          const getAsset = this.props.getAsset;
+          const entryData = entry ? entry.getIn(['data']) : null;
+          const data = entryData ? entryData.toJS() : {};
+
+          let sections = [];
+          if (Array.isArray(data.sections)) {
+            sections = data.sections;
+          } else if (data.sections && typeof data.sections === 'object') {
+            sections = Object.values(data.sections);
+          }
+
+          return h('div', { className: 'p-6 bg-slate-50 min-h-screen font-sans text-gray-800' },
+            h('div', { className: 'max-w-4xl mx-auto space-y-4' },
+              h('header', { className: 'border-b pb-4 mb-6 flex justify-between items-center' },
+                h('div', null,
+                  h('h1', { className: 'text-xl font-bold text-gray-900' }, data.title || 'Page Preview'),
+                  h('p', { className: 'text-xs text-gray-500' }, 'Live Preview Pane')
+                ),
+                h('span', { className: 'text-xs px-2.5 py-1 rounded bg-blue-100 text-blue-800 font-semibold uppercase' }, data.slug || 'page')
+              ),
+              sections.map((section, index) => renderSection(section, index, getAsset)),
+              sections.length === 0 && h('div', { className: 'p-8 text-center text-gray-500 bg-white rounded-xl shadow-sm border border-gray-200' }, 'No sections added yet.')
+            )
+          );
+        } catch (err) {
+          return h('div', { style: { color: 'red', padding: '20px', background: '#fff' } },
+            h('h2', null, 'Preview Render Error:'),
+            h('pre', null, String(err.stack || err))
+          );
+        }
       }
+    });
 
-      return h('div', { className: 'p-6 bg-slate-50 min-h-screen font-sans text-gray-800' },
-        h('div', { className: 'max-w-4xl mx-auto space-y-4' },
-          h('header', { className: 'border-b pb-4 mb-6 flex justify-between items-center' },
-            h('div', null,
-              h('h1', { className: 'text-xl font-bold text-gray-900' }, data.title || 'Page Preview'),
-              h('p', { className: 'text-xs text-gray-500' }, 'Live Preview Pane')
-            ),
-            h('span', { className: 'text-xs px-2.5 py-1 rounded bg-blue-100 text-blue-800 font-semibold uppercase' }, data.slug || 'page')
-          ),
-          sections.map((section, index) => renderSection(section, index, getAsset)),
-          sections.length === 0 && h('div', { className: 'p-8 text-center text-gray-500 bg-white rounded-xl shadow-sm border border-gray-200' }, 'No sections added yet.')
-        )
-      );
-    }
-
-    // Register preview templates for Decap CMS file collections
-    const fileNames = [
-      "events",
-      "kepengurusan",
-      "arsip-lpj",
-      "arsip-pengurus",
-      "home",
-      "sejarah",
-      "communities",
-      "spa",
-      "ad-art",
-      "impressum",
-      "kontak-email",
-      "press-kit",
-      "linktree",
-      "lapor-diri",
-      "wiki-aachen",
-      "merchandise",
-      "acop2025",
-      "active-pages",
-      "passive-pages"
+    const targetNames = [
+      "events", "events.json",
+      "kepengurusan", "kepengurusan.json",
+      "arsip-lpj", "arsip-lpj.json",
+      "arsip-pengurus", "arsip-pengurus.json",
+      "home", "home.json",
+      "sejarah", "sejarah.json",
+      "communities", "communities.json",
+      "spa", "spa.json",
+      "ad-art", "ad-art.json",
+      "impressum", "impressum.json",
+      "kontak-email", "kontak-email.json",
+      "press-kit", "press-kit.json",
+      "linktree", "linktree.json",
+      "lapor-diri", "lapor-diri.json",
+      "wiki-aachen", "wiki-aachen.json",
+      "merchandise", "merchandise.json",
+      "acop2025", "acop2025.json",
+      "active-pages", "passive-pages"
     ];
 
-    fileNames.forEach(function(name) {
+    targetNames.forEach(function(name) {
       CMS.registerPreviewTemplate(name, PagePreview);
     });
   </script>
