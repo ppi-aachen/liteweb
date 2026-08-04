@@ -284,7 +284,13 @@
     function PagePreview(props) {
       const { entry, getAsset } = props;
       const data = entry.getIn(['data']) ? entry.getIn(['data']).toJS() : {};
-      const sections = data.sections || [];
+      
+      let sections = [];
+      if (Array.isArray(data.sections)) {
+        sections = data.sections;
+      } else if (data.sections && typeof data.sections === 'object') {
+        sections = Object.values(data.sections);
+      }
 
       return h('div', { className: 'p-6 bg-slate-50 min-h-screen font-sans text-gray-800' },
         h('div', { className: 'max-w-4xl mx-auto space-y-4' },
@@ -301,9 +307,32 @@
       );
     }
 
-    // Register preview templates for Decap CMS collections
-    CMS.registerPreviewTemplate("active-pages", PagePreview);
-    CMS.registerPreviewTemplate("passive-pages", PagePreview);
+    // Register preview templates for Decap CMS file collections
+    const fileNames = [
+      "events",
+      "kepengurusan",
+      "arsip-lpj",
+      "arsip-pengurus",
+      "home",
+      "sejarah",
+      "communities",
+      "spa",
+      "ad-art",
+      "impressum",
+      "kontak-email",
+      "press-kit",
+      "linktree",
+      "lapor-diri",
+      "wiki-aachen",
+      "merchandise",
+      "acop2025",
+      "active-pages",
+      "passive-pages"
+    ];
+
+    fileNames.forEach(function(name) {
+      CMS.registerPreviewTemplate(name, PagePreview);
+    });
   </script>
 </body>
 </html>
