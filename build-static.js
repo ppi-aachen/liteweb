@@ -491,12 +491,14 @@ const renderMarkdown = (content) => {
         return `<ol class="list-decimal list-inside space-y-1 my-3">${items.join('')}</ol>`;
     });
 
-    // Replace trailing backslashes at end of lines with linebreaks
-    html = html.replace(/\\\r?\n/g, '<br />\n');
+    // Convert Decap CMS trailing backslashes at end of lines into single <br />
+    html = html.replace(/\\\r?\n/g, '<br />');
     html = html.replace(/\\$/gm, '');
-    html = html.replace(/(?:<br\s*\/?>\s*){2,}/gi, '<br />');
 
-    // Paragraphs: wrap consecutive non-empty, non-tag lines in <p> tags
+    // Remove trailing <br /> right before paragraph breaks
+    html = html.replace(/(?:<br\s*\/?>\s*)+(?=\n\n|$)/g, '');
+
+    // Paragraphs: wrap consecutive non-empty, non-tag blocks in <p> tags
     html = html.split(/\n{2,}/).map(block => {
         block = block.trim();
         if (!block) return '';
