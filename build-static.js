@@ -447,13 +447,16 @@ const renderMarkdown = (content) => {
     // Inline code
     html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
 
-    // Headings (### h3, ## h2, # h1)
+    // Headings (###### h6 down to # h1)
+    html = html.replace(/^###### (.+)$/gm, '<h6 class="font-bold text-sm mt-4 mb-2">$1</h6>');
+    html = html.replace(/^##### (.+)$/gm, '<h5 class="font-bold text-base mt-4 mb-2">$1</h5>');
+    html = html.replace(/^#### (.+)$/gm, '<h4 class="font-bold text-lg mt-5 mb-2">$1</h4>');
     html = html.replace(/^### (.+)$/gm, '<h3 class="heading-3 mt-6 mb-2">$1</h3>');
     html = html.replace(/^## (.+)$/gm, '<h2 class="heading-2 mt-8 mb-4">$1</h2>');
     html = html.replace(/^# (.+)$/gm, '<h1 class="heading-1 mt-10 mb-4">$1</h1>');
 
     // Horizontal rule
-    html = html.replace(/^---$/gm, '<hr class="my-6 border-gray-200" />');
+    html = html.replace(/^(?:---| - - - |- - -|\*\*\*)$/gm, '<hr class="my-6 border-gray-200" />');
 
     // Bold and italic
     html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
@@ -461,6 +464,10 @@ const renderMarkdown = (content) => {
     html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
     html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
     html = html.replace(/_(.+?)_/g, '<em>$1</em>');
+
+    // Autolinks <http://...>
+    html = html.replace(/<((?:https?|mailto):[^>]+)>/g, (_, url) =>
+        `<a href="${ensureAbsoluteUrl(url)}" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">${url}</a>`);
 
     // Links [text](url)
     html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, url) =>
@@ -473,27 +480,29 @@ const renderMarkdown = (content) => {
     // Unordered lists
     html = html.replace(/((?:^[ \t]*[-*+] .+\n?)+)/gm, (block) => {
         const items = block.trim().split('\n').map(line =>
-            `<li>${line.replace(/^[ \t]*[-*+] /, '')}</li>`);
+            `<li>${line.replace(/^[ \t]*[-*+] /, '').replace(/\\$/, '')}</li>`);
         return `<ul class="list-disc list-inside space-y-1 my-3">${items.join('')}</ul>`;
     });
 
     // Ordered lists
     html = html.replace(/((?:^[ \t]*\d+\. .+\n?)+)/gm, (block) => {
         const items = block.trim().split('\n').map(line =>
-            `<li>${line.replace(/^[ \t]*\d+\. /, '')}</li>`);
+            `<li>${line.replace(/^[ \t]*\d+\. /, '').replace(/\\$/, '')}</li>`);
         return `<ol class="list-decimal list-inside space-y-1 my-3">${items.join('')}</ol>`;
     });
 
+    // Replace trailing backslashes at end of lines with linebreaks
+    html = html.replace(/\\\r?\n/g, '<br />\n');
+    html = html.replace(/\\$/gm, '');
+    html = html.replace(/(?:<br\s*\/?>\s*){2,}/gi, '<br />');
+
     // Paragraphs: wrap consecutive non-empty, non-tag lines in <p> tags
-    // Split by double newline (paragraph breaks)
     html = html.split(/\n{2,}/).map(block => {
         block = block.trim();
         if (!block) return '';
-        // Don't wrap if already a block-level HTML element or heading
         if (/^<(h[1-6]|ul|ol|li|pre|blockquote|div|p|hr|img|table)/.test(block)) {
             return block;
         }
-        // Convert single newlines within a paragraph to <br>
         return `<p class="mb-4 last:mb-0">${block.replace(/\n/g, '<br />')}</p>`;
     }).join('\n');
 
