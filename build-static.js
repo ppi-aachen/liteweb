@@ -344,7 +344,7 @@ const renderLayout = (bodyContent, title, currentPath, pageScript = null, dataSc
             <div class="border-t border-white/20 pt-6">
               <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="body-text text-white/70 text-center md:text-left">
-                  © ${new Date().getFullYear()} Perhimpunan Pelajar Indonesia di Aachen
+                  © <span id="copyright-year">${new Date().getFullYear()}</span> Perhimpunan Pelajar Indonesia di Aachen
                 </p>
                 <div class="flex gap-4">
                   <a href="impressum.html" class="body-text text-white/70 hover:text-primary-light transition-colors" data-lang-id="Impressum & Datenschutzerklärung" data-lang-en="Impressum & Privacy Policy" data-lang-de="Impressum & Datenschutzerklärung">Impressum & Datenschutzerklärung</a>

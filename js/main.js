@@ -232,4 +232,19 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateParallax);
         updateParallax(); // Initial check
     }
+
+    // Automatically update copyright year in footer to current year
+    const copyrightYearSpan = document.getElementById('copyright-year');
+    const currentYear = new Date().getFullYear();
+    if (copyrightYearSpan) {
+        copyrightYearSpan.textContent = currentYear;
+    } else {
+        const copyrightEls = document.querySelectorAll('footer p');
+        copyrightEls.forEach(el => {
+            if (el.textContent.includes('©') && el.textContent.includes('Perhimpunan Pelajar Indonesia')) {
+                el.innerHTML = el.innerHTML.replace(/©\s*\d{4}/, `© ${currentYear}`);
+            }
+        });
+    }
 });
+
