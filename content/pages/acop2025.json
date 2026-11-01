@@ -1,11 +1,11 @@
 {
   "type": "Page",
-  "title": "Aachen Open 2025",
-  "slug": "acop2025",
+  "title": "Aachen Open",
+  "slug": "acop",
   "sections": [
     {
       "type": "IframeSection",
-      "title": "Aachen Open 2025",
+      "title": "Aachen Open",
       "src": "https://aachenopen.de/",
       "height": "calc(100vh - 64px)"
     }
